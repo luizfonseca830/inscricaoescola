@@ -1,7 +1,7 @@
 @extends('layouts.header-footer')
 
 @section('title')
-    <title>SEINFRA - REGISTRO</title>
+    <title>SISTEMA DE INSCRIÇÕES</title>
 @endsection
 
 @section('css')
