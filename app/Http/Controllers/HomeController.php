@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Pessoa;
+use App\Models\Pontuacao;
+use App\Models\RecursoModel;
+use App\Models\TipoTela;
 
 class HomeController extends Controller
 {
@@ -19,10 +22,17 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('home');
+        $pessoa = Pessoa::whereNotNull('anexo_id')->get()->count();
+        $pontuacao = Pessoa::whereNotNull('status')->get()->count();
+        $recurso = RecursoModel::all()->count();
+        return view('dashboard', [
+            'inscricao_total' => $pessoa,
+            'avaliacao_total' => $pontuacao,
+            'recurso_total' => $recurso,
+        ]);
     }
 }
