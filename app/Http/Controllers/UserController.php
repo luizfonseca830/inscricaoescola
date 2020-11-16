@@ -28,6 +28,11 @@ class UserController extends Controller
     }
 
     public function delete($id){
+        if (Auth::user()->tipo != 'Admin') {
+            session()->put('error', 'Você não tem acesso a essa página!');
+            return redirect()->route('home');
+        }
+
         $user = User::find($id);
         if($user->delete()){
             session()->put('sucess', 'Usuário deletado com sucesso!');
@@ -60,6 +65,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $password,
             'password_confirmation' => $password,
+            'tipo' => $request->type,
         ]);
 
         session()->put('sucess', 'O usuário foi alterado com sucesso!');

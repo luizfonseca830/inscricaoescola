@@ -69,15 +69,15 @@ Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('com
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('table-list', function () {
-        return view('pages.table_list');
-    })->name('table');
+	Route::get('table-list', function () {
+		return view('pages.table_list');
+	})->name('table');
 
-    Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
+	Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
     Route::get('/avaliar/{id}', 'AreaRestritaController@index2')->name('/avaliar');
     Route::post('pontuacao', 'PontuacaoController@store')->name('pontuacao');
 
-    Route::get('/visualizacao-aprovar', 'AreaRestritaController@indexa3')->name('visualizacao-aprovar');
+	Route::get('/visualizacao-aprovar', 'AreaRestritaController@indexa3')->name('visualizacao-aprovar');
     Route::get('/aprovar/{id}', 'AreaRestritaController@aprovar')->name('/aprovar');
     Route::post('/reprovarpessoa', 'PontuacaoController@reavaliar')->name('reprovarpessoa');
     Route::get('/aprovarpessoa/{id}', 'PontuacaoController@aceitarAvaliacao')->name('aprovarpessoa');
@@ -120,10 +120,10 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('user', 'UserController', ['except' => ['show']]);
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
 Route::get('/gerarPDF/{comprovante}', 'ComprovanteController@gerarComprovanteCpf')->name('gerarpdf-comprovante');

@@ -10,20 +10,30 @@ use PHPJasper\PHPJasper;
 class JasperController extends Controller
 {
     //
-    static public function index()
+    static public function index($cargo, $status)
     {
-        $input = public_path() . '/jasper/INSCRIÇÕES.jasper';
+        $input = public_path() . '/jasper/SEINFRA_JASPER.jasper';
+        if ($status == '1') {
+            $tipo = 'deferido';
+        }
+        else {
+            $tipo = 'indeferido';
+        }
 
-
-        $output = public_path() . '/jasper/pdf/';
+        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($cargo). '-' . $tipo;
 
         $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
+            'params' => [
+                'FilterCargo' => JasperController::tirarAcentos($cargo),
+                'FilterStatus' => $status
+            ],
             'db_connection' => [
                 'driver' => getenv('DB_CONNECTION'), //mysql,postgres ....
                 'username' => getenv('DB_USERNAME'),
-                'password' => getenv('DB_PASSWORD'),
+                //'password' => getenv('DB_PASSWORD'),
+                //CASO TENHA SENHA CRIAR PASSWORD NO VETOR E => PASSA A SENHA 'SENHA'
                 'host' => getenv('DB_HOST'),
                 'database' => getenv('DB_DATABASE'),
                 'port' => getenv('DB_PORT'),

@@ -14,7 +14,8 @@ class AddUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'tipo' => $request->type,
         ]);
         session()->put('sucess', 'Usuário criado com sucesso!');
         return redirect()->route('user.index');

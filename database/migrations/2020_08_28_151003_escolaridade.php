@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEnderecoTable extends Migration
+class Escolaridade extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateEnderecoTable extends Migration
      */
     public function up()
     {
-        Schema::create('endereco', function (Blueprint $table) {
+        //
+        Schema::create('escolaridade', function($table)
+        {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->string('endereco');
-            $table->string('bairro');
-            $table->string('cep');
+            $table->string('nivel_escolaridade', 100);
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +31,7 @@ class CreateEnderecoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('endereco');
+        //
+        Schema::dropIfExists('escolaridade');
     }
 }

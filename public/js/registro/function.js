@@ -20,4 +20,32 @@ $(function () {
         atual_fs.hide(800);
         prev_fs.show(800);
     });
+
+    $('select[name="escolaridade"]').on('change', function () {
+        var escolaridade = this.value;
+
+        $('select[name="CARGO"] option').each(function () {
+            var $this = $(this);
+
+            if ($this.data('escolaridade') == escolaridade) $this.show();
+            else $this.hide();
+        });
+    });
+
+    $(function () {
+        $('input.checkgroup').click(function () {
+            if ($(this).is(":checked")) {
+                $('input.checkgroup').attr('disabled', true);
+                $(this).removeAttr('disabled');
+            } else {
+                $('input.checkgroup').removeAttr('disabled');
+            }
+        })
+    })
+    $('#escolaridade').click(function () {
+        var nivel = $('#escolaridade').val()
+        if (nivel == 1 || nivel == 2 || nivel == 3) {
+            $('#cargo-div').removeAttr('hidden', false);
+        }
+    });
 });

@@ -1,6 +1,6 @@
 @extends('layouts.header-footer')
 @section('title')
-    <title>REGISTRO</title>
+    <title>SEINFRA - REGISTRO</title>
 @endsection
 
 @section('css')

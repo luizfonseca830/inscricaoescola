@@ -2,7 +2,13 @@
 
 namespace App\Providers;
 
+use App\Charts\AvaliacaoRevisaoChart;
+use App\Charts\AvaliacoesChart;
+use App\Charts\InscricoesChart;
+use App\Charts\RecursoChart;
+use App\Charts\RevisaoChart;
 use Illuminate\Support\ServiceProvider;
+use ConsoleTVs\Charts\Registrar as Charts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,8 +27,13 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
         //
+        $charts->register([
+            InscricoesChart::class,
+            RecursoChart::class,
+            AvaliacoesChart::class,
+        ]);
     }
 }

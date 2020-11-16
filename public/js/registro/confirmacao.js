@@ -16,7 +16,11 @@ $('#confirma').click(function () {
     else{
         $('#sexo_conf').html('Feminino')
     }
+    $('#pne_conf').html($('#pne').val())
 
+    $('#cep_conf').html($('#cep').val())
+    $('#bairro_conf').html($('#bairro').val())
+    $('#endereco_conf').html($('#endereco').val() + ', ' + $('#numero').val())
 
     if ($('#escolaridade').val() == 1){
         $('#escolaridade_conf').html('Nível Fundamental')
@@ -28,6 +32,27 @@ $('#confirma').click(function () {
         $('#escolaridade_conf').html('Nível Superior')
     }
 
+    if ($('#cargo').val() == 1) {
+        $('#cargo_conf').html('Auxiliar de Topografia')
+    }
+    if ($('#cargo').val() == 2) {
+        $('#cargo_conf').html('Encarregado de Campo')
+    }
+    if ($('#cargo').val() == 3) {
+        $('#cargo_conf').html('Técnico em Agrimensura ou equivalente')
+    }
+    if ($('#cargo').val() == 4) {
+        $('#cargo_conf').html('Topógrafo Prático')
+    }
+    if ($('#cargo').val() == 5) {
+        $('#cargo_conf').html('Arquiteto e Urbanista')
+    }
+    if ($('#cargo').val() == 6) {
+        $('#cargo_conf').html('Engenheiro Civil')
+    }
+    if ($('#cargo').val() == 7) {
+        $('#cargo_conf').html('Engenheiro Eletricista')
+    }
 });
 
 $('#close').click(function () {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComprovanteTable extends Migration
+class Endereco extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateComprovanteTable extends Migration
      */
     public function up()
     {
-        Schema::create('comprovante', function (Blueprint $table) {
+        //
+        Schema::create('endereco', function($table)
+        {
             $table->id();
-            $table->string('comprovante', 255)->nullable();
+            $table->string('endereco');
+            $table->string('bairro');
+            $table->string('cep');
             $table->timestamps();
         });
     }
@@ -27,6 +31,7 @@ class CreateComprovanteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comprovante');
+        //
+        Schema::dropIfExists('endereco');
     }
 }

@@ -20,7 +20,7 @@ class ComprovanteController extends Controller
     }
 
     static public function gerarComprovante($pessoa){
-        $comprovante = 'INSCRIÇÃO' . time() . $pessoa->id;
+        $comprovante = 'SEINFRA' . time() . $pessoa->id;
         return $comprovante;
     }
 
