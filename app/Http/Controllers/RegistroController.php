@@ -20,7 +20,6 @@ class RegistroController extends Controller
     //CADASTRO DA PESSOA NA 1 REQUISAO
     public function storePart1(Registro $request)
     {
-
         //CASO O CPF EXISTA
         $pessoa_confirma = Pessoa::where('cpf', $request->cpf)->first();
         if (!isset($request->termo_de_condicao) && !isset($request->termo_de_privacidade)) {
@@ -32,23 +31,7 @@ class RegistroController extends Controller
             Cookie::queue('pessoa_cpf', $request->cpf, $expiresAt);
             return redirect()->route('registro/anexos');
         }
-        //VERIFICAO DE CARGOS -> IMPEDIR DE PASSAR CARGOS DE OUTRO NIVEL DE ESCOLARIDADE
-        if ($request->escolaridade == '1') {
-            if ($request->CARGO != '1' && $request->cargo != '2') {
-                session()->put('error', 'Ops, parece que o cargo selecionado não pertence ao nível de escolarida!');
-                return redirect()->route('registro');
-            }
-        } else if ($request->escolaridade == '2') {
-            if ($request->CARGO != '3' && $request->cargo != '4') {
-                session()->put('error', 'Ops, parece que o cargo selecionado não pertence ao nível de escolarida!');
-                return redirect()->route('registro');
-            }
-        } else if ($request->escolaridade == '3') {
-            if ($request->CARGO != '5' && $request->cargo != '6' && $request->cargo != '7') {
-                session()->put('error', 'Ops, parece que o cargo selecionado não pertence ao nível de escolarida!');
-                return redirect()->route('registro');
-            }
-        }
+
 
         $endereco_id = Endereco::create([
             'endereco' => $request->endereco . ', ' . $request->numero,
@@ -56,12 +39,7 @@ class RegistroController extends Controller
             'cep' => $request->cep,
         ])->id;
 
-        if ($request->deficiencia == 'Nao') {
-            $deficiencia = 0;
-        }
-        else {
-            $deficiencia = 1;
-        }
+
 
         $pessoa_id = Pessoa::create([
             'nome_completo' => $request->nome_completo,

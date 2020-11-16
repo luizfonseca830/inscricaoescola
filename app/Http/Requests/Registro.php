@@ -42,7 +42,6 @@ class Registro extends FormRequest
             'numero' => 'required|numeric|digits_between:1,5|min:0',
             'orgao_emissor' => 'required|string|max:12',
             'escolaridade' => 'required|exists:escolaridade,id',
-            'CARGO' => 'exists:cargos,id',
         ];
     }
 

@@ -41,10 +41,8 @@ Route::post('/recurso-pedir', 'RecursoController@pedirRecurso')->name('recurso-p
 
 
 Route::get('/registro', function () {
-    $cargo = \App\Models\Cargo::all();
     $escolaridade = \App\Models\Escolaridade::all();
     return view('registro.registro')->with([
-        'cargos' => $cargo,
         'escolaridade' => $escolaridade
     ]);
 })->name('registro');

@@ -15,6 +15,23 @@ class CreatePessoaTable extends Migration
     {
         Schema::create('pessoa', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('escolaridade_id');
+            $table->unsignedBigInteger('comprovante_id')->nullable();
+            $table->string('nome_completo');
+            $table->string('cpf')->unique();
+            $table->string('rg', 15);
+            $table->string('orgao_emissor');
+            $table->string('pis', '15');
+            $table->string('telefone');
+            $table->string('nacionalidade', 100);
+            $table->string('naturalidade');
+            $table->date('data_nascimento');
+            $table->string('sexo');
+            $table->string('email');
+            $table->boolean('portador_deficiencia');
+
+            $table->foreign('escolaridade_id')->references('id')->on('escolaridade');
+            $table->foreign('comprovante_id')->references('id')->on('comprovante');
             $table->timestamps();
         });
     }

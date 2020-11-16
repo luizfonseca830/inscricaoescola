@@ -91,10 +91,6 @@ body{
 }
 
 
-#formulario_registro .cargos option{
-    display: none;
-}
-
 #formulario_registro p{
     float: left;
 }

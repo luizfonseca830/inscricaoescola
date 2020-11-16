@@ -18,79 +18,47 @@
                     <p>{{ __('Dashboard') }}</p>
                 </a>
             </li>
-                <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-                    <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-                        <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-                        <p>{{ __('Configurações') }}
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse show" id="laravelExample">
-                        <ul class="nav">
-                            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    <span class="sidebar-mini"> UP </span>
-                                    <span class="sidebar-normal">{{ __('Perfil De Usuário') }} </span>
-                                </a>
-                            </li>
-                            <li class="nav-item{{ $activePage == 'Gestao' ? ' active' : '' }}">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    <span class="sidebar-mini"> GU </span>
-                                    <span class="sidebar-normal"> {{ __('Gestão de Usuário') }} </span>
-                                </a>
-                            </li>
-                            <li class="nav-item{{ $activePage == 'TelaCriar' ? ' active' : '' }}">
-                                <a class="nav-link" href="{{route('tela-criar')}}">
-                                    <span class="sidebar-mini"> LT </span>
-                                    <span class="sidebar-normal"> {{ __('Criar Tela/Anexos') }} </span>
-                                </a>
-                            </li>
-                            <li class="nav-item{{ $activePage == 'TelaLiberar' ? ' active' : '' }}">
-                                <a class="nav-link" href="{{route('tela-liberar')}}">
-                                    <span class="sidebar-mini"> LT </span>
-                                    <span class="sidebar-normal"> {{ __('Liberar Tela/Anexos') }} </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item{{ $activePage == 'avaliacao' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{ route('/visualizacao') }}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Avaliação') }}</p>
-                    </a>
-                </li>
-
-            <li class="nav-item{{ $activePage == 'avaliacao-pne' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('avaliacao-pne')}}">
-                    <i class="material-icons">library_books</i>
-                    <p>{{ __('Avaliação - PNE') }}</p>
+            <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+                <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+                    <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
+                    <p>{{ __('Configurações') }}
+                        <b class="caret"></b>
+                    </p>
                 </a>
+                <div class="collapse show" id="laravelExample">
+                    <ul class="nav">
+                        <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('profile.edit') }}">
+                                <span class="sidebar-mini"> UP </span>
+                                <span class="sidebar-normal">{{ __('Perfil De Usuário') }} </span>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'Gestao' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('user.index') }}">
+                                <span class="sidebar-mini"> GU </span>
+                                <span class="sidebar-normal"> {{ __('Gestão de Usuário') }} </span>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'TelaCriar' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{route('tela-criar')}}">
+                                <span class="sidebar-mini"> LT </span>
+                                <span class="sidebar-normal"> {{ __('Criar Tela/Anexos') }} </span>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'TelaLiberar' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{route('tela-liberar')}}">
+                                <span class="sidebar-mini"> LT </span>
+                                <span class="sidebar-normal"> {{ __('Liberar Tela/Anexos') }} </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
-            <li class="nav-item{{ $activePage == 'revisao' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('visualizacao-aprovar') }}">
-                    <i class="material-icons">library_books</i>
-                    <p>{{ __('Revisão') }}</p>
-                </a>
-            </li>
-            <li class="nav-item{{ $activePage == 'recurso' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('/visualizacao-recurso')}}">
-                    <i class="material-icons">library_books</i>
-                    <p>{{ __('Recurso') }}</p>
-                </a>
-            </li>
             <li class="nav-item{{ $activePage == 'Relatorios' ? ' active' : '' }}">
                 <a class="nav-link" href="{{route('relatorios')}}">
                     <i class="material-icons">library_books</i>
                     <p>{{ __('Relatório') }}</p>
-                </a>
-            </li>
-            <li class="nav-item{{ $activePage == 'transparencia' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('lista-transparencia')}}">
-                    <i class="material-icons">library_books</i>
-                    <p>{{ __('Transparência') }}</p>
                 </a>
             </li>
         </ul>

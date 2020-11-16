@@ -17,7 +17,7 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{{route('inical')}}"><span>SEINFRA</span></a></h1>
+            <h1 class="text-light"><a href="{{route('inical')}}"><span>ESCOLA NOME</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -47,7 +47,7 @@
                     <h4>Links mais Usados</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="http://www.riobranco.ac.gov.br/files/politicadeprivacidade.pdf" target="_blank">Política de Privacidade</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#" target="_blank">Política de Privacidade</a></li>
                     </ul>
                 </div>
 
@@ -58,7 +58,7 @@
                         Centro <br>
                         Rua Rui Barbosa, 285<br>
                         Rio Branco - AC <br><br>
-                        <strong>Telefone:</strong> (68) 3212-7040<br>
+                        <strong>Telefone:</strong> (68) 5555-5555<br>
                         <strong>CEP:</strong> 69.900-901<br>
                     </p>
 
@@ -82,10 +82,10 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Direito Autoral <strong><span>Prefeitura de Rio Branco</span></strong>. Todos os Direitos Reservados.
+            &copy; Direito Autoral <strong><span>Escola Nome</span></strong>. Todos os Direitos Reservados.
         </div>
         <div class="credits">
-            Criado por <a href="#">Prefeitura Municipal de Rio Branco</a>
+            Criado por <a href="https://www.linkedin.com/in/fonseca-jorge-384970b3/">Jorge Fonseca</a>
         </div>
     </div>
 </footer><!-- End Footer -->

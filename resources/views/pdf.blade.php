@@ -13,7 +13,7 @@
     </div>
     <div style="margin-left: 20%;">
         <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
-        <h2>Cargo: {{$comprovante->pessoa->cargo->cargo}}</h2>
+        <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->cargo}}</h2>
         <h2>Data de Inscrição: {{date('Y-m-d H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
         <h2>Número de Protocolo: {{$comprovante->comprovante}}</h2>
     </div>

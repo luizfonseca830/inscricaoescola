@@ -80,10 +80,6 @@ body{
     display: inline;
 }
 
-#formulario_registro .cargos option{
-    display: block;
-}
-
 #formulario_registro p{
     float: left;
 }

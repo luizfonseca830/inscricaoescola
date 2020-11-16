@@ -97,19 +97,10 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Editais</h2>
+                    <h2>Relatórios</h2>
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <a href="{{asset('anexos/EDITAL DE PROCESSO SELETIVO SIMPLIFICADO - SEINFRA.docx')}}" target="_blank">
-                            <button class="icon-box">
-                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                <h4>Edital de Inscrição do Processo Seletivo - SEINFRA</h4>
-                                <p>Clique aqui para baixar</p>
-                            </button>
-                        </a>
-                    </div>
                     @foreach($pdfs as $pdf)
                         @if ($pdf->status_liberar == '1' || !is_null($pdf->data_liberar) )
                             @if (($pdf->status_liberar == '1') || strtotime($pdf->data_liberar) <= strtotime(date('Y-m-d H:i')))

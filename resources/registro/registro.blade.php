@@ -23,7 +23,6 @@
                 <ul id="progress">
                     <li class="ativo">Dados Pessoais</li>
                     <li>Endereço</li>
-                    <li>Cargo</li>
                 </ul>
 
                 <fieldset>
@@ -158,7 +157,6 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2>Cargo</h2>
                     <h3>Selecione sua Escolaridade</h3>
                     <select name="escolaridade" id="escolaridade">
                         <option>Não selecionado</option>
@@ -169,16 +167,6 @@
                     @error('escolaridade')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    <div hidden id="cargo-div">
-                        <h3>Selecione seu Cargo</h3>
-                        <select name="CARGO" class="cargos" id="cargo">
-                            <option value="0">Não selecionado</option>
-                            @foreach($cargos as $cargo)
-                                <option data-escolaridade="{{$cargo->escolaridade->id}}"
-                                        value="{{$cargo->id}}">{{$cargo->cargo}}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-3">
@@ -200,9 +188,6 @@
                             </div>
                         </div>
                     </div>
-                    @error('CARGO')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                     <input type="button" name="next" id="confirma" class="acao" value="Enviar"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
                 </fieldset>
@@ -272,9 +257,6 @@
                                     <h5>Escolaridade</h5>
                                     <div class="col col-12">
                                         <p>Nível de Escolaridade: <label id="escolaridade_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Cargo: <label id="cargo_conf"></label></p>
                                     </div>
                                 </div>
                                 <div class="row">

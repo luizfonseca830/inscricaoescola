@@ -19,14 +19,10 @@ LDQyNSwyNSxhZjU0MjAxYS0wMWVlLTRkYmMtYjZhNS01NzBjNzA3MmU4ZTA7]]>
 	<queryString>
 		<![CDATA[select   comprovante as Protocolo,
          nome_completo as Nome,
-         pontuacao_total as Nota,
-         cargo as Cargo,
          nivel_escolaridade as Escolaridade
 
-from pontuacao
-         LEFT JOIN pessoa p on pontuacao.id = p.pontuacao_id
+from pessoa
          INNER JOIN comprovante c on p.comprovante_id = c.id
-         INNER JOIN cargos c2 on p.cargo_id = c2.id
          inner join escolaridade e on c2.escolaridade_id = e.id
 
 where status_aprovado = $P{FilterStatus} and cargo = $P{FilterCargo}
