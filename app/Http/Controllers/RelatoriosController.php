@@ -12,21 +12,17 @@ class RelatoriosController extends Controller
 {
     //
     public function index(){
-        if (Auth::user()->tipo != 'Admin') {
-            session()->put('error', 'Você não tem permissão para acessar essa página!');
-            return redirect()->route('home');
-        }
         return view('pages.relatorio.relatorios', [
-            'cargos' => Cargo::all(),
+            'escolaridade' => Escolaridade::all(),
         ]);
     }
 
     public function requestPDFJasper(Request $request)
     {
-        $file = JasperController::index($request->cargo, $request->deferimento);
+        $file = JasperController::index($request->escolaridade);
         $headers = array(
             'Content-Type: application/pdf',
         );
-        return response()->download($file, $request->cargo . '.pdf', $headers);
+        return response()->download($file, 'Inscrições' . '.pdf', $headers);
     }
 }

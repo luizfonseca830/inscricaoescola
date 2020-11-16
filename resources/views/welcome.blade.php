@@ -10,7 +10,7 @@
     </style>
 @endsection
 @section('content')
-    @extends('layouts.modal-cache')
+
     <section class="container-fluid">
         <div class="row justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -21,7 +21,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="container" src="{{asset('images/caruosel/seinfra.jpeg')}}" alt="First slide">
+                        <img class="container" src="{{asset('images/caruosel/escola1.png')}}" alt="First slide">
                     </div>
                 <!--
                     <div class="carousel-item">

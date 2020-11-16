@@ -10,24 +10,19 @@ use PHPJasper\PHPJasper;
 class JasperController extends Controller
 {
     //
-    static public function index($cargo, $status)
+    static public function index($escolaridade)
     {
         $input = public_path() . '/jasper/SEINFRA_JASPER.jasper';
-        if ($status == '1') {
-            $tipo = 'deferido';
-        }
-        else {
-            $tipo = 'indeferido';
-        }
 
-        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($cargo). '-' . $tipo;
+
+        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($escolaridade);
 
         $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
             'params' => [
-                'FilterCargo' => JasperController::tirarAcentos($cargo),
-                'FilterStatus' => $status
+                'FilterCargo' => JasperController::tirarAcentos($escolaridade),
+
             ],
             'db_connection' => [
                 'driver' => getenv('DB_CONNECTION'), //mysql,postgres ....

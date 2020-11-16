@@ -26,13 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pessoa = Pessoa::whereNotNull('anexo_id')->get()->count();
-        $pontuacao = Pessoa::whereNotNull('status')->get()->count();
-        $recurso = RecursoModel::all()->count();
+        $pessoa = Pessoa::all()->count();
         return view('dashboard', [
             'inscricao_total' => $pessoa,
-            'avaliacao_total' => $pontuacao,
-            'recurso_total' => $recurso,
         ]);
     }
 }

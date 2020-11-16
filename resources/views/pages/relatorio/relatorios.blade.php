@@ -15,19 +15,7 @@
 
                         <fieldset>
                             <h2>Relatório</h2>
-                            <h3>Selecione o Cargo</h3>
-                            <select name="cargo">
-                                <option>Não selecionado</option>
-                                @foreach($cargos as $cargo)
-                                    <option value="{{$cargo->cargo}}">{{$cargo->cargo}}</option>
-                                @endforeach
-                            </select>
 
-                            <h3>Tipo de Relatório</h3>
-                            <select name="deferimento" class="form-control">
-                                <option value="1" selected>Deferidos</option>
-                                <option value="0">Indeferidos</option>
-                            </select>
                             <input type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>
                     </form>

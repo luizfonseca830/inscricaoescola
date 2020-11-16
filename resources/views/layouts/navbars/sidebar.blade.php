@@ -18,7 +18,6 @@
                     <p>{{ __('Dashboard') }}</p>
                 </a>
             </li>
-            @if(auth()->user()->tipo == 'Admin')
                 <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
                     <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
                         <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
@@ -55,53 +54,45 @@
                         </ul>
                     </div>
                 </li>
-            @endif
-            @if (auth()->user()->tipo == 'Admin' || auth()->user()->tipo == 'Avaliador' || auth()->user()->tipo == 'Supervisor')
+
                 <li class="nav-item{{ $activePage == 'avaliacao' ? ' active' : '' }}">
                     <a class="nav-link" href="{{ route('/visualizacao') }}">
                         <i class="material-icons">library_books</i>
                         <p>{{ __('Avaliação') }}</p>
                     </a>
                 </li>
-            @endif
-            @if (auth()->user()->tipo == 'Admin' || auth()->user()->tipo == 'Avaliador' || auth()->user()->tipo == 'Supervisor')
-                <li class="nav-item{{ $activePage == 'avaliacao-pne' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{route('avaliacao-pne')}}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Avaliação - PNE') }}</p>
-                    </a>
-                </li>
-            @endif
-            @if (auth()->user()->tipo == 'Admin' || auth()->user()->tipo == 'Revisor' || auth()->user()->tipo == 'Supervisor')
-                <li class="nav-item{{ $activePage == 'revisao' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{ route('visualizacao-aprovar') }}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Revisão') }}</p>
-                    </a>
-                </li>
-            @endif
-            @if (auth()->user()->tipo == 'Admin' || auth()->user()->tipo == 'Recurso' || auth()->user()->tipo == 'Supervisor')
-                <li class="nav-item{{ $activePage == 'recurso' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{route('/visualizacao-recurso')}}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Recurso') }}</p>
-                    </a>
-                </li>
-            @endif
-            @if (auth()->user()->tipo == 'Admin' || auth()->user()->tipo == 'Supervisor')
-                <li class="nav-item{{ $activePage == 'Relatorios' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{route('relatorios')}}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Relatório') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item{{ $activePage == 'transparencia' ? ' active' : '' }}">
-                    <a class="nav-link" href="{{route('lista-transparencia')}}">
-                        <i class="material-icons">library_books</i>
-                        <p>{{ __('Transparência') }}</p>
-                    </a>
-                </li>
-            @endif
+
+            <li class="nav-item{{ $activePage == 'avaliacao-pne' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('avaliacao-pne')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Avaliação - PNE') }}</p>
+                </a>
+            </li>
+
+            <li class="nav-item{{ $activePage == 'revisao' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('visualizacao-aprovar') }}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Revisão') }}</p>
+                </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'recurso' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('/visualizacao-recurso')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Recurso') }}</p>
+                </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'Relatorios' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('relatorios')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Relatório') }}</p>
+                </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'transparencia' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('lista-transparencia')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Transparência') }}</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
