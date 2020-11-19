@@ -23,7 +23,6 @@
                 <ul id="progress">
                     <li class="ativo">Dados Pessoais</li>
                     <li>Endereço</li>
-                    <li>Cargo</li>
                 </ul>
 
                 <fieldset>
@@ -35,6 +34,18 @@
                            placeholder="Informe seu Nome Completo"
                            autofocus/>
                     @error('nome_completo')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <h3>Selecione sua Escolaridade</h3>
+                    <select name="escolaridade" id="escolaridade">
+                        <option>Não selecionado</option>
+                        @foreach($escolaridade as $esc)
+                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                        @endforeach
+                    </select>
+                    @error('escolaridade')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
@@ -110,15 +121,6 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-                    <p>PNE - Portador de Necessidades Especiais</p>
-                    <select name="deficiencia" class="@error('deficiencia') is-invalid @enderror form-control" id="pne">
-                        <option value="Sim">Sim</option>
-                        <option value="Nao" selected>Nao</option>
-                    </select>
-                    @error('deficiencia')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
                     <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
                 </fieldset>
 
@@ -151,23 +153,7 @@
                     @error('numero')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
-                    <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
 
-                </fieldset>
-
-                <fieldset>
-                    <h2>Cargo</h2>
-                    <h3>Selecione sua Escolaridade</h3>
-                    <select name="escolaridade" id="escolaridade">
-                        <option>Não selecionado</option>
-                        @foreach($escolaridade as $esc)
-                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
-                        @endforeach
-                    </select>
-                    @error('escolaridade')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                     <div class="container">
                         <div class="row">
                             <div class="col-3">
@@ -189,8 +175,10 @@
                             </div>
                         </div>
                     </div>
+
                     <input type="button" name="next" id="confirma" class="acao" value="Enviar"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
+
                 </fieldset>
 
                 <!-- MODAL DE CONFIRMACAO -->

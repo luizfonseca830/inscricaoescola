@@ -75,19 +75,6 @@
                             </div>
                         @endif
                     @endif
-                    @if ($recurso->status_liberar == '1' || !is_null($recurso->data_liberar) )
-                        @if ($recurso->nome_ou_anexo == 'Recurso' && ($recurso->status_liberar == 1) || strtotime($recurso->data_liberar) <= strtotime(date('Y-m-d H:i')))
-                            <div class="col-lg-4 mt-4 mt-lg-0">
-                                <a href="{{route('recurso')}}">
-                                    <button class="icon-box">
-                                        <i class="icofont-tasks-alt"></i>
-                                        <h3>Recurso</h3>
-                                    </button>
-                                </a>
-
-                            </div>
-                        @endif
-                    @endif
                 </div>
             </div>
         </section><!-- End Featured Section -->

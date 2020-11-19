@@ -17,7 +17,7 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{{route('inical')}}"><span>ESCOLA NOME</span></a></h1>
+            <h1 class="text-light"><a href="{{route('inical')}}"><span>INSTITUTO SÃO JOSÉ</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -82,7 +82,7 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Direito Autoral <strong><span>Escola Nome</span></strong>. Todos os Direitos Reservados.
+            &copy; Direito Autoral <strong><span>INSTITUTO SÃO JOSÉ</span></strong>. Todos os Direitos Reservados.
         </div>
         <div class="credits">
             Criado por <a href="https://www.linkedin.com/in/fonseca-jorge-384970b3/">Jorge Fonseca</a>

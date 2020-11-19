@@ -17,21 +17,26 @@ class CreatePessoaTable extends Migration
             $table->id();
             $table->unsignedBigInteger('escolaridade_id');
             $table->unsignedBigInteger('comprovante_id')->nullable();
+            $table->unsignedBigInteger('endereco_id');
             $table->string('nome_completo');
-            $table->string('cpf')->unique();
-            $table->string('rg', 15);
-            $table->string('orgao_emissor');
-            $table->string('pis', '15');
-            $table->string('telefone');
-            $table->string('nacionalidade', 100);
-            $table->string('naturalidade');
-            $table->date('data_nascimento');
             $table->string('sexo');
+            $table->date('data_nascimento');
+            $table->string('idade');
+            $table->string('escola_de_origem');
+            $table->boolean('irmaos_na_escola');
+            $table->string('nome_irmao_na_escola');
+            $table->string('serie_irmao_na_escola');
+            $table->boolean('irmaos_no_sorteio');
+            $table->string('nome_irmaos_no_sorteio');
+            $table->string('serie_irmao_no_sorteio');
+            $table->string('responsavel');
             $table->string('email');
-            $table->boolean('portador_deficiencia');
+            $table->string('telefone');
+            $table->boolean('status_aprovado')->nullable();
 
             $table->foreign('escolaridade_id')->references('id')->on('escolaridade');
             $table->foreign('comprovante_id')->references('id')->on('comprovante');
+            $table->foreign('endereco_id')->references('id')->on('endereco');
             $table->timestamps();
         });
     }
