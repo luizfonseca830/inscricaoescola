@@ -23,7 +23,7 @@ class Pessoa extends Model
         'serie_irmao_na_escola',
         'irmaos_no_sorteio',
         'nome_irmaos_no_sorteio',
-        'serie_irmao_na_escola',
+        'serie_irmao_no_sorteio',
         'responsavel',
         'cpf',
         'telefone',

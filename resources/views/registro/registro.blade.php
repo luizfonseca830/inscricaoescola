@@ -1,6 +1,6 @@
 @extends('layouts.header-footer')
 @section('title')
-    <title>SEINFRA - REGISTRO</title>
+    <title>INSTITUTO SÃO JOSÉ - REGISTRO</title>
 @endsection
 
 @section('css')
@@ -22,6 +22,7 @@
                 @endif
                 <ul id="progress">
                     <li class="ativo">Dados Pessoais</li>
+                    <li>Dados Adicionais</li>
                     <li>Endereço</li>
                 </ul>
 
@@ -31,16 +32,13 @@
                     <input type="text" name="nome_completo" id="nome_completo" autocomplete="nome_completo"
                            value="{{old('nome_completo')}}"
                            class="@error('nome_completo') is-invalid @enderror form-control"
-                           placeholder="Informe seu Nome Completo"
-                           autofocus/>
+                           placeholder="Informe seu Nome Completo" autofocus/>
                     @error('nome_completo')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-
-                    <h3>Selecione sua Escolaridade</h3>
                     <select name="escolaridade" id="escolaridade">
-                        <option>Não selecionado</option>
+                        <option>Selecione sua série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
@@ -48,66 +46,11 @@
                     @error('escolaridade')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-
-                    <input type="text" name="cpf" id="cpf" autocomplete="cpf" value="{{old('cpf')}}"
-                           class="@error('cpf') is-invalid @enderror form-control" placeholder="Informe seu CPF"/>
-                    @error('cpf')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="text" name="rg" id="rg" autocomplete="rg" value="{{old('rg')}}"
-                           class="@error('rg') is-invalid @enderror form-control ajuseLeft"
-                           placeholder="Informe seu RG"/>
-                    <input type="text" name="orgao_emissor" id="orgao_emissor" autocomplete="orgao_emissor"
-                           value="{{old('orgao_emissor')}}"
-                           class="@error('orgao_emissor') is-invalid @enderror form-control ajusteRight"
-                           placeholder="Orgão Emissor"/>
-                    @error('rg')
-                    <div class="alert alert-danger" style="width: 40%;display: inline-block;">{{ $message }}</div>
-                    @enderror
-                    @error('orgao_emissor')
-                    <div class="alert alert-danger" style="width: 40%;display: inline-block;">{{ $message }}</div>
-                    @enderror
-
-                    <input type="text" name="pis" id="pis" autocomplete="pis" value="{{old('pis')}}"
-                           class="@error('pis') is-invalid @enderror form-control" placeholder="Informe seu PIS"/>
-                    @error('pis')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="text" id="telefone" name="telefone" autocomplete="telefone" value="{{old('telefone')}}"
-                           class="@error('telefone') is-invalid @enderror form-control"
-                           placeholder="Informe seu Telefone"/>
-                    @error('telefone')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="text" name="nacionalidade" id="nacionalidade" autocomplete="nacionalidade"
-                           value="{{old('nacionalidade')}}"
-                           class="@error('nacionalidade') is-invalid @enderror form-control"
-                           placeholder="Informe sua Nacionalidade"/>
-                    @error('nacionalidade')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="text" name="naturalidade" id="naturalidade" autocomplete="naturalidade"
-                           value="{{old('naturalidade')}}"
-                           class="@error('naturalidade') is-invalid @enderror form-control"
-                           placeholder="Informe sua Naturalidade"/>
-                    @error('naturalidade')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <input type="email" name="email" id="email" autocomplete="email" value="{{old('email')}}"
-                           class="@error('email') is-invalid @enderror form-control" placeholder="Informe seu Email"/>
-                    @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <p>Data de Nascimento</p>
+                    <p>Data De Nascimento</p>
                     <input type="date" name="data_nascimento" max="2020-12-31" min="1930-01-01" id="data_nascimento"
                            autocomplete="data_nascimento" value="{{old('data_nascimento')}}"
                            class="@error('data_nascimento') is-invalid @enderror form-control"/>
+
                     @error('data_nascimento')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -117,11 +60,78 @@
                         <option value="H">Masculino</option>
                         <option value="M">Feminino</option>
                     </select>
-                    @error('sexo')
+
+                    <input type="text" name="idade" id="idade" autocomplete="idade"
+                           value="{{old('idade')}}"
+                           class="@error('idade') is-invalid @enderror form-control" placeholder="Informe sua idade"/>
+                    @error('idade')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="responsavel" id="responsavel" autocomplete="responsavel"
+                           value="{{old('responsavel')}}"
+                           class="@error('responsavel') is-invalid @enderror form-control"
+                           placeholder="Nome Do Responsável"/>
+                    @error('responsavel')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="cpf" id="cpf" autocomplete="cpf" value="{{old('cpf')}}"
+                           class="@error('cpf') is-invalid @enderror form-control" placeholder="Informe seu CPF"/>
+                    @error('cpf')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <input type="text" id="telefone" name="telefone" autocomplete="telefone" value="{{old('telefone')}}"
+                           class="@error('telefone') is-invalid @enderror form-control"
+                           placeholder="Informe seu Telefone"/>
+                    @error('telefone')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <input type="email" name="email" id="email" autocomplete="email" value="{{old('email')}}"
+                           class="@error('email') is-invalid @enderror form-control" placeholder="Informe seu Email"/>
+                    @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
                     <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
+                </fieldset>
+
+                <fieldset>
+                    <h2>Dados Adicionais</h2>
+
+                    <p>TEM IRMÃO(A) ESTUDANDO NA ESCOLA?</p>
+                    <select name="irmaos_na_escola" id="irmaos_na_escola">
+                        <option value="Sim">Sim</option>
+                        <option value="Nao" selected>Nao</option>
+                    </select>
+                    <input type="text" id="nome_irmao_na_escola" name="nome_irmao_na_escola"
+                           placeholder="Nome do Irmão(a)"/>
+                    <select name="serie_irmao_na_escola" id="serie_irmao_na_escola">
+                        <option>Selecione a série</option>
+                        @foreach($escolaridade as $esc)
+                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                        @endforeach
+                    </select>
+
+                    <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
+                    <select name="irmaos_no_sorteio" id="irmaos_no_sorteio">
+                        <option value="Sim">Sim</option>
+                        <option value="Nao" selected>Nao</option>
+                    </select>
+                    <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
+                           placeholder="Nome do Irmão(a)"/>
+                    <select name="serie_irmao_no_sorteio" id="serie_irmao_no_sorteio">
+                        <option>Selecione a série</option>
+                        @foreach($escolaridade as $esc)
+                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                        @endforeach
+                    </select>
+
+                    <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
+                    <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
                 </fieldset>
 
                 <fieldset>

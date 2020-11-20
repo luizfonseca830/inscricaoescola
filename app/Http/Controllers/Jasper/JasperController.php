@@ -27,7 +27,7 @@ class JasperController extends Controller
             'db_connection' => [
                 'driver' => getenv('DB_CONNECTION'), //mysql,postgres ....
                 'username' => getenv('DB_USERNAME'),
-                //'password' => getenv('DB_PASSWORD'),
+                'password' => getenv('DB_PASSWORD'),
                 //CASO TENHA SENHA CRIAR PASSWORD NO VETOR E => PASSA A SENHA 'SENHA'
                 'host' => getenv('DB_HOST'),
                 'database' => getenv('DB_DATABASE'),
