@@ -30,6 +30,7 @@ class CreatePessoaTable extends Migration
             $table->string('nome_irmaos_no_sorteio');
             $table->string('serie_irmao_no_sorteio');
             $table->string('responsavel');
+            $table->string('cpf');
             $table->string('email');
             $table->string('telefone');
             $table->boolean('status_aprovado')->nullable();

@@ -12,7 +12,7 @@ class JasperController extends Controller
     //
     static public function index($escolaridade)
     {
-        $input = public_path() . '/jasper/SEINFRA_JASPER.jasper';
+        $input = public_path() . '/jasper/INSTITUTO SÃO JOSÉ_JASPER.jasper';
 
 
         $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($escolaridade);

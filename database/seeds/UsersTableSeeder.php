@@ -21,15 +21,5 @@ class UsersTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-
-        DB::table('users')->insert([
-            'name' => 'Jaime',
-            'email' => 'jaime.fontes@riobranco.ac.gov.br',
-            'email_verified_at' => now(),
-            'password' => Hash::make('142536'),
-            'tipo' => 'Admin',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
     }
 }

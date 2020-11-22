@@ -4,7 +4,7 @@
 
     <main class="container">
         <div class="row">
-            <h2>Comprovante de Inscrição: </h2>
+            <h2>Comprovante de Inscrição PARA SORTEIO DE VAGA – ANO LETIVO 2021: </h2>
         </div>
         <div>
             <h4>{{$comprovante}}</h4>

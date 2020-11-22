@@ -48,7 +48,6 @@ class Registro extends FormRequest
             'responsavel.required' => 'O campo reponsável é obrigatório.',
             'cpf.required' => 'O cpf é obrigatório',
             'telefone.required ' => 'O telefone é obrigatório',
-            'idade' => 'A idade é obrigatoria',
             'endereco.required' => 'O campo endereço é obrigatório. ',
             'cep.formato_cep' => 'O campo cep não possui um formato válido de CEP. Ex (99999-999 ou 99.999-999)',
             'idade.required' => 'O campo número é obrigatório',

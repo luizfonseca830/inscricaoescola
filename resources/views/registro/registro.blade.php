@@ -206,26 +206,16 @@
                                             <labe id="nome_conf"></labe>
                                         </p>
                                     </div>
+                                    <div class="row">
+                                        <div class="col col-12">
+                                            <p>Nível de Escolaridade: <label id="escolaridade_conf"></label></p>
+                                        </div>
+                                    </div>
                                     <div class="col col-12">
                                         <p>CPF <label id="cpf_conf"></label></p>
                                     </div>
-                                    <div class="col col-6">
-                                        <p>RG: <label id="rg_conf"></label></p>
-                                    </div>
-                                    <div class="col col-6">
-                                        <p>Orgão Emissor: <label id="orgao_emissor_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>PIS: <label id="pis_conf"></label></p>
-                                    </div>
                                     <div class="col col-12">
                                         <p>Telefone: <label id="telefone_conf"></label></p>
-                                    </div>
-                                    <div class="col col-6">
-                                        <p>Nacionalidade: <label id="nacionalidade_conf"></label></p>
-                                    </div>
-                                    <div class="col col-6">
-                                        <p>Naturalide: <label id="naturalidade_conf"></label></p>
                                     </div>
                                     <div class="col col-12">
                                         <p>Email: <label id="email_conf"></label></p>
@@ -236,9 +226,7 @@
                                     <div class="col col-6">
                                         <p>Sexo: <label id="sexo_conf"></label></p>
                                     </div>
-                                    <div class="col col-6">
-                                        <p>PNE: <label id="pne_conf"></label></p>
-                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <h5>Endereço</h5>
@@ -252,12 +240,7 @@
                                         <p>Endereco: <label id="endereco_conf"></label></p>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <h5>Escolaridade</h5>
-                                    <div class="col col-12">
-                                        <p>Nível de Escolaridade: <label id="escolaridade_conf"></label></p>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <p style="color: red">Após a confirmação não será mais permitido a alterações de
                                         informações!</p>
