@@ -1,3 +1,6 @@
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ</title>
+@endsection
 <!doctype html>
 <html lang="pt-br">
 <head>

@@ -1,4 +1,7 @@
 @extends('layouts.header-footer')
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ</title>
+@endsection
 @extends('layouts.modal-message')
 @section('css')
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -82,15 +85,13 @@
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Relatórios</h2>
-                </div>
-
                 <div class="row justify-content-center">
                     @foreach($pdfs as $pdf)
                         @if ($pdf->status_liberar == '1' || !is_null($pdf->data_liberar) )
                             @if (($pdf->status_liberar == '1') || strtotime($pdf->data_liberar) <= strtotime(date('Y-m-d H:i')))
+                                <div class="section-title" data-aos="fade-up">
+                                    <h2>Relatórios</h2>
+                                </div>
                                 <div class="col-lg-4 col-md-6  align-items-stretch">
                                     <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
                                         <button class="icon-box">

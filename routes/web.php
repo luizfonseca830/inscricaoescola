@@ -40,10 +40,8 @@ Route::get('/registro', function () {
     ]);
 })->name('registro');
 
-Route::any('registro/parte1', 'RegistroController@storePart1')->name('registro/parte1');
-Route::post('registro/parte2', 'RegistroController@storePart2')->name('registro/parte2');
-Route::get('/registro/anexos', 'RegistroController@buscaIndex')->name('registro/anexos');
-Route::post('registro/teste', 'RegistroController@teste')->name('teste');
+Route::any('registro/parte1', 'RegistroController@store')->name('registro/parte1');
+
 
 Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
 
@@ -84,7 +82,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tela-unica-mostra/{id}', 'TelasDinamicas\TipoTelaController@show')->name('tela-unica-mostra');
     Route::match(['post', 'get'], 'tela-editar/{id}', 'TelasDinamicas\TipoTelaController@update')->name('tela-editar');
 
-    Route::get('visualizacao-avaliar/{id}', 'VisualizacaoPessoas\VisualizarAvaliacaoController@show')->name('visualizacao-avaliar');
     Route::get('busca-candidato', 'BuscaCandidatos\BuscaCandidatosController@index')->name('busca-candidatos');
     Route::post('pesquisa-candidato', 'BuscaCandidatos\BuscaCandidatosController@show')->name('pesquisa-candidato');
 });

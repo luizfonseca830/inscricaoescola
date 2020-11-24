@@ -28,12 +28,19 @@
 
                 <fieldset>
                     <h2>Dados Pessoais</h2>
-
                     <input type="text" name="nome_completo" id="nome_completo" autocomplete="nome_completo"
                            value="{{old('nome_completo')}}"
                            class="@error('nome_completo') is-invalid @enderror form-control"
                            placeholder="Informe seu Nome Completo" autofocus/>
                     @error('nome_completo')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <input type="text" name="escola_de_origem" id="escola_de_origem" autocomplete="escola_de_origem"
+                           value="{{old('escola_de_origem')}}"
+                           class="@error('escola_de_origem') is-invalid @enderror form-control"
+                           placeholder="Informe Sua Escola De Origem" autofocus/>
+                    @error('escola_de_origem')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
@@ -47,7 +54,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <p>Data De Nascimento</p>
-                    <input type="date" name="data_nascimento" max="2020-12-31" min="1930-01-01" id="data_nascimento"
+                    <input type="date" name="data_nascimento" max="2010-12-31" min="2000-01-01" id="data_nascimento"
                            autocomplete="data_nascimento" value="{{old('data_nascimento')}}"
                            class="@error('data_nascimento') is-invalid @enderror form-control"/>
 
@@ -107,7 +114,7 @@
                         <option value="Sim">Sim</option>
                         <option value="Nao" selected>Nao</option>
                     </select>
-                    <input type="text" id="nome_irmao_na_escola" name="nome_irmao_na_escola"
+                    <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
                            placeholder="Nome do Irmão(a)"/>
                     <select name="serie_irmao_na_escola" id="serie_irmao_na_escola">
                         <option>Selecione a série</option>
@@ -206,10 +213,27 @@
                                             <labe id="nome_conf"></labe>
                                         </p>
                                     </div>
+                                    <div class="col col-12">
+                                        <p>Escola De Origem:
+                                            <labe id="escola_de_origem_conf"></labe>
+                                        </p>
+                                    </div>
                                     <div class="row">
                                         <div class="col col-12">
                                             <p>Nível de Escolaridade: <label id="escolaridade_conf"></label></p>
                                         </div>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>Data Nascimento: <label id="data_nascimento_conf"></label></p>
+                                    </div>
+                                    <div class="col col-6">
+                                        <p>Sexo: <label id="sexo_conf"></label></p>
+                                    </div>
+                                    <div class="col col-6">
+                                        <p>Idade: <label id="idade_conf"></label></p>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>Responsável <label id="responsavel_conf"></label></p>
                                     </div>
                                     <div class="col col-12">
                                         <p>CPF <label id="cpf_conf"></label></p>
@@ -220,11 +244,32 @@
                                     <div class="col col-12">
                                         <p>Email: <label id="email_conf"></label></p>
                                     </div>
+
+                                </div>
+                                <div class="row">
+                                    <h5>Dados Adicionais</h5>
                                     <div class="col col-12">
-                                        <p>Data Nascimento: <label id="data_nascimento_conf"></label></p>
+                                        <p>Escola De Origem: <label id="escola_de_origem_conf"></label></p>
                                     </div>
-                                    <div class="col col-6">
-                                        <p>Sexo: <label id="sexo_conf"></label></p>
+                                    <div class="col col-12">
+                                        <p>TEM IRMÃO(A) ESTUDANDO NA ESCOLA? <label id="irmaos_na_escola_conf"></label></p>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>Nome do Irmão(a): <label id="nome_irmaos_na_escola_conf"></label></p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-12">
+                                            <p>Nível de Escolaridade: <label id="serie_irmao_na_escola_conf"></label></p>
+                                        </div>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS? <label id="irmaos_no_sorteio_conf"></label></p>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>Nome do Irmão(a): <label id="nome_irmaos_no_sorteio_conf"></label></p>
+                                    </div>
+                                    <div class="col col-12">
+                                        <p>Nível de Escolaridade: <label id="serie_irmao_no_sorteio_conf"></label></p>
                                     </div>
 
                                 </div>

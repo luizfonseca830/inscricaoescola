@@ -23,10 +23,10 @@ class CreatePessoaTable extends Migration
             $table->date('data_nascimento');
             $table->string('idade');
             $table->string('escola_de_origem');
-            $table->boolean('irmaos_na_escola');
+            $table->string('irmaos_na_escola');
             $table->string('nome_irmao_na_escola');
             $table->string('serie_irmao_na_escola');
-            $table->boolean('irmaos_no_sorteio');
+            $table->string('irmaos_no_sorteio');
             $table->string('nome_irmaos_no_sorteio');
             $table->string('serie_irmao_no_sorteio');
             $table->string('responsavel');

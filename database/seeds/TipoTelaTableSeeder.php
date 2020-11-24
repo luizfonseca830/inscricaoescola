@@ -11,12 +11,6 @@ class TipoTelaTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tipotela')->insert([
-            'tipo' => 'Tela',
-            'nome_ou_anexo' => 'Recurso',
-            'status_liberar' => 0,
-            'data_liberar' => null,
-        ]);
 
         DB::table('tipotela')->insert([
             'tipo' => 'Tela',

@@ -17,8 +17,8 @@ use function GuzzleHttp\Promise\all;
 
 class RegistroController extends Controller
 {
-    //CADASTRO DA PESSOA NA 1 REQUISAO
-    public function storePart1(Registro $request)
+
+    public function store(Registro $request)
     {
         //CASO O CPF EXISTA
         $pessoa_confirma = Pessoa::where('cpf', $request->cpf)->first();
@@ -26,13 +26,6 @@ class RegistroController extends Controller
             session()->put('error', 'Ops, parece que você não aceito os termos e políticas de privacidade!');
             return redirect()->route('registro');
         }
-        if ($pessoa_confirma) {
-            $expiresAt = 1440;
-            Cookie::queue('pessoa_cpf', $request->cpf, $expiresAt);
-            return redirect()->route('registro/anexos');
-        }
-
-
         $endereco_id = Endereco::create([
             'endereco' => $request->endereco . ', ' . $request->numero,
             'bairro' => $request->bairro,
@@ -44,12 +37,18 @@ class RegistroController extends Controller
             'escolaridade_id' => $request->escolaridade,
             'endereco_id' => $endereco_id,
             'nome_completo' => $request->nome_completo,
-
+            'escola_de_origem' => $request->escola_de_origem,
             'cpf' => $request->cpf,
-            'rg' => $request->rg,
-
+            'idade' => $request->idade,
+            'irmaos_na_escola' => $request->irmaos_na_escola,
+            'nome_irmaos_na_escola' => $request->nome_irmaos_na_escola,
+            'escolaridade_id' => $request->serie_irmao_na_escola,
+            'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
+            'nome_irmaos_no_sorteio' => $request->nome_irmaos_no_sorteio,
+            'escolaridade_id' => $request->serie_irmao_no_sorteio,
+            'responsavel' => $request->responsavel,
+            'sexo' => $request->sexo,
             'telefone' => $request->telefone,
-
             'email' => $request->email,
             'data_nascimento' => $request->data_nascimento,
         ]);
@@ -60,13 +59,14 @@ class RegistroController extends Controller
             'aceito_dados' => 1,
         ]);
 
+        $pessoa = Pessoa::find($request->pessoa_id);
+
         //REALIZAR O UPDATE NA PESSOA ADICIONANDO O ANEXO
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
 
         PessoaController::updateIDs($request->pessoa_id, $comprovate_id);
-        //DELETAR O COKKIE
-        Cookie::queue(Cookie::forget('pessoa_cpf'));
+
         //ENVIAR O EMAIL
         Mail::send('registro.comprovante-email', ['comprovante' => $comprovante,], function ($message) {
             $message->from(getenv('MAIL_USERNAME'),

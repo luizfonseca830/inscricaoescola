@@ -1,5 +1,7 @@
 @extends('layouts.header-footer')
-
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ - Login</title>
+@endsection
 @section('content')
 
     <div class="container" style="margin-top: 60px; margin-bottom: 60px">

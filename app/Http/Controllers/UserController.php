@@ -19,19 +19,10 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        if (Auth::user()->tipo != 'Admin') {
-            session()->put('error', 'Você não tem acesso a essa página!');
-            return redirect()->route('home');
-        }
-
-        return view('users.index', ['users' => $model->paginate(15)]);
+       return view('users.index', ['users' => $model->paginate(15)]);
     }
 
     public function delete($id){
-        if (Auth::user()->tipo != 'Admin') {
-            session()->put('error', 'Você não tem acesso a essa página!');
-            return redirect()->route('home');
-        }
 
         $user = User::find($id);
         if($user->delete()){
@@ -65,7 +56,6 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $password,
             'password_confirmation' => $password,
-            'tipo' => $request->type,
         ]);
 
         session()->put('sucess', 'O usuário foi alterado com sucesso!');

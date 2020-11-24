@@ -1,5 +1,8 @@
 @extends('layouts.app', ['activePage' => 'TelaLiberar', 'titlePage' => __('TelaLiberar')])
 @extends('layouts.modal-message')
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ</title>
+@endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
 

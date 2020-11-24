@@ -1,5 +1,8 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('DashBoard')])
 @extends('layouts.modal-message')
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ</title>
+@endsection
 @section('content')
     <div class="content">
         <div class="container-fluid">

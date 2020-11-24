@@ -1,4 +1,3 @@
-
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/registro/comprovante.css')}}"/>
 

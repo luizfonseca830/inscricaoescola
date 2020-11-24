@@ -1,5 +1,8 @@
 @extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'Gestao', 'title' => __('Gestao')])
 @extends('layouts.modal-message')
+@section('title')
+    <title>INSTITUTO SÃO JOSÉ</title>
+@endsection
 @section('css')
     <style>
         label {
@@ -83,46 +86,6 @@
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
                                         </div>
                                     @endif
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="type"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Tipo de Conta:') }}</label>
-
-                                <div class="col-md-6">
-                                    <select name="type" id="type" class="form-control">
-                                        @if ($usuario->tipo == 'Avaliador')
-                                            <option value="Avaliador" selected>Avaliador</option>
-                                        @else
-                                            <option value="Avaliador">Avaliador</option>
-                                        @endif
-
-                                        @if ($usuario->tipo == 'Revisor')
-                                            <option value="Revisor" selected>Revisor</option>
-                                        @else
-                                            <option value="Revisor">Revisor</option>
-                                        @endif
-
-                                        @if ($usuario->tipo == 'Recurso')
-                                            <option value="Recurso" selected>Recurso</option>
-                                        @else
-                                            <option value="Recurso">Recurso</option>
-                                        @endif
-
-                                        @if ($usuario->tipo == 'Supervisor')
-                                            <option value="Supervisor" selected>Supervisor</option>
-                                        @else
-                                            <option value="Supervisor">Supervisor</option>
-                                        @endif
-
-                                        @if ($usuario->tipo == 'Admin')
-                                            <option value="Admin" selected>Administrador</option>
-                                        @else
-                                            <option value="Admin">Administrador</option>
-                                        @endif
-                                    </select>
                                 </div>
                             </div>
 
