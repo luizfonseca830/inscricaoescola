@@ -20,12 +20,7 @@ class RegistroController extends Controller
 
     public function store(Registro $request)
     {
-        //CASO O CPF EXISTA
-        $pessoa_confirma = Pessoa::where('cpf', $request->cpf)->first();
-        if (!isset($request->termo_de_condicao) && !isset($request->termo_de_privacidade)) {
-            session()->put('error', 'Ops, parece que você não aceito os termos e políticas de privacidade!');
-            return redirect()->route('registro');
-        }
+
         $endereco_id = Endereco::create([
             'endereco' => $request->endereco . ', ' . $request->numero,
             'bairro' => $request->bairro,
@@ -53,15 +48,9 @@ class RegistroController extends Controller
             'data_nascimento' => $request->data_nascimento,
         ]);
 
-        //SALVA OS TERMOS
-        Termos::create([
-            'pessoa_id' => $pessoa_id->id,
-            'aceito_dados' => 1,
-        ]);
 
         $pessoa = Pessoa::find($request->pessoa_id);
 
-        //REALIZAR O UPDATE NA PESSOA ADICIONANDO O ANEXO
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
 
@@ -77,25 +66,5 @@ class RegistroController extends Controller
         session()->forget('pessoa_email');
         return redirect()->route('registro/comprovante', $comprovante);
 
-    }
-
-    //DEVOLVER PARA O REGISTRO OS DADOS DA PESSOA + ALTERACOES NO STYLE
-    public function buscaIndex()
-    {
-        $cpf = Cookie::get('pessoa_cpf');
-        $pessoa = Pessoa::where('cpf', $cpf)->first();
-        if (!is_null($pessoa->anexo_id)) {
-            Cookie::queue(Cookie::forget('pessoa_cpf'));
-            return redirect()->route('inical');
-        }
-        if ($pessoa->escolaridade->id == 3) {
-            //VAI NA CLASS SERVE PARA O STYLE
-            $progress = 'progress-ajuste2';
-        } else $progress = 'progress-ajuste';
-
-        return view('registro.registros_anexos')->with([
-            'pessoa' => $pessoa,
-            'progress' => $progress,
-        ]);
     }
 }

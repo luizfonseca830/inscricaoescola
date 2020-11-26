@@ -40,7 +40,7 @@ Route::get('/registro', function () {
     ]);
 })->name('registro');
 
-Route::any('registro/parte1', 'RegistroController@store')->name('registro/parte1');
+Route::any('registros', 'RegistroController@store')->name('registros');
 
 
 Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //

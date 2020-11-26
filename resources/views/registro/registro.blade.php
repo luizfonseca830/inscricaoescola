@@ -12,7 +12,7 @@
 
     <main class="container" id="ajuste">
         <div class="row">
-            <form id="formulario_registro" method="post" action="{{route('registro/parte1')}}">
+            <form id="formulario_registro" method="post" action="{{route('registros')}}">
                 @csrf
                 @if (session()->has('error'))
                     <div class="alert alert-danger" role="alert">
@@ -54,7 +54,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <p>Data De Nascimento</p>
-                    <input type="date" name="data_nascimento" max="2010-12-31" min="2000-01-01" id="data_nascimento"
+                    <input type="date" name="data_nascimento" id="data_nascimento"
                            autocomplete="data_nascimento" value="{{old('data_nascimento')}}"
                            class="@error('data_nascimento') is-invalid @enderror form-control"/>
 
@@ -117,7 +117,7 @@
                     <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
                            placeholder="Nome do Irmão(a)"/>
                     <select name="serie_irmao_na_escola" id="serie_irmao_na_escola">
-                        <option>Selecione a série</option>
+                        <option value="0">Selecione a série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
@@ -128,10 +128,11 @@
                         <option value="Sim">Sim</option>
                         <option value="Nao" selected>Nao</option>
                     </select>
+
                     <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
                            placeholder="Nome do Irmão(a)"/>
                     <select name="serie_irmao_no_sorteio" id="serie_irmao_no_sorteio">
-                        <option>Selecione a série</option>
+                        <option value="0">Selecione a série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
@@ -193,113 +194,10 @@
                         </div>
                     </div>
 
-                    <input type="button" name="next" id="confirma" class="acao" value="Enviar"/>
+                    <input type="submit" name="enviar" id="confirma" class="acao" value="Enviar"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
 
                 </fieldset>
-
-                <!-- MODAL DE CONFIRMACAO -->
-                <div class="modal" id="modal" tabindex="-1" role="dialog" style="display: none">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>Confirmação de Dados</h2>
-                            </div>
-                            <div class="modal-body text-center">
-                                <div class="row">
-                                    <h5>Dados Pessoais</h5>
-                                    <div class="col col-12">
-                                        <p>Nome:
-                                            <labe id="nome_conf"></labe>
-                                        </p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Escola De Origem:
-                                            <labe id="escola_de_origem_conf"></labe>
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-12">
-                                            <p>Nível de Escolaridade: <label id="escolaridade_conf"></label></p>
-                                        </div>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Data Nascimento: <label id="data_nascimento_conf"></label></p>
-                                    </div>
-                                    <div class="col col-6">
-                                        <p>Sexo: <label id="sexo_conf"></label></p>
-                                    </div>
-                                    <div class="col col-6">
-                                        <p>Idade: <label id="idade_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Responsável <label id="responsavel_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>CPF <label id="cpf_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Telefone: <label id="telefone_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Email: <label id="email_conf"></label></p>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <h5>Dados Adicionais</h5>
-                                    <div class="col col-12">
-                                        <p>Escola De Origem: <label id="escola_de_origem_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>TEM IRMÃO(A) ESTUDANDO NA ESCOLA? <label id="irmaos_na_escola_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Nome do Irmão(a): <label id="nome_irmaos_na_escola_conf"></label></p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-12">
-                                            <p>Nível de Escolaridade: <label id="serie_irmao_na_escola_conf"></label></p>
-                                        </div>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS? <label id="irmaos_no_sorteio_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Nome do Irmão(a): <label id="nome_irmaos_no_sorteio_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Nível de Escolaridade: <label id="serie_irmao_no_sorteio_conf"></label></p>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <h5>Endereço</h5>
-                                    <div class="col col-12">
-                                        <p>CEP: <label id="cep_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Bairro: <label id="bairro_conf"></label></p>
-                                    </div>
-                                    <div class="col col-12">
-                                        <p>Endereco: <label id="endereco_conf"></label></p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <p style="color: red">Após a confirmação não será mais permitido a alterações de
-                                        informações!</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">
-                                        Fechar
-                                    </button>
-                                    <button type="submit" class="btn btn-secondary">Confirmar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </form>
         </div>
