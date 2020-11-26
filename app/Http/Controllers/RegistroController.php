@@ -37,10 +37,10 @@ class RegistroController extends Controller
             'idade' => $request->idade,
             'irmaos_na_escola' => $request->irmaos_na_escola,
             'nome_irmaos_na_escola' => $request->nome_irmaos_na_escola,
-            'escolaridade_id' => $request->serie_irmao_na_escola,
+            'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola,
             'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
             'nome_irmaos_no_sorteio' => $request->nome_irmaos_no_sorteio,
-            'escolaridade_id' => $request->serie_irmao_no_sorteio,
+            'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio,
             'responsavel' => $request->responsavel,
             'sexo' => $request->sexo,
             'telefone' => $request->telefone,
@@ -48,9 +48,14 @@ class RegistroController extends Controller
             'data_nascimento' => $request->data_nascimento,
         ]);
 
+        //SALVA OS TERMOS
+        Termos::create([
+            'pessoa_id' => $pessoa_id->id,
+            'aceito_dados' => 1,
+        ]);
 
         $pessoa = Pessoa::find($request->pessoa_id);
-
+        session()->put('pessoa_email', $pessoa->email);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
 
