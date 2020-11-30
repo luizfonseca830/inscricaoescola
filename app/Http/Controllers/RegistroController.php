@@ -55,11 +55,12 @@ class RegistroController extends Controller
         ]);
 
         $pessoa = Pessoa::find($request->pessoa_id);
-        session()->put('pessoa_email', $pessoa->email);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
 
         PessoaController::updateIDs($request->pessoa_id, $comprovate_id);
+        $pessoa_email = Pessoa::find($request->email);
+        session()->put($pessoa_email);
 
         //ENVIAR O EMAIL
         Mail::send('registro.comprovante-email', ['comprovante' => $comprovante,], function ($message) {
