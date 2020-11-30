@@ -54,7 +54,7 @@ class RegistroController extends Controller
             'aceito_dados' => 1,
         ]);
 
-        $pessoa = Pessoa::find($request->pessoa_id);
+        $pessoa = Pessoa::find($pessoa_id->id);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
 
