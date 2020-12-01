@@ -16,8 +16,8 @@ class CreatePessoaTable extends Migration
         Schema::create('pessoa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('escolaridade_id');
-            $table->unsignedBigInteger('serie_irmao_na_escola_id');
-            $table->unsignedBigInteger('serie_irmao_no_sorteio_id');
+            $table->unsignedBigInteger('serie_irmao_na_escola_id')->nullable();
+            $table->unsignedBigInteger('serie_irmao_no_sorteio_id')->nullable();
             $table->unsignedBigInteger('comprovante_id')->nullable();
             $table->unsignedBigInteger('endereco_id');
             $table->string('nome_completo');

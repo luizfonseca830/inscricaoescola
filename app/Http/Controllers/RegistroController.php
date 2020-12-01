@@ -33,10 +33,10 @@ class RegistroController extends Controller
             'idade' => $request->idade,
             'irmaos_na_escola' => $request->irmaos_na_escola,
             'nome_irmaos_na_escola' => $request->nome_irmaos_na_escola,
-            'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola,
+            'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola_id,
             'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
             'nome_irmaos_no_sorteio' => $request->nome_irmaos_no_sorteio,
-            'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio,
+            'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio_id,
             'responsavel' => $request->responsavel,
             'sexo' => $request->sexo,
             'telefone' => $request->telefone,
@@ -53,11 +53,10 @@ class RegistroController extends Controller
         $pessoa = Pessoa::find($pessoa_id->id);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
+        PessoaController::updateIDs($pessoa, $comprovate_id);
 
-        PessoaController::updateIDs($request->pessoa_id, $comprovate_id);
         $pessoa_email = Pessoa::find($request->email);
         session()->put($pessoa_email);
-
         //ENVIAR O EMAIL
         Mail::send('registro.comprovante-email', ['comprovante' => $comprovante,], function ($message) {
             $message->from(getenv('MAIL_USERNAME'),
