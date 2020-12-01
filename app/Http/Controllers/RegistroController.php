@@ -9,11 +9,7 @@ use App\Models\AnexoDoutorado;
 use App\Models\Endereco;
 use App\Models\Pessoa;
 use App\Models\Termos;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
-use function GuzzleHttp\Promise\all;
 
 class RegistroController extends Controller
 {

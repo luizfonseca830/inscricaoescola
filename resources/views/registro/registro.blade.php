@@ -194,7 +194,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" name="enviar" id="confirma" class="acao" value="Enviar"/>
+                    <input type="submit" name="enviar" class="acao" value="Enviar"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
 
                 </fieldset>
@@ -209,6 +209,5 @@
     <script src="{{asset('js/registro/function.js')}}"></script>
     <script src="{{asset('js/jquery.inputmask.min.js')}}"></script>
     <script src="{{asset('js/registro/mask.js')}}"></script>
-    <script src="{{asset('js/registro/confirmacao.js')}}"></script>
     <script src="{{asset('js/registro/cep.js')}}"></script>
 @endsection
