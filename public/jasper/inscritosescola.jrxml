@@ -89,9 +89,9 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="nome_irmao_na_escola" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nome_irmao_na_escola"/>
-		<property name="com.jaspersoft.studio.field.label" value="nome_irmao_na_escola"/>
+	<field name="nome_irmaos_na_escola" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_irmaos_na_escola"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_irmaos_na_escola"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>

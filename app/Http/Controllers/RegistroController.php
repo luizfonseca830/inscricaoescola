@@ -55,16 +55,6 @@ class RegistroController extends Controller
         $comprovate_id = ComprovanteController::store($comprovante);
         PessoaController::updateIDs($pessoa, $comprovate_id);
 
-        $pessoa_email = Pessoa::find($request->email);
-        session()->put($pessoa_email);
-        //ENVIAR O EMAIL
-        Mail::send('registro.comprovante-email', ['comprovante' => $comprovante,], function ($message) {
-            $message->from(getenv('MAIL_USERNAME'),
-                'CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS – ACRE INSTITUTO SÃO JOSÉ');
-            $message->to(session('pessoa_email'));
-            $message->subject('INSCRIÇÃO PARA SORTEIO DE VAGA – ANO LETIVO 2021');
-        });
-        session()->forget('pessoa_email');
         return redirect()->route('registro/comprovante', $comprovante);
 
     }

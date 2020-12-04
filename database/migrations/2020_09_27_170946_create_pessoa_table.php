@@ -26,11 +26,11 @@ class CreatePessoaTable extends Migration
             $table->string('idade');
             $table->string('escola_de_origem')->nullable();
             $table->string('irmaos_na_escola')->nullable();
-            $table->string('nome_irmao_na_escola')->nullable();
+            $table->string('nome_irmaos_na_escola')->nullable();
             $table->string('irmaos_no_sorteio')->nullable();
             $table->string('nome_irmaos_no_sorteio')->nullable();
             $table->string('responsavel');
-            $table->string('cpf');
+            $table->string('cpf')->unique();
             $table->string('email');
             $table->string('telefone');
             $table->boolean('status_aprovado')->nullable();

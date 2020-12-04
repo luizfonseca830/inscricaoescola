@@ -19,7 +19,7 @@ class Pessoa extends Model
         'data_nascimento',
         'escola_de_origem',
         'irmaos_na_escola',
-        'nome_irmao_na_escola',
+        'nome_irmaos_na_escola',
         'serie_irmao_na_escola_id',
         'irmaos_no_sorteio',
         'nome_irmaos_no_sorteio',
