@@ -63,6 +63,7 @@ body{
     font: 14px "Trebuchet MS", Tahoma, Arial;
     margin-bottom: 10px;
     height: auto;
+    text-transform: uppercase !important;
 }
 
 #formulario_registro .ajuseLeft{

@@ -10,25 +10,24 @@ use PHPJasper\PHPJasper;
 class JasperController extends Controller
 {
     //
-    static public function index($escolaridade)
+    static public function index($sorteio)
     {
         $input = public_path() . '/jasper/INSTITUTO SÃO JOSÉ_JASPER.jasper';
 
 
-        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($escolaridade);
+        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($sorteio);
 
         $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
             'params' => [
-                'FilterCargo' => JasperController::tirarAcentos($escolaridade),
+                'FilterSorteio' => JasperController::tirarAcentos($sorteio),
 
             ],
             'db_connection' => [
-                'driver' => getenv('DB_CONNECTION'), //mysql,postgres ....
+                'driver' => getenv('DB_CONNECTION'),
                 'username' => getenv('DB_USERNAME'),
                 'password' => getenv('DB_PASSWORD'),
-                //CASO TENHA SENHA CRIAR PASSWORD NO VETOR E => PASSA A SENHA 'SENHA'
                 'host' => getenv('DB_HOST'),
                 'database' => getenv('DB_DATABASE'),
                 'port' => getenv('DB_PORT'),

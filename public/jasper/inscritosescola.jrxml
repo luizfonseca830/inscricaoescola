@@ -15,7 +15,10 @@
 		</conditionalStyle>
 	</style>
 	<queryString language="SQL">
-		<![CDATA[ select  * from dbinscricaoescola.pessoa ]]>
+		<![CDATA[select *
+from dbinscricaoescola.pessoa p
+         inner join dbinscricaoescola.comprovante c
+         join comprovante c2 on c2.id = p.comprovante_id]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -149,6 +152,17 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="COLUMN_23" class="java.math.BigInteger">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
+	</field>
+	<field name="comprovante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="comprovante"/>
+		<property name="com.jaspersoft.studio.field.label" value="comprovante"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -180,32 +194,32 @@
 	<detail>
 		<band height="91" splitType="Stretch">
 			<ellipse>
-				<reportElement x="60" y="0" width="420" height="84" uuid="b9aa32f7-7a72-45da-84d0-c0fb0378c00d"/>
+				<reportElement x="100" y="0" width="390" height="70" forecolor="#FFCC66" backcolor="#FFCCCC" uuid="b9aa32f7-7a72-45da-84d0-c0fb0378c00d"/>
 			</ellipse>
 			<textField>
-				<reportElement x="240" y="7" width="110" height="18" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="275" y="7" width="110" height="18" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="200" y="7" width="40" height="20" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
-				<text><![CDATA[Nome:]]></text>
+				<reportElement key="" mode="Transparent" x="235" y="7" width="40" height="20" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
+				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="230" y="27" width="80" height="22" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
+				<reportElement key="" mode="Transparent" x="265" y="27" width="80" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
 				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="200" y="27" width="30" height="22" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
+				<reportElement key="" mode="Transparent" x="235" y="27" width="30" height="22" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
 				<text><![CDATA[CPF:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="270" y="50" width="100" height="20" uuid="36a87f08-20bf-4604-9965-961f20208763"/>
-				<textFieldExpression><![CDATA[$F{comprovante_id}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="200" y="49" width="70" height="20" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
+				<reportElement key="" mode="Transparent" x="235" y="49" width="70" height="20" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
 				<text><![CDATA[PROTOCOLO:]]></text>
 			</staticText>
+			<textField>
+				<reportElement key="" mode="Transparent" x="307" y="46" width="100" height="30" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
+				<textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>

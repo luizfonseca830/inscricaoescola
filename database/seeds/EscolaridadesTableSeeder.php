@@ -21,7 +21,7 @@ class EscolaridadesTableSeeder extends Seeder
         ]);
 
         DB::table('escolaridade')->insert([
-            'nivel_escolaridade' => '3°ano do Ensino Fundamental I'
+            'nivel_escolaridade' => '3° ano do Ensino Fundamental I'
         ]);
 
         DB::table('escolaridade')->insert([
@@ -41,7 +41,7 @@ class EscolaridadesTableSeeder extends Seeder
         ]);
 
         DB::table('escolaridade')->insert([
-            'nivel_escolaridade' => '8°ano do Ensino Fundamental II'
+            'nivel_escolaridade' => '8° ano do Ensino Fundamental II'
         ]);
 
         DB::table('escolaridade')->insert([
@@ -49,15 +49,15 @@ class EscolaridadesTableSeeder extends Seeder
         ]);
 
         DB::table('escolaridade')->insert([
-            'nivel_escolaridade' => '1° ANO - Ensino Médio'
+            'nivel_escolaridade' => '1° ano do Ensino Médio'
         ]);
 
         DB::table('escolaridade')->insert([
-            'nivel_escolaridade' => '2° ANO - Ensino Médio'
+            'nivel_escolaridade' => '2° ano do Ensino Médio'
         ]);
 
         DB::table('escolaridade')->insert([
-            'nivel_escolaridade' => '3° ANO - Ensino Médio'
+            'nivel_escolaridade' => '3° ano do Ensino Médio'
         ]);
     }
 }

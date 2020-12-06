@@ -9,24 +9,24 @@
 
             <div class="row">
                 <div class="col-12 text-right">
-                    <a href="{{route('add-user')}}" class="btn btn-sm btn-primary">Adicionar Usuário</a>
+                    <a href="{{route('criarSorteio')}}" class="btn btn-sm btn-primary">Adicionar Sorteio</a>
                 </div>
                 <input class="form-control" id="pesquisa" type="text" placeholder="Procurar..">
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Ações</th>
                     </tr>
                     </thead>
                     <tbody id="myTable">
-                    @forelse($users as $user)
+                    @forelse($sorteios as $sorteio)
                         <tr>
-                            <th>{{$user->id}}</th>
-                            <th>{{$user->name}}</th>
-                            <th>{{$user->email}}</th>
+                            <th>{{$sorteio->id}}</th>
+                            <th>{{$sorteio->descricao_sorteio}}</th>
+                            <th>{{$sorteio->data_dia_sorteio}}</th>
                             <th>
                                 <a href="{{route('delete-user', $user->id)}}"><i class="fa fa-trash" style="color: red"></i></a>
                                 <a href="{{route('edit-user', $user->id)}}"><i class="fa fa-user" style="color: #2180e8"></i></a>

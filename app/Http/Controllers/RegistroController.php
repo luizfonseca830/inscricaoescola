@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Registro;
-use App\Http\Requests\RegistroAnexos;
-use App\Models\AnexoCursoTecnico;
-use App\Models\AnexoDoutorado;
 use App\Models\Endereco;
 use App\Models\Pessoa;
 use App\Models\Termos;
@@ -31,12 +28,12 @@ class RegistroController extends Controller
             'escola_de_origem' => $request->escola_de_origem,
             'cpf' => $request->cpf,
             'idade' => $request->idade,
-            'irmaos_na_escola' => $request->irmaos_na_escola,
-            'nome_irmaos_na_escola' => $request->nome_irmaos_na_escola,
-            'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola_id,
-            'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
-            'nome_irmaos_no_sorteio' => $request->nome_irmaos_no_sorteio,
-            'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio_id,
+            'irmaos_na_escola' => irmaos_na_escola,
+            'nome_irmaos_na_escola' => nome_irmaos_na_escola,
+            'serie_irmao_na_escola_id' => serie_irmao_na_escola_id,
+            'irmaos_no_sorteio' => irmaos_no_sorteio,
+            'nome_irmaos_no_sorteio' => nome_irmaos_no_sorteio,
+            'serie_irmao_no_sorteio_id' => serie_irmao_no_sorteio_id,
             'responsavel' => $request->responsavel,
             'sexo' => $request->sexo,
             'telefone' => $request->telefone,

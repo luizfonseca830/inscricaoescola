@@ -45,10 +45,7 @@ Route::post('registros', 'RegistroController@store')->name('registros');
 
 Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
 
-Route::get('/visualizacao', function (){
-    return view('area-restrita.visualizacao');
-})->name('visualizacao');
-
+Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
 
 Route::get('/protocolo', 'ComprovanteController@protocolo')->name('protocolo');
 Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('comprovante-procurar');
@@ -60,7 +57,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 
-	Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
     Route::get('/add-user', function () {
         return view('auth.register');
     })->name('add-user');
@@ -97,3 +93,6 @@ Route::get('/gerarPDF/{comprovante}', 'ComprovanteController@gerarComprovanteCpf
 Route::get('pdf', function () {
     return view('pdf');
 })->name('pdf');
+
+Route::get('/sorteios', 'SorteiosController@index')->name('listasorteios');
+Route::post('/sorteios', 'SorteiosController@store')->name('criarsorteios');

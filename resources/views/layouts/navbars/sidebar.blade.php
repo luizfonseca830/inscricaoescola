@@ -7,7 +7,7 @@
     -->
     <div class="logo">
         <a href="#" class="simple-text logo-normal">
-            {{ __('Início') }}
+            {{ __('Instituto São José') }}
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -27,12 +27,6 @@
                 </a>
                 <div class="collapse show" id="laravelExample">
                     <ul class="nav">
-                        <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('profile.edit') }}">
-                                <span class="sidebar-mini"> UP </span>
-                                <span class="sidebar-normal">{{ __('Perfil De Usuário') }} </span>
-                            </a>
-                        </li>
                         <li class="nav-item{{ $activePage == 'Gestao' ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('user.index') }}">
                                 <span class="sidebar-mini"> GU </span>
@@ -51,8 +45,22 @@
                                 <span class="sidebar-normal"> {{ __('Liberar Tela/Anexos') }} </span>
                             </a>
                         </li>
+
+                        <li class="nav-item{{ $activePage == 'sorteio' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('listasorteios') }}">
+                                <i class="material-icons">library_books</i>
+                                <p>{{ __('Sorteios') }}</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+            </li>
+
+            <li class="nav-item{{ $activePage == 'avaliacao' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('/visualizacao') }}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Inscritos') }}</p>
+                </a>
             </li>
 
             <li class="nav-item{{ $activePage == 'Relatorios' ? ' active' : '' }}">
@@ -61,6 +69,7 @@
                     <p>{{ __('Relatório') }}</p>
                 </a>
             </li>
+
         </ul>
     </div>
 </div>
