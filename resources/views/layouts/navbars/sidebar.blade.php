@@ -45,13 +45,6 @@
                                 <span class="sidebar-normal"> {{ __('Liberar Tela/Anexos') }} </span>
                             </a>
                         </li>
-
-                        <li class="nav-item{{ $activePage == 'sorteio' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('listasorteios') }}">
-                                <i class="material-icons">library_books</i>
-                                <p>{{ __('Sorteios') }}</p>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </li>

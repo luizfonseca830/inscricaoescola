@@ -93,6 +93,3 @@ Route::get('/gerarPDF/{comprovante}', 'ComprovanteController@gerarComprovanteCpf
 Route::get('pdf', function () {
     return view('pdf');
 })->name('pdf');
-
-Route::get('/sorteios', 'SorteiosController@index')->name('listasorteios');
-Route::post('/sorteios', 'SorteiosController@store')->name('criarsorteios');
