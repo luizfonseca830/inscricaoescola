@@ -15,13 +15,13 @@ class JasperController extends Controller
         $input = public_path() . '/jasper/INSTITUTO SÃO JOSÉ_JASPER.jasper';
 
 
-        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos($sorteio);
+        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos();
 
         $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
             'params' => [
-                'FilterSorteio' => JasperController::tirarAcentos($sorteio),
+                'FilterSorteio' => JasperController::tirarAcentos(),
 
             ],
             'db_connection' => [
