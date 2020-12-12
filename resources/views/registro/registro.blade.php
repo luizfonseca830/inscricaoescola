@@ -36,6 +36,12 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
+                    <input type="text" name="cpf" id="cpf" autocomplete="cpf" value="{{old('cpf')}}"
+                           class="@error('cpf') is-invalid @enderror form-control" placeholder="Informe seu CPF"/>
+                    @error('cpf')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
                     <input type="text" name="escola_de_origem" id="escola_de_origem" autocomplete="escola_de_origem"
                            value="{{old('escola_de_origem')}}"
                            class="@error('escola_de_origem') is-invalid @enderror form-control"
@@ -68,7 +74,7 @@
                         <option value="M">Feminino</option>
                     </select>
 
-                    <input type="text" name="idade" id="idade" autocomplete="idade"
+                    <input type="number" name="idade" min="5" id="idade" autocomplete="idade"
                            value="{{old('idade')}}"
                            class="@error('idade') is-invalid @enderror form-control" placeholder="Informe sua idade"/>
                     @error('idade')
@@ -82,13 +88,6 @@
                     @error('responsavel')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-
-                    <input type="text" name="cpf" id="cpf" autocomplete="cpf" value="{{old('cpf')}}"
-                           class="@error('cpf') is-invalid @enderror form-control" placeholder="Informe seu CPF"/>
-                    @error('cpf')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
 
                     <input type="text" id="telefone" name="telefone" autocomplete="telefone" value="{{old('telefone')}}"
                            class="@error('telefone') is-invalid @enderror form-control"

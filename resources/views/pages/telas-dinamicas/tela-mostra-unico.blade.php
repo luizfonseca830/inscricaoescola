@@ -15,7 +15,7 @@
                     <form id="formulario_registro" method="post" action="{{route('tela-editar', $tela->id)}}">
                         @csrf
                         <ul id="progress">
-                            <li class="ativo" style="width: 100%">Relatório</li>
+                            <li class="ativo" style="width: 100%">Editar Tela</li>
                         </ul>
 
                         <fieldset>

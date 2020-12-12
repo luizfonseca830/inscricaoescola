@@ -24,16 +24,17 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="container" src="{{asset('images/caruosel/escola1.png')}}" alt="First slide">
+                        <img class="container" src="{{asset('images/caruosel/INSCRIÇÃO-ONLINE.png')}}" alt="First slide">
                     </div>
-                <!--
+
                     <div class="carousel-item">
-                        <img src="{{asset('images/caruosel/carrusel-fundo.png')}}" alt="Second slide">
+                        <img src="{{asset('images/caruosel/alunos.jpg')}}" alt="Second slide">
                     </div>
+
                     <div class="carousel-item">
-                        <img src="{{asset('images/caruosel/carrusel-fundo.png')}}" alt="Third slide">
+                        <img src="{{asset('images/caruosel/alunosprimario.jpg')}}" alt="Third slide">
                     </div>
-                    !-->
+
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

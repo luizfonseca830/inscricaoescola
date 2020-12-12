@@ -11,16 +11,15 @@ class RelatoriosController extends Controller
     //
     public function index(){
         return view('pages.relatorio.relatorios', [
-            'sorteios' => Sorteios::all(),
         ]);
     }
 
-    public function requestPDFJasper(Request $request)
+    public function requestPDFJasper()
     {
-        $file = JasperController::index($request->sorteio);
+        $file = JasperController::index();
         $headers = array(
             'Content-Type: application/pdf',
         );
-        return response()->download($file, $request->sorteio . '.pdf', $headers);
+        return response()->download($file, 'relatorio.pdf', $headers);
     }
 }

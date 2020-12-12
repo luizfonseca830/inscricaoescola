@@ -10,20 +10,16 @@ use PHPJasper\PHPJasper;
 class JasperController extends Controller
 {
     //
-    static public function index($sorteio)
+    static public function index()
     {
         $input = public_path() . '/jasper/INSTITUTO SÃO JOSÉ_JASPER.jasper';
 
 
-        $output = public_path() . '/jasper/pdf/'.JasperController::tirarAcentos();
+        $output = public_path() . '/jasper/pdf/';
 
         $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
-            'params' => [
-                'FilterSorteio' => JasperController::tirarAcentos(),
-
-            ],
             'db_connection' => [
                 'driver' => getenv('DB_CONNECTION'),
                 'username' => getenv('DB_USERNAME'),
@@ -38,12 +34,8 @@ class JasperController extends Controller
             $input,
             $output,
             $options
-        )->execute();
-
+        )->$output();
+        dd($x);
         return $output . '.pdf';
-    }
-
-    static function tirarAcentos($string){
-        return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string);
     }
 }

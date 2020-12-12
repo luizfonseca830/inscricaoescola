@@ -32,7 +32,7 @@ class Registro extends FormRequest
             'cep' => 'required|formato_cep',
             'idade' => 'required|numeric|digits_between:1,5|min:0',
             'nome_completo' => 'required|string|min:10|max:50',
-            'cpf' => 'required|cpf|formato_cpf',
+            'cpf' => 'required|cpf|formato_cpf|unique',
             'data_nascimento' => 'required|date',
             'telefone' => 'required|celular_com_ddd',
             'responsavel' => 'required|string|min:10|max:50',

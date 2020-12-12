@@ -17,7 +17,7 @@
                     <form id="formulario_registro" method="post" action="{{route('tela-criar-salvar')}}">
                         @csrf
                         <ul id="progress">
-                            <li class="ativo" style="width: 100%">Relatório</li>
+                            <li class="ativo" style="width: 100%">Criar Tela</li>
                         </ul>
 
                         <fieldset>

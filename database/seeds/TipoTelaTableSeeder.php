@@ -15,14 +15,14 @@ class TipoTelaTableSeeder extends Seeder
         DB::table('tipotela')->insert([
             'tipo' => 'Tela',
             'nome_ou_anexo' => 'Inscrição',
-            'status_liberar' => 0,
+            'status_liberar' => 1,
             'data_liberar' => null,
         ]);
 
         DB::table('tipotela')->insert([
             'tipo' => 'Tela',
             'nome_ou_anexo' => 'Protocolo',
-            'status_liberar' => 0,
+            'status_liberar' => 1,
             'data_liberar' => null,
         ]);
 
