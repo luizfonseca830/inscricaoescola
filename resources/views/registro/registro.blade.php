@@ -51,7 +51,7 @@
                     @enderror
 
                     <select name="escolaridade" id="escolaridade">
-                        <option>Selecione sua série</option>
+                        <option value="">Selecione sua série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
@@ -116,7 +116,7 @@
                     <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
                            placeholder="Nome do Irmão(a)"/>
                     <select name="serie_irmao_na_escola_id" id="serie_irmao_na_escola_id">
-                        <option value="0">Selecione a série</option>
+                        <option value="">Selecione a série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
@@ -131,7 +131,7 @@
                     <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
                            placeholder="Nome do Irmão(a)"/>
                     <select name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
-                        <option value="0">Selecione a série</option>
+                        <option value="">Selecione a série</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach

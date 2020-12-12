@@ -13,7 +13,7 @@ class AreaRestritaController extends Controller
         //
 
 
-        $pessoas = Pessoa::where('id')->paginate(40);
+        $pessoas = Pessoa::paginate(40);
         return view('pages.visualizacao')->with('pessoas', $pessoas);
     }
 }

@@ -12,12 +12,9 @@ class JasperController extends Controller
     //
     static public function index()
     {
-        $input = public_path() . '/jasper/inscricaoescola.jasper';
-
-
+        $input = public_path() . '/jasper/inscritosescola.jrxml';
         $output = public_path() . '/jasper/pdf/';
 
-        $jasper = new PHPJasper();
         $options = [
             'format' => ['pdf'],
             'db_connection' => [
@@ -29,13 +26,12 @@ class JasperController extends Controller
                 'port' => getenv('DB_PORT'),
             ]
         ];
-
+        $jasper = new PHPJasper();
         $x = $jasper->process(
             $input,
             $output,
             $options
         )->execute();
-
         return $output . '.pdf';
     }
 }

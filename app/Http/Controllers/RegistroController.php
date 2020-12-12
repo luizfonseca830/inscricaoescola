@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Mail;
 
 class RegistroController extends Controller
 {
-
     public function store(Registro $request)
     {
 
