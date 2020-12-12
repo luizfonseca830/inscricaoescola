@@ -33,12 +33,12 @@
                                     <select name="nome_ou_anexo">
                                         <option value="0">Não Selecionado</option>
                                         @foreach($arquivos as $arquivo)
-                                            @if (substr($arquivo, 62) == $tela->nome_ou_anexo)
-                                                <option value="{{substr($arquivo, 62)}}"
-                                                        selected>{{substr($arquivo, 62)}}</option>
+                                            @if (substr($arquivo, 57) == $tela->nome_ou_anexo)
+                                                <option value="{{substr($arquivo, 45)}}"
+                                                        selected>{{substr($arquivo, 57)}}</option>
                                             @else
-                                                <option value="{{substr($arquivo, 62)}}"
-                                                        >{{substr($arquivo, 62)}}</option>
+                                                <option value="{{substr($arquivo, 45)}}"
+                                                        >{{substr($arquivo, 57)}}</option>
                                             @endif
                                         @endforeach
                                     </select>

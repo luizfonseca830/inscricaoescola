@@ -193,45 +193,45 @@
 	<detail>
 		<band height="157" splitType="Stretch">
 			<rectangle>
-				<reportElement x="148" y="5" width="381" height="135" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+				<reportElement x="102" y="5" width="381" height="135" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
-				<reportElement key="" mode="Transparent" x="286" y="21" width="148" height="18" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="232" y="21" width="148" height="18" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="225" y="17" width="60" height="28" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
+				<reportElement key="" mode="Transparent" x="169" y="17" width="60" height="28" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
 				<textElement verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="289" y="43" width="148" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
+				<reportElement key="" mode="Transparent" x="230" y="43" width="148" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
 				<textElement verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="240" y="42" width="50" height="22" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
+				<reportElement key="" mode="Transparent" x="184" y="43" width="43" height="22" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
 				<textElement verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[CPF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="170" y="71" width="112" height="20" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
+				<reportElement key="" mode="Transparent" x="115" y="68" width="112" height="20" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
 				<textElement verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
 				<text><![CDATA[PROTOCOLO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="279" y="70" width="188" height="22" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
+				<reportElement key="" mode="Transparent" x="219" y="68" width="163" height="21" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16"/>
 				</textElement>
