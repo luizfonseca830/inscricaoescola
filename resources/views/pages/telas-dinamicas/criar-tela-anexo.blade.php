@@ -39,7 +39,7 @@
                                 <select name="nome_pdf">
                                     <option value="0">Não Selecionado</option>
                                     @foreach($arquivos as $arquivo)
-                                        <option value="{{substr($arquivo, 62)}}">{{substr($arquivo, 62)}}</option>
+                                        <option value="{{substr($arquivo, 45)}}">{{substr($arquivo, 57)}}</option>
                                     @endforeach
                                 </select>
                             </div>

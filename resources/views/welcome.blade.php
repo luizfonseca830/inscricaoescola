@@ -24,7 +24,8 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="container" src="{{asset('images/caruosel/INSCRIÇÃO-ONLINE.png')}}" alt="First slide">
+                        <img class="container" src="{{asset('images/caruosel/INSCRIÇÃO-ONLINE.png')}}"
+                             alt="First slide">
                     </div>
 
                     <div class="carousel-item">
@@ -83,16 +84,18 @@
             </div>
         </section><!-- End Featured Section -->
 
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="row justify-content-center">
-                    @foreach($pdfs as $pdf)
-                        @if ($pdf->status_liberar == '1' || !is_null($pdf->data_liberar) )
-                            @if (($pdf->status_liberar == '1') || strtotime($pdf->data_liberar) <= strtotime(date('Y-m-d H:i')))
+
+    @foreach($pdfs as $pdf)
+        @if ($pdf->status_liberar == '1' || !is_null($pdf->data_liberar) )
+            @if (($pdf->status_liberar == '1') || strtotime($pdf->data_liberar) <= strtotime(date('Y-m-d H:i')))
+                <!-- ======= Services Section ======= -->
+                    <section id="services" class="services">
+                        <div class="container">
+                            <div class="row justify-content-center">
                                 <div class="section-title" data-aos="fade-up">
                                     <h2>Relatórios</h2>
                                 </div>
+                                <br>
                                 <div class="col-lg-4 col-md-6  align-items-stretch">
                                     <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
                                         <button class="icon-box">
@@ -102,13 +105,13 @@
                                         </button>
                                     </a>
                                 </div>
-                            @endif
-                        @endif
-                    @endforeach
-                </div>
+                                @endif
+                                @endif
+                                @endforeach
+                            </div>
 
-            </div>
-        </section><!-- End Services Section -->
+                        </div>
+                    </section><!-- End Services Section -->
 
     </main>
 @endsection
