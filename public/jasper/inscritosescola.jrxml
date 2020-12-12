@@ -15,10 +15,8 @@
 		</conditionalStyle>
 	</style>
 	<queryString language="SQL">
-		<![CDATA[select *
-from dbinscricaoescola.pessoa p
-         inner join dbinscricaoescola.comprovante c
-         join comprovante c2 on c2.id = p.comprovante_id]]>
+		<![CDATA[select * from pessoa p
+         inner join comprovante c2 on c2.id = p.comprovante_id]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>

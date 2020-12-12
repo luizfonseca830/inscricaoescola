@@ -12,7 +12,7 @@ class JasperController extends Controller
     //
     static public function index()
     {
-        $input = public_path() . '/jasper/INSTITUTO SÃO JOSÉ_JASPER.jasper';
+        $input = public_path() . '/jasper/inscricaoescola.jasper';
 
 
         $output = public_path() . '/jasper/pdf/';
@@ -34,8 +34,8 @@ class JasperController extends Controller
             $input,
             $output,
             $options
-        )->$output();
-        dd($x);
+        )->execute();
+
         return $output . '.pdf';
     }
 }
