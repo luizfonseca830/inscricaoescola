@@ -13,7 +13,7 @@ class JasperController extends Controller
     static public function index()
     {
         $input = public_path() . '/jasper/inscritosescola.jrxml';
-        $output = public_path() . '/jasper/pdf/';
+        $output = public_path() . '/jasper/pdf/inscritosescola';
 
         $options = [
             'format' => ['pdf'],
