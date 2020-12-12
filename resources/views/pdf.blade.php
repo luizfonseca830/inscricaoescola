@@ -18,8 +18,9 @@
     </div>
     <div style="margin-left: 20%;">
         <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
+        <h2>Cpf:{{$comprovante->pessoa->cpf}}</h2>
         <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
-        <h2>Data e Hora de Inscrição: {{date('d-m-Y H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
+        <h2>Data e Hora de Inscrição: {{date('d/m/Y H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
         <h2>Número de Protocolo: {{$comprovante->comprovante}}</h2>
     </div>
     <div style="margin-top: 30%; text-align: center">
