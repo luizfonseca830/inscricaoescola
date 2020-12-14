@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Charts\AvaliacaoRevisaoChart;
-use App\Charts\AvaliacoesChart;
+use Illuminate\Support\Facades\Schema;
 use App\Charts\InscricoesChart;
 use Illuminate\Support\ServiceProvider;
 use ConsoleTVs\Charts\Registrar as Charts;
@@ -27,10 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Charts $charts)
     {
+        Schema::defaultStringLength(191);
+
         //
         $charts->register([
-            InscricoesChart::class,
-            AvaliacoesChart::class,
+            InscricoesChart::class
         ]);
     }
 }
