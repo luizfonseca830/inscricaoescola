@@ -40,12 +40,6 @@ class RegistroController extends Controller
             'data_nascimento' => $request->data_nascimento,
         ]);
 
-        //SALVA OS TERMOS
-        Termos::create([
-            'pessoa_id' => $pessoa_id->id,
-            'aceito_dados' => 1,
-        ]);
-
         $pessoa = Pessoa::find($pessoa_id->id);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
         $comprovate_id = ComprovanteController::store($comprovante);
