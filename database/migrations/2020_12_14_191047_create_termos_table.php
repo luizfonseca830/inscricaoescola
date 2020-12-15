@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Termos extends Migration
+class CreateTermosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,7 @@ class Termos extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('termos', function($table)
-        {
+        Schema::create('termos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedBigInteger('pessoa_id');
@@ -23,8 +21,6 @@ class Termos extends Migration
             $table->foreign('pessoa_id')->references('id')->on('pessoa');
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -34,7 +30,6 @@ class Termos extends Migration
      */
     public function down()
     {
-        //
         Schema::dropIfExists('termos');
     }
 }
