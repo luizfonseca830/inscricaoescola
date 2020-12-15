@@ -16,8 +16,9 @@ class CreateTermosTable extends Migration
         Schema::create('termos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->unsignedBigInteger('pessoa_id');
+            $table->BigInteger('pessoa_id')->unsigned();
             $table->boolean('aceito_dados');
+
             $table->foreign('pessoa_id')->references('id')->on('pessoa');
             $table->timestamps();
         });
