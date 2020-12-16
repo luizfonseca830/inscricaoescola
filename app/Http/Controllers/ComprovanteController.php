@@ -35,7 +35,7 @@ class ComprovanteController extends Controller
     public function procurar(ComprovanteRequest $request){
         $pessoa = Pessoa::where('cpf', $request->cpf)->first();
         if (is_null($pessoa)) {
-            session()->put('error', 'Ops parecer que não possuimos esse registro');
+            session()->put('error', 'Ops parece que não possuimos esse registro');
             return redirect()->route('protocolo');
         }
 

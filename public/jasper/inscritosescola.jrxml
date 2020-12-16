@@ -175,7 +175,7 @@
 			</staticText>
 			<image>
 				<reportElement x="27" y="14" width="90" height="69" uuid="5c6d4e20-fe7d-40d1-b47f-471f2cd85c02"/>
-				<imageExpression><![CDATA["/home/fonseca/Projetos/inscricaoescola/public/jasper/logoinstitutosaojoseGRANDE.jpeg"]]></imageExpression>
+				<imageExpression><![CDATA["/home/wwcsmr/public_html/inscricao/inscricaoescola/public/jasper/logoinstitutosaojoseGRANDE.jpeg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
