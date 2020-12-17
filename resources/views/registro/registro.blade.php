@@ -21,13 +21,13 @@
                     {{session()->forget('error')}}
                 @endif
                 <ul id="progress">
-                    <li class="ativo">Dados Pessoais</li>
+                    <li class="ativo">Dados Pessoais Do Aluno</li>
                     <li>Dados Adicionais</li>
                     <li>Endereço</li>
                 </ul>
 
                 <fieldset>
-                    <h2>Dados Pessoais</h2>
+                    <h2>Dados Pessoais Do Aluno</h2>
                     <input type="text" name="nome_completo" id="nome_completo" autocomplete="nome_completo"
                            value="{{old('nome_completo')}}"
                            class="@error('nome_completo') is-invalid @enderror form-control"

@@ -68,9 +68,8 @@
                     <h3>Redes Sociais</h3>
                     <p></p>
                     <div class="social-links mt-3">
-                        <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
                         <a href="https://www.facebook.com/institutosaojoseac/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        <a href="https://www.instagram.com/institutosaojose.sjc/?hl=pt-br" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://www.instagram.com/institutosaojose_isj/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
                     </div>
                 </div>
 

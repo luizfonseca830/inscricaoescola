@@ -14,7 +14,9 @@
     <div style="text-align: center; margin-top: 2%;">
 
         <img src="{{public_path().'/images/logoinstituto.png'}}"/>
-        <h1>Comprovante de Inscrição Para O Sortei de Vagas Ano Letivo: 2021</h1>
+        <h1>Comprovante de Inscrição Para O Sortei de Vagas
+            <br>Ano Letivo: 2021</h1>
+
     </div>
     <div style="margin-left: 20%;">
         <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
@@ -24,7 +26,9 @@
         <h2>Protocolo: {{$comprovante->comprovante}}</h2>
     </div>
     <footer style="margin-top: 30%; text-align: center">
-        <strong> INSTITUTO SÃO JOSÉ – RIO BRANCO - ACRE</strong>
+        <strong> CONGREGAÇÃO DAS SERVAS DA MARIA REPARADORAS - ACRE</strong>
+        <br>
+        <strong> INSTITUTO SÃO JOSÉ – RIO BRANCO</strong>
     </footer>
 </body>
 </html>
