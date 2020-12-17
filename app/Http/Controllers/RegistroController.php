@@ -23,17 +23,17 @@ class RegistroController extends Controller
         $pessoa_id = Pessoa::create([
             'escolaridade_id' => $request->escolaridade,
             'endereco_id' => $endereco_id,
-            'nome_completo' => $request->nome_completo,
+            'nome_completo' => strtoupper($request->nome_completo),
             'escola_de_origem' => $request->escola_de_origem,
-            'cpf' => $request->cpf,
+            'cpf' => strtoupper($request->cpf),
             'idade' => $request->idade,
             'irmaos_na_escola' => $request->irmaos_na_escola,
-            'nome_irmaos_na_escola' => $request->nome_irmaos_na_escola,
+            'nome_irmaos_na_escola' => strtoupper($request->nome_irmaos_na_escola),
             'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola_id,
             'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
-            'nome_irmaos_no_sorteio' => $request->nome_irmaos_no_sorteio,
+            'nome_irmaos_no_sorteio' => strtoupper($request->nome_irmaos_no_sorteio),
             'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio_id,
-            'responsavel' => $request->responsavel,
+            'responsavel' => strtoupper($request->responsavel),
             'sexo' => $request->sexo,
             'telefone' => $request->telefone,
             'email' => $request->email,
@@ -42,8 +42,8 @@ class RegistroController extends Controller
 
         $pessoa = Pessoa::find($pessoa_id->id);
         $comprovante = ComprovanteController::gerarComprovante($pessoa);
-        $comprovate_id = ComprovanteController::store($comprovante);
-        PessoaController::updateIDs($pessoa, $comprovate_id);
+        $comprovante_id = ComprovanteController::store($comprovante);
+        PessoaController::updateIDs($pessoa, $comprovante_id);
 
         return redirect()->route('registro/comprovante', $comprovante);
 

@@ -93,3 +93,5 @@ Route::get('/gerarPDF/{comprovante}', 'ComprovanteController@gerarComprovanteCpf
 Route::get('pdf', function () {
     return view('pdf');
 })->name('pdf');
+
+Route::get('visualizacao-pessoa/{id}', 'VisualizarPessoaController@show')->name('visualizacao-pessoa');

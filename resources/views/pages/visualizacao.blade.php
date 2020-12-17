@@ -19,7 +19,9 @@
                             <th>{{$pessoa->id}}</th>
                             <th>{{$pessoa->nome_completo}}</th>
                             <th>{{$pessoa->cpf}}</th>
+                            <th><a href="{{route('visualizacao-pessoa', $pessoa->id)}}"> <input type="button" class="btn btn-outline-info" value="Visualizar"></a></th>
                        </tr>
+
                     @empty
                         <tr>
                             <td colspan="2">Nenhum Resultado Encontrado</td>

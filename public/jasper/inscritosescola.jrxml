@@ -1,294 +1,295 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
-	<property name="template.type" value="columnar"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inscrição escola"/>
-	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
-	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
-	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
-	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
-	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
-		<conditionalStyle>
-			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
-			<style mode="Opaque" backcolor="#F0EFEF"/>
-		</conditionalStyle>
-	</style>
-	<queryString language="SQL">
-		<![CDATA[select * from pessoa p
+    <property name="template.type" value="columnar"/>
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inscrição escola"/>
+    <style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#F0EFEF"/>
+        </conditionalStyle>
+    </style>
+    <queryString language="SQL">
+        <![CDATA[select * from pessoa p
          inner join comprovante c2 on c2.id = p.comprovante_id]]>
-	</queryString>
-	<field name="id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="id"/>
-		<property name="com.jaspersoft.studio.field.label" value="id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="escolaridade_id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="escolaridade_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="escolaridade_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="serie_irmao_na_escola_id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="serie_irmao_na_escola_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="serie_irmao_na_escola_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="serie_irmao_no_sorteio_id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="serie_irmao_no_sorteio_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="serie_irmao_no_sorteio_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="comprovante_id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="comprovante_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="comprovante_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="endereco_id" class="java.math.BigInteger">
-		<property name="com.jaspersoft.studio.field.name" value="endereco_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="endereco_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nome_completo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nome_completo"/>
-		<property name="com.jaspersoft.studio.field.label" value="nome_completo"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="sexo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="sexo"/>
-		<property name="com.jaspersoft.studio.field.label" value="sexo"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="data_nascimento" class="java.sql.Date">
-		<property name="com.jaspersoft.studio.field.name" value="data_nascimento"/>
-		<property name="com.jaspersoft.studio.field.label" value="data_nascimento"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="idade" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="idade"/>
-		<property name="com.jaspersoft.studio.field.label" value="idade"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="escola_de_origem" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="escola_de_origem"/>
-		<property name="com.jaspersoft.studio.field.label" value="escola_de_origem"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="irmaos_na_escola" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="irmaos_na_escola"/>
-		<property name="com.jaspersoft.studio.field.label" value="irmaos_na_escola"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nome_irmaos_na_escola" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nome_irmaos_na_escola"/>
-		<property name="com.jaspersoft.studio.field.label" value="nome_irmaos_na_escola"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="irmaos_no_sorteio" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="irmaos_no_sorteio"/>
-		<property name="com.jaspersoft.studio.field.label" value="irmaos_no_sorteio"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nome_irmaos_no_sorteio" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nome_irmaos_no_sorteio"/>
-		<property name="com.jaspersoft.studio.field.label" value="nome_irmaos_no_sorteio"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="responsavel" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="responsavel"/>
-		<property name="com.jaspersoft.studio.field.label" value="responsavel"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="cpf" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="cpf"/>
-		<property name="com.jaspersoft.studio.field.label" value="cpf"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="email" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="email"/>
-		<property name="com.jaspersoft.studio.field.label" value="email"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="telefone" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="telefone"/>
-		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="status_aprovado" class="java.lang.Boolean">
-		<property name="com.jaspersoft.studio.field.name" value="status_aprovado"/>
-		<property name="com.jaspersoft.studio.field.label" value="status_aprovado"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="created_at" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
-		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="updated_at" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
-		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="comprovante" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="comprovante"/>
-		<property name="com.jaspersoft.studio.field.label" value="comprovante"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="147" splitType="Stretch">
-			<staticText>
-				<reportElement style="Detail" x="122" y="24" width="438" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
-				<textElement textAlignment="Center">
-					<font size="20" isBold="false"/>
-				</textElement>
-				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                        DE VAGAS                                                                                 ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Detail" x="156" y="106" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
-				<textElement textAlignment="Center">
-					<font isBold="false"/>
-				</textElement>
-				<text><![CDATA[CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE ]]></text>
-			</staticText>
-			<image>
-				<reportElement style="Detail" x="30" y="6" width="92" height="96" uuid="5c6d4e20-fe7d-40d1-b47f-471f2cd85c02"/>
+    </queryString>
+    <field name="id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="id"/>
+        <property name="com.jaspersoft.studio.field.label" value="id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="escolaridade_id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="escolaridade_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="escolaridade_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="serie_irmao_na_escola_id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="serie_irmao_na_escola_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="serie_irmao_na_escola_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="serie_irmao_no_sorteio_id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="serie_irmao_no_sorteio_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="serie_irmao_no_sorteio_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="comprovante_id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="comprovante_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="comprovante_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="endereco_id" class="java.math.BigInteger">
+        <property name="com.jaspersoft.studio.field.name" value="endereco_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="endereco_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nome_completo" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nome_completo"/>
+        <property name="com.jaspersoft.studio.field.label" value="nome_completo"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="sexo" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="sexo"/>
+        <property name="com.jaspersoft.studio.field.label" value="sexo"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="data_nascimento" class="java.sql.Date">
+        <property name="com.jaspersoft.studio.field.name" value="data_nascimento"/>
+        <property name="com.jaspersoft.studio.field.label" value="data_nascimento"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="idade" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="idade"/>
+        <property name="com.jaspersoft.studio.field.label" value="idade"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="escola_de_origem" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="escola_de_origem"/>
+        <property name="com.jaspersoft.studio.field.label" value="escola_de_origem"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="irmaos_na_escola" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="irmaos_na_escola"/>
+        <property name="com.jaspersoft.studio.field.label" value="irmaos_na_escola"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nome_irmaos_na_escola" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nome_irmaos_na_escola"/>
+        <property name="com.jaspersoft.studio.field.label" value="nome_irmaos_na_escola"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="irmaos_no_sorteio" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="irmaos_no_sorteio"/>
+        <property name="com.jaspersoft.studio.field.label" value="irmaos_no_sorteio"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nome_irmaos_no_sorteio" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nome_irmaos_no_sorteio"/>
+        <property name="com.jaspersoft.studio.field.label" value="nome_irmaos_no_sorteio"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="responsavel" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="responsavel"/>
+        <property name="com.jaspersoft.studio.field.label" value="responsavel"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="cpf" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="cpf"/>
+        <property name="com.jaspersoft.studio.field.label" value="cpf"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="email" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="email"/>
+        <property name="com.jaspersoft.studio.field.label" value="email"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="telefone" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="telefone"/>
+        <property name="com.jaspersoft.studio.field.label" value="telefone"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="status_aprovado" class="java.lang.Boolean">
+        <property name="com.jaspersoft.studio.field.name" value="status_aprovado"/>
+        <property name="com.jaspersoft.studio.field.label" value="status_aprovado"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="created_at" class="java.sql.Timestamp">
+        <property name="com.jaspersoft.studio.field.name" value="created_at"/>
+        <property name="com.jaspersoft.studio.field.label" value="created_at"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="updated_at" class="java.sql.Timestamp">
+        <property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+        <property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="comprovante" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="comprovante"/>
+        <property name="com.jaspersoft.studio.field.label" value="comprovante"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="147" splitType="Stretch">
+            <staticText>
+                <reportElement style="Detail" x="122" y="24" width="438" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+                <textElement textAlignment="Center">
+                    <font size="20" isBold="false"/>
+                </textElement>
+                <text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                        DE VAGAS                                                                                 ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Detail" x="156" y="106" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
+                <textElement textAlignment="Center">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE ]]></text>
+            </staticText>
+            <image>
+                <reportElement style="Detail" x="30" y="6" width="92" height="96" uuid="5c6d4e20-fe7d-40d1-b47f-471f2cd85c02"/>
                 <imageExpression><![CDATA["/home/wwcsmr/public_html/inscricao/inscricaoescola/public/jasper/logoinstituto.png"]]></imageExpression>
+
             </image>
-			<staticText>
-				<reportElement style="Detail" mode="Transparent" x="288" y="120" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
-				<textElement>
-					<font isItalic="false" isUnderline="true"/>
-				</textElement>
-				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Detail" x="246" y="70" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
-				<textElement textAlignment="Center">
-					<font size="18" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ANO LETIVO:2021]]></text>
-			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="80" splitType="Stretch">
-			<rectangle>
-				<reportElement x="146" y="4" width="344" height="73" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
-			</rectangle>
-			<textField>
-				<reportElement key="" mode="Transparent" x="190" y="11" width="256" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="" mode="Transparent" x="151" y="9" width="40" height="26" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Aluno:]]></text>
-			</staticText>
-			<textField>
-				<reportElement key="" mode="Transparent" x="180" y="35" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="" mode="Transparent" x="151" y="36" width="29" height="20" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[CPF:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="" mode="Transparent" x="151" y="57" width="68" height="16" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Protocolo:]]></text>
-			</staticText>
-			<textField>
-				<reportElement key="" mode="Transparent" x="220" y="57" width="250" height="16" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
-			</textField>
-		</band>
-	</detail>
-	<columnFooter>
-		<band height="7" splitType="Stretch">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fab082df-3ca0-43ac-900e-4da3f8b5a45d"/>
-				<graphicElement>
-					<pen lineWidth="0.5" lineColor="#999999"/>
-				</graphicElement>
-			</line>
-		</band>
-	</columnFooter>
-	<pageFooter>
-		<band height="13" splitType="Stretch">
-			<frame>
-				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="bfdca178-800d-445c-9a31-bb616a00e8ce"/>
-				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="513" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="2fba0f87-635e-476d-858f-d102b26146fe"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement style="Column header" mode="Transparent" x="433" y="0" width="80" height="13" forecolor="#FFFFFF" uuid="e454d23d-bcfc-4c79-a399-0ef520a3150a"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
-				</textField>
-				<textField pattern="M/d/yy h:mm a">
-					<reportElement x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="14d8de1e-8695-4078-a67f-0e69172574d5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</frame>
-		</band>
-	</pageFooter>
-	<summary>
-		<band splitType="Stretch"/>
-	</summary>
+            <staticText>
+                <reportElement style="Detail" mode="Transparent" x="288" y="120" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
+                <textElement>
+                    <font isItalic="false" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Detail" x="246" y="70" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
+                <textElement textAlignment="Center">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ANO LETIVO:2021]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="80" splitType="Stretch">
+            <rectangle>
+                <reportElement x="166" y="7" width="344" height="73" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+            </rectangle>
+            <textField>
+                <reportElement key="" mode="Transparent" x="213" y="10" width="256" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement key="" mode="Transparent" x="174" y="8" width="40" height="26" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Aluno:]]></text>
+            </staticText>
+            <textField>
+                <reportElement key="" mode="Transparent" x="203" y="34" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement key="" mode="Transparent" x="174" y="35" width="29" height="20" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[CPF:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement key="" mode="Transparent" x="174" y="56" width="68" height="16" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Protocolo:]]></text>
+            </staticText>
+            <textField>
+                <reportElement key="" mode="Transparent" x="236" y="56" width="250" height="16" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="7" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fab082df-3ca0-43ac-900e-4da3f8b5a45d"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="13" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="bfdca178-800d-445c-9a31-bb616a00e8ce"/>
+                <textField evaluationTime="Report">
+                    <reportElement style="Column header" x="513" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="2fba0f87-635e-476d-858f-d102b26146fe"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="Column header" mode="Transparent" x="433" y="0" width="80" height="13" forecolor="#FFFFFF" uuid="e454d23d-bcfc-4c79-a399-0ef520a3150a"/>
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+                </textField>
+                <textField pattern="M/d/yy h:mm a">
+                    <reportElement x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="14d8de1e-8695-4078-a67f-0e69172574d5"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
 </jasperReport>

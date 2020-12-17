@@ -27,7 +27,7 @@ class Registro extends FormRequest
     {
         return [
             //
-            'endereco' => 'required|string|max:50',
+            'endereco' => 'required|string|max:100',
             'bairro' => 'required|string|max:50',
             'cep' => 'required|formato_cep',
             'idade' => 'required|numeric|digits_between:1,5|min:0',

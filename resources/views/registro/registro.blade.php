@@ -51,7 +51,7 @@
                     @enderror
 
                     <select name="escolaridade" id="escolaridade">
-                        <option value="">Selecione sua série</option>
+                        <option value="">Selecione a escolaridade desejada</option>
                         @foreach($escolaridade as $esc)
                             <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
                         @endforeach
