@@ -162,11 +162,11 @@
 	<title>
 		<band height="147" splitType="Stretch">
 			<staticText>
-				<reportElement style="Title" x="120" y="24" width="440" height="75" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<reportElement style="Title" x="120" y="24" width="440" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                        DE VAGAS                                                                                 ANO LETIVO: 2021]]></text>
+				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                        DE VAGAS                                                                                 ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="130" y="106" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
@@ -182,7 +182,7 @@
 			<staticText>
 				<reportElement mode="Transparent" x="258" y="120" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
 				<textElement>
-					<font isItalic="false"/>
+					<font isItalic="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
 			</staticText>
