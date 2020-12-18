@@ -59,7 +59,7 @@
                         R. Floriano Peixoto, 722<br>
                         Rio Branco - AC <br><br>
                         <strong>Telefone:</strong> (68) 3223-5518<br>
-                        <strong>CEP:</strong> 69908-030<br>
+                        <strong>CEP:</strong> 69900-090<br>
                     </p>
 
                 </div>
