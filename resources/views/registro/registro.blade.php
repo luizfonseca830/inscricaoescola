@@ -27,7 +27,7 @@
                 </ul>
 
                 <fieldset>
-                    <h2>Dados Pessoais Do Aluno</h2>
+                    <h2>Dados Pessoais do Aluno</h2>
                     <input type="text" name="nome_completo" id="nome_completo" autocomplete="nome_completo"
                            value="{{old('nome_completo')}}"
                            class="@error('nome_completo') is-invalid @enderror form-control"
