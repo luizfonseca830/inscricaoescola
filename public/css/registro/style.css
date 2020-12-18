@@ -72,12 +72,12 @@ body{
     float: left;
 }
 #formulario_registro .ajusteRight{
-    width: 40%;
+    width: 70%;
     float: left;
 }
 
 #formulario_registro input[type=checkbox]{
-    width: 10%;
+    width: 40%;
     display: inline;
 }
 
