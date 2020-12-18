@@ -21,7 +21,7 @@
                     {{session()->forget('error')}}
                 @endif
                 <ul id="progress">
-                    <li class="ativo">Dados Pessoais Do Aluno</li>
+                    <li class="ativo">Dados Pessoais do Aluno</li>
                     <li>Dados Adicionais</li>
                     <li>Endereço</li>
                 </ul>

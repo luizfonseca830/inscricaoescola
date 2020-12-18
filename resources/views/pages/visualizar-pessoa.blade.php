@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 <div class="row">
-                    <h2>Dados Pessoais Do Aluno</h2>
+                    <h2>Dados Pessoais do Aluno</h2>
                     <div class="col-sm-8">
                         <p>Nome Completo</p>
                         <input size="50" type="text" id="focosAtivo" name="nome_completo"
