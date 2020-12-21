@@ -27,7 +27,7 @@
             </div>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Data De Nascimento</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Data de Nascimento</span>
                 </div>
                 <input type="date" name="data_nascimento" id="data_nascimento"
                        autocomplete="data_nascimento" value="{{old('data_nascimento')}}"
@@ -38,7 +38,7 @@
                 @if (session()->has('sucess'))
                     <strong>Número do protocolo: {{session('sucess')}}</strong>
                     <div class="row">
-                        <a href="{{route('gerarpdf-comprovante', session('sucess'))}}" target="_blank">Download Do
+                        <a href="{{route('gerarpdf-comprovante', session('sucess'))}}" target="_blank">Download do
                             Comprovante de Inscrição</a>
                     </div>
                     {{session()->forget('sucess')}}
