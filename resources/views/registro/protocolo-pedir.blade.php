@@ -22,10 +22,17 @@
                 </div>
                 <input type="text" id="cpf" name="cpf" class="form-control" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm">
+                <br>
+
             </div>
-            @error('cpf')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Data De Nascimento</span>
+                </div>
+                <input type="date" name="data_nascimento" id="data_nascimento"
+                       autocomplete="data_nascimento" value="{{old('data_nascimento')}}"
+                       class="@error('data_nascimento') is-invalid @enderror form-control"/>
+            </div>
             <input type="submit" class="btn btn-outline-primary" value="Pesquisar">
             <div style="width: 100%; margin-top: 2%;">
                 @if (session()->has('sucess'))
