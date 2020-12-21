@@ -31,7 +31,7 @@
                             <input type="text" value="Femino" disabled/>
                         @endif
                         <p>Email</p>
-                        <input type="email" value="{{$pessoa->email}}" disabled/>
+                        <input size="40" type="email" value="{{$pessoa->email}}" disabled/>
                         <p>Idade</p>
                         <input type="text" value="{{$pessoa->idade}}" disabled/>
                         <p>Nome do Responsável</p>
