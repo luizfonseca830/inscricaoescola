@@ -113,30 +113,31 @@
                         <option value="Sim">Sim</option>
                         <option value="Nao" selected>Nao</option>
                     </select>
-                    <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
-                           placeholder="Nome do Irmão(a)"/>
-                    <select name="serie_irmao_na_escola_id" id="serie_irmao_na_escola_id">
-                        <option value="">Selecione a série</option>
-                        @foreach($escolaridade as $esc)
-                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
-                        @endforeach
-                    </select>
-
+                    <div class="divIrmaoEscola" hidden="true">
+                        <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
+                               placeholder="Nome do Irmão(a)"/>
+                        <select name="serie_irmao_na_escola_id" id="serie_irmao_na_escola_id">
+                            <option value="">Selecione a série</option>
+                            @foreach($escolaridade as $esc)
+                                <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
                     <select name="irmaos_no_sorteio" id="irmaos_no_sorteio">
                         <option value="Sim">Sim</option>
                         <option value="Nao" selected>Nao</option>
                     </select>
-
-                    <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
-                           placeholder="Nome do Irmão(a)"/>
-                    <select name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
-                        <option value="">Selecione a série</option>
-                        @foreach($escolaridade as $esc)
-                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
-                        @endforeach
-                    </select>
-
+                    <div class="divIrmaoSorteio" hidden="true">
+                        <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
+                               placeholder="Nome do Irmão(a)"/>
+                        <select name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
+                            <option value="">Selecione a série</option>
+                            @foreach($escolaridade as $esc)
+                                <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
                 </fieldset>
@@ -209,4 +210,5 @@
     <script src="{{asset('js/jquery.inputmask.min.js')}}"></script>
     <script src="{{asset('js/registro/mask.js')}}"></script>
     <script src="{{asset('js/registro/cep.js')}}"></script>
+    <script src="{{asset('js/registro/selecionador.js')}}"></script>
 @endsection

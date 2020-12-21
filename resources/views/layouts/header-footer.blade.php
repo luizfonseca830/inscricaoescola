@@ -47,7 +47,8 @@
                     <h4>Links mais Usados</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#" target="_blank">Política de Privacidade</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#" target="_blank">Política de Privacidade</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -68,8 +69,10 @@
                     <h3>Redes Sociais</h3>
                     <p></p>
                     <div class="social-links mt-3">
-                        <a href="https://www.facebook.com/institutosaojoseac/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        <a href="https://www.instagram.com/institutosaojose_isj/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://www.facebook.com/institutosaojoseac/" class="facebook" target="_blank"><i
+                                class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/institutosaojose_isj/" class="instagram" target="_blank"><i
+                                class="bx bxl-instagram"></i></a>
                     </div>
                 </div>
 

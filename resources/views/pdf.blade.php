@@ -11,24 +11,25 @@
     <title>PDF</title>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 2%;">
+<div style="text-align: center; margin-top: 2%;">
 
-        <img src="{{public_path().'/images/logoinstituto.png'}}"/>
-        <h1><u>Comprovante de Inscrição Para O Sorteio de Vagas</u>
-            <br>Ano Letivo: 2021</h1>
+    <img src="{{public_path().'/images/logoinstituto.png'}}"/>
+    <h1><u>Comprovante de inscrição para o sorteio de</u>
+        <br><u>vagas</u>
+        <br>Ano Letivo: 2021</h1>
 
-    </div>
-    <div style="margin-left: 20%;">
-        <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
-        <h2>CPF: {{$comprovante->pessoa->cpf}}</h2>
-        <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
-        <h2>Data e Hora de Inscrição: {{date('d/m/Y H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
-        <h2>Protocolo: {{$comprovante->comprovante}}</h2>
-    </div>
-    <footer style="margin-top: 30%; text-align: center">
-        <strong>CONGREGAÇÃO DAS SERVAS DA MARIA REPARADORAS - ACRE</strong>
-        <br>
-        <strong> INSTITUTO SÃO JOSÉ – RIO BRANCO</strong>
-    </footer>
+</div>
+<div style="margin-left: 20%;">
+    <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
+    <h2>CPF: {{$comprovante->pessoa->cpf}}</h2>
+    <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
+    <h2>Data e Hora de Inscrição: {{date('d/m/Y H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
+    <h2>Protocolo: {{$comprovante->comprovante}}</h2>
+</div>
+<footer style="margin-top: 30%; text-align: center">
+    <strong>CONGREGAÇÃO DAS SERVAS DA MARIA REPARADORAS - ACRE</strong>
+    <br>
+    <strong> INSTITUTO SÃO JOSÉ – RIO BRANCO</strong>
+</footer>
 </body>
 </html>

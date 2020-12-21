@@ -55,12 +55,12 @@
                                            disabled/>
                                 @endif
                                 <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
-                                @if ($pessoa->irmaos_na_escola == 'Sim')
+                                @if ($pessoa->irmaos_no_sorteio == 'Sim')
                                     <input type="text" value="Sim" disabled/>
                                 @else
                                     <input type="text" value="Não" disabled/>
                                 @endif
-                                @if ($pessoa->irmaos_na_escola == 'Sim')
+                                @if ($pessoa->irmaos_no_sorteio == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
                                     <input size="50" type="text" value="{{$pessoa->escolaridade->nivel_escolaridade}}"
                                            disabled/>

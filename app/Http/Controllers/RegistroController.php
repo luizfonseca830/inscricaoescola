@@ -24,7 +24,7 @@ class RegistroController extends Controller
             'escolaridade_id' => $request->escolaridade,
             'endereco_id' => $endereco_id,
             'nome_completo' => strtoupper($request->nome_completo),
-            'escola_de_origem' => $request->escola_de_origem,
+            'escola_de_origem' => strtoupper($request->escola_de_origem),
             'cpf' => strtoupper($request->cpf),
             'idade' => $request->idade,
             'irmaos_na_escola' => $request->irmaos_na_escola,
@@ -36,7 +36,7 @@ class RegistroController extends Controller
             'responsavel' => strtoupper($request->responsavel),
             'sexo' => $request->sexo,
             'telefone' => $request->telefone,
-            'email' => $request->email,
+            'email' => strtoupper($request->email),
             'data_nascimento' => $request->data_nascimento,
         ]);
 
