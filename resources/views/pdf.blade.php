@@ -14,10 +14,8 @@
 <div style="text-align: center; margin-top: 2%;">
 
     <img src="{{public_path().'/images/logoinstituto.png'}}"/>
-    <h1><u>Comprovante de inscrição para o sorteio de</u>
-        <br><u>vagas</u>
+    <h1><u>Comprovante de inscrição para o sorteio de vagas</u>
         <br>Ano Letivo: 2021</h1>
-
 </div>
 <div style="margin-left: 20%;">
     <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
