@@ -17,7 +17,7 @@
     <h1><u>Comprovante de inscrição para o sorteio de vagas</u>
         <br>Ano Letivo: 2021</h1>
 </div>
-<div style="margin-left: 20%;">
+<div style="margin-left: 1%;">
     <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
     <h2>CPF: {{$comprovante->pessoa->cpf}}</h2>
     <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
@@ -25,7 +25,7 @@
     <h2>Protocolo: {{$comprovante->comprovante}}</h2>
 </div>
 <footer style="margin-top: 30%; text-align: center">
-    <strong>CONGREGAÇÃO DAS SERVAS DA MARIA REPARADORAS - ACRE</strong>
+    <strong>CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE</strong>
     <br>
     <strong> INSTITUTO SÃO JOSÉ – RIO BRANCO</strong>
 </footer>
