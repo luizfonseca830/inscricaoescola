@@ -12,11 +12,11 @@ class JasperController extends Controller
     //
     static public function index()
     {
-        $input = public_path() . '/jasper/inscritosescola.jrxml';
+        $input = public_path() . '/jasper/inscritosescola.jasper';
         $output = public_path() . '/jasper/pdf/inscritosescola';
-
         $options = [
             'format' => ['pdf'],
+            'params' => ['CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png'],
             'db_connection' => [
                 'driver' => getenv('DB_CONNECTION'),
                 'username' => getenv('DB_USERNAME'),
@@ -27,11 +27,13 @@ class JasperController extends Controller
             ]
         ];
         $jasper = new PHPJasper();
+    /*     $jasper->compile($input)->execute();*/
         $x = $jasper->process(
             $input,
             $output,
             $options
         )->execute();
+   /*   dd($x);*/
         return $output . '.pdf';
     }
 }
