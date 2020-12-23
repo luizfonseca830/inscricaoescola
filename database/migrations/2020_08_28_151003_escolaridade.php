@@ -18,7 +18,7 @@ class Escolaridade extends Migration
         {
             $table->engine = 'InnoDB';
             $table->id();
-            $table->unsignedBigInteger('modulo_id')->nullable();
+            $table->BigInteger('modulo_id')->nullable();
             $table->string('nivel_escolaridade', 100);
 
             $table->foreign('modulo_id')->references('id')->on('modulo');
