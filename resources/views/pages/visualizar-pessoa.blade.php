@@ -7,6 +7,7 @@
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
+                @csrf
                 <div class="row">
                     <h2>Dados Pessoais do Aluno</h2>
                     <div class="col-sm-8">
