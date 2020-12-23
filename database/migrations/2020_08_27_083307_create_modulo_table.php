@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Escolaridade extends Migration
+class CreateModuloTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class Escolaridade extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('escolaridade', function(Blueprint $table)
-        {
-            $table->engine = 'InnoDB';
+        Schema::create('modulo', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('modulo_id')->nullable();
-            $table->string('nivel_escolaridade', 100);
-
-            $table->foreign('modulo_id')->references('id')->on('modulo');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
@@ -33,7 +27,6 @@ class Escolaridade extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('escolaridade');
+        Schema::dropIfExists('modulo');
     }
 }

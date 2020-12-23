@@ -18,17 +18,10 @@ class Pessoa extends Model
         'idade',
         'data_nascimento',
         'escola_de_origem',
-        'irmaos_na_escola',
-        'nome_irmaos_na_escola',
-        'serie_irmao_na_escola_id',
-        'irmaos_no_sorteio',
-        'nome_irmaos_no_sorteio',
-        'serie_irmao_no_sorteio_id',
         'responsavel',
         'cpf',
         'telefone',
-        'email',
-        'status_aprovado',
+        'email'
     ];
 
     public function escolaridade()

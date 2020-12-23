@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ComprovanteTableSeeder extends Seeder
+class EnderecoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class ComprovanteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Comprovante::class, 300)->create();
-        //
+        factory(\App\Models\Endereco::class, 300)->create();
     }
 }
