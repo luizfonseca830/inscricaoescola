@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EnderecoSeeder extends Seeder
+class EnderecoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

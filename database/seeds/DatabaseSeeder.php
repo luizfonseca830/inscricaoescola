@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        $this->call([EnderecoSeeder::class]);
+        $this->call([EnderecoTableSeeder::class]);
         $this->call([ComprovanteTableSeeder::class]);
         $this->call([ModuloTableSeeder::class]);
         $this->call([UsersTableSeeder::class]);
