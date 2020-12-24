@@ -14,7 +14,7 @@ class JasperController extends Controller
     //
     static public function index(Request $request)
     {
-        $input = public_path() . '/jasper/inscritosescola.jasper';
+        $input = public_path() . '/jasper/inscritosescola.jrxml';
         $output = public_path() . '/jasper/pdf/inscritosescola';
         $options = [
             'format' => ['pdf'],
@@ -36,8 +36,8 @@ class JasperController extends Controller
         /*dd(public_path());*/
         $jasper = new PHPJasper();
 
-        /* $compilando = $jasper->compile($input)->output();
-              dd($compilando);*/
+         $compilando = $jasper->compile($input)->output();
+              dd($compilando);
 
         $x = $jasper->process(
             $input,
