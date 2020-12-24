@@ -6,7 +6,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
     <div class="logo">
-        <a href="#" class="simple-text logo-normal">
+        <a href="{{ route('home') }}" class="simple-text logo-normal">
             {{ __('Instituto São José') }}
         </a>
     </div>
@@ -20,7 +20,7 @@
             </li>
             <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
                 <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-                    <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
+                    <i class="material-icons">build</i>
                     <p>{{ __('Configurações') }}
                         <b class="caret"></b>
                     </p>

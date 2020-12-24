@@ -18,6 +18,20 @@
 
                         <fieldset>
                             <h2>Relatório</h2>
+                            <h3>Selecione a Escolaridade</h3>
+                            <select name="Filtroescolaridade">
+                                <option value="">Não selecionado</option>
+                                @foreach($escolaridades as $escolaridade)
+                                    <option value="{{$escolaridade->id}}">{{$escolaridade->nivel_escolaridade}}</option>
+                                @endforeach
+                            </select>
+                            <h3>Selecione o Modulo</h3>
+                            <select name="Filtromodulo">
+                                <option value="">Não selecionado</option>
+                                @foreach($modulos as $modulo)
+                                    <option value="{{$modulo->id}}">{{$modulo->descricao}}</option>
+                                @endforeach
+                            </select>
 
                             <input type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>

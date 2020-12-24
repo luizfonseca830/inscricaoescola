@@ -13,7 +13,7 @@
 <body>
 <div style="text-align: center; margin-top: 2%;">
 
-    <img src="{{public_path().'/images/logoinstituto.png'}}"/>
+    <img height="150" width="200" src="{{public_path().'/images/logoinstituto.png'}}"/>
     <h1><u>Comprovante de inscrição para o sorteio de vagas</u>
         <br>Ano Letivo: 2021</h1>
 </div>
