@@ -34,9 +34,9 @@ class JasperController extends Controller
             ]
         ];
         /*dd(public_path());*/
-       /* $jasper = new PHPJasper();
+        $jasper = new PHPJasper();
 
-         $compilando = $jasper->compile($input)->output();
+       /*  $compilando = $jasper->compile($input)->output();
               dd($compilando);*/
 
         $x = $jasper->process(
