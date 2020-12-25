@@ -13,11 +13,11 @@ class ModuloTableSeeder extends Seeder
     {
 
         DB::table('modulo')->insert([
-            'descricao' => 'Fundamental'
+            'descricao' => 'Ensino Fundamental'
         ]);
 
         DB::table('modulo')->insert([
-            'descricao' => 'Médio'
+            'descricao' => 'Ensino Médio'
         ]);
     }
 }
