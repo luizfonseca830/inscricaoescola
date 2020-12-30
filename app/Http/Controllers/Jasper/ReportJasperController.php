@@ -3,42 +3,22 @@
 namespace App\Http\Controllers\Jasper;
 
 use App\Http\Controllers\Controller;
-use App\Models\Escolaridade;
-use App\Models\Modulo;
-use http\Client\Response;
 use Illuminate\Http\Request;
 use PHPJasper\PHPJasper;
 
-class JasperController extends Controller
+class ReportJasperController extends Controller
 {
-    //
     static public function index(Request $request)
     {
-        $input = public_path() . '/jasper/inscritosescola.jasper';
-        $output = public_path() . '/jasper/pdf/inscritosescola';
-        if (is_null($request->Filtromodulo) && is_null($request->Filtroescolaridade)) {
+        $input = public_path() . '/jasper/relatorionumerico.jasper';
+        $output = public_path() . '/jasper/pdf/relatorionumerico';
+        if (is_null($request->Filtroescolaridade)) {
             $options = [
                 'format' => ['pdf'],
                 'params' => [
                     'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
                 ],
 
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
-        } else if (!is_null($request->Filtromodulo) && is_null($request->Filtroescolaridade)) {
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtromodulo' => $request->Filtromodulo,
-                ],
                 'db_connection' => [
                     'driver' => getenv('DB_CONNECTION'),
                     'username' => getenv('DB_USERNAME'),
@@ -53,10 +33,8 @@ class JasperController extends Controller
                 'format' => ['pdf'],
                 'params' => [
                     'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroescolaridade' => $request->Filtroescolaridade
+                    'Filtroescolaridade' => $request->Filtroescolaridade,
                 ],
-
                 'db_connection' => [
                     'driver' => getenv('DB_CONNECTION'),
                     'username' => getenv('DB_USERNAME'),
@@ -70,8 +48,8 @@ class JasperController extends Controller
 
         $jasper = new PHPJasper();
 
-         /*$compilando = $jasper->compile($input)->output();
-               dd($compilando);*/
+      /*  $compilando = $jasper->compile($input)->output();
+              dd($compilando);*/
 
         $x = $jasper->process(
             $input,
@@ -79,7 +57,7 @@ class JasperController extends Controller
             $options
         )->execute();
 
-       /*dd($x);*/
+     /*   dd($x);*/
         return $output . '.pdf';
     }
 }

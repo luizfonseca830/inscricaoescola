@@ -63,6 +63,13 @@
                 </a>
             </li>
 
+            <li class="nav-item{{ $activePage == 'RelatorioNumerico' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('relatorionumerico')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Relatório Numérico') }}</p>
+                </a>
+            </li>
+
         </ul>
     </div>
 </div>
