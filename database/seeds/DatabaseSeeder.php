@@ -11,9 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      /*  Schema::disableForeignKeyConstraints();*/
-      /*  $this->call([EnderecoTableSeeder::class]);*/
-       /* $this->call([ComprovanteTableSeeder::class]);*/
+       Schema::disableForeignKeyConstraints();
+       $this->call([EnderecoTableSeeder::class]);
+        $this->call([ComprovanteTableSeeder::class]);
 
         $this->call([ModuloTableSeeder::class]);
         $this->call([UsersTableSeeder::class]);
@@ -21,8 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([TipoTelaTableSeeder::class]);
 
 
-       /* $this->call(PessoaTableSeeder::class);
-
-        Schema::enableForeignKeyConstraints();*/
+        $this->call(PessoaTableSeeder::class);
+        Schema::enableForeignKeyConstraints();
     }
 }

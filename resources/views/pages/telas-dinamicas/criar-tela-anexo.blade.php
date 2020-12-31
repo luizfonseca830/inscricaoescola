@@ -54,7 +54,7 @@
 
                             <div id="data_liberar" hidden>
                                 <p>Selecione um intervalo para liberar a tela</p>
-                                <input type="datetime-local" name="data_inical">
+                                <input type="datetime-local" name="data_inicial">
                                 <input type="datetime-local" name="data_final">
                             </div>
 
