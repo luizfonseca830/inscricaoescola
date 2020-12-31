@@ -15,7 +15,7 @@ class ValidaData
      */
     public function handle($request, Closure $next)
     {
-        if ($request->status_liberar == 1 || $request->data_inicial >= now() || $request->data_final > now()) {
+        if ($request->status_liberar == 1 || $request->data_inicial <= now() || $request->data_final < now()) {
             return $next($request);
         }
         return redirect()->route('inical');
