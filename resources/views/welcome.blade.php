@@ -68,7 +68,7 @@
                             </div>
                         @endif
                     @endif
-                    @if ($protocolo->status_liberar == '1' || $protocolo->data_incial >= $protocolo->data_final)
+                        @if ($protocolo->status_liberar == '1' || $protocolo->data_final > now() || $protocolo->data_inicial >= now())
                         @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
                             <div class="col-lg-4 mt-4 mt-lg-0">
                                 <a href="{{route('protocolo')}}">
@@ -86,7 +86,7 @@
 
 
     @foreach($pdfs as $pdf)
-        @if($pdf->data_inical >= $pdf->data_final || $pdf->status_liberar == '1' )
+        @if ($pdf->status_liberar == '1' || $pdf->data_final > now() || $pdf->data_inicial >= now())
             @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
                 <!-- ======= Services Section ======= -->
                     <section id="services" class="services">
