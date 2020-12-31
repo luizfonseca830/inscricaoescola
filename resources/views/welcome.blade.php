@@ -71,16 +71,15 @@
                         @endif
                     @endif
 
-                        @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
-                            <div class="col-lg-4 mt-4 mt-lg-0">
-                                <a href="{{route('protocolo')}}">
-                                    <button class="icon-box">
-                                        <i class="icofont-ui-note"></i>
-                                        <h3>Buscar Protocolo</h3>
-                                    </button>
-                                </a>
-                            </div>
-                        @endif
+                    @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
+                        <div class="col-lg-4 mt-4 mt-lg-0">
+                            <a href="{{route('protocolo')}}">
+                                <button class="icon-box">
+                                    <i class="icofont-ui-note"></i>
+                                    <h3>Buscar Protocolo</h3>
+                                </button>
+                            </a>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -89,31 +88,30 @@
 
     @foreach($pdfs as $pdf)
 
-            @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
-                <!-- ======= Services Section ======= -->
-                    <section id="services" class="services">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="section-title" data-aos="fade-up">
-                                    <h2>Relatórios</h2>
-                                </div>
-                                <br>
-                                <div class="col-lg-4 col-md-6  align-items-stretch">
-                                    <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                            <h4>{{$pdf->nome_anexo_mostrar}}</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                @endif
-                                @endif
-                                @endforeach
+        @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
+            <!-- ======= Services Section ======= -->
+                <section id="services" class="services">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="section-title" data-aos="fade-up">
+                                <h2>Relatórios</h2>
                             </div>
-
+                            <br>
+                            <div class="col-lg-4 col-md-6  align-items-stretch">
+                                <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                        <h4>{{$pdf->nome_anexo_mostrar}}</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            @endif
+                            @endforeach
                         </div>
-                    </section><!-- End Services Section -->
+
+                    </div>
+                </section><!-- End Services Section -->
 
     </main>
 @endsection
