@@ -56,7 +56,9 @@
         <section id="featured" class="featured">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    @if ($inscricao->status_liberar == '1' || $inscricao->data_final > now() || $inscricao->data_inicial >= now())
+                    @if ($inscricao->status_liberar == '1'
+                      || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
+                      || $inscricao->data_final == null && $inscricao->data_inicial <= now())
                         @if ($inscricao->nome_ou_anexo == 'Inscrição' && ($inscricao->status_liberar == 1) || strtotime($inscricao->data_inicial) <= strtotime(date('Y-m-d H:i')))
                             <div class="col-lg-4">
                                 <a href="{{route('registro')}}">
@@ -68,7 +70,7 @@
                             </div>
                         @endif
                     @endif
-                        @if ($protocolo->status_liberar == '1' || $protocolo->data_final > now() || $protocolo->data_inicial >= now())
+                        @if ($protocolo->status_liberar == '1' || $protocolo->data_final >= now() || $protocolo->data_inicial <= now())
                         @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
                             <div class="col-lg-4 mt-4 mt-lg-0">
                                 <a href="{{route('protocolo')}}">
@@ -86,7 +88,7 @@
 
 
     @foreach($pdfs as $pdf)
-        @if ($pdf->status_liberar == '1' || $pdf->data_final > now() || $pdf->data_inicial >= now())
+        @if ($pdf->status_liberar == '1' || $pdf->data_final >= now() || $pdf->data_inicial <= now())
             @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
                 <!-- ======= Services Section ======= -->
                     <section id="services" class="services">
