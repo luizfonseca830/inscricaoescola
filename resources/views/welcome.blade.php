@@ -56,7 +56,7 @@
         <section id="featured" class="featured">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    @if ($inscricao->status_liberar == '1'
+                    @if ($inscricao->status_liberar == '1' && $inscricao->data_final == null && $inscricao->data_inicial == null
                       || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
                       || $inscricao->data_final == null && $inscricao->data_inicial <= now())
                         @if ($inscricao->nome_ou_anexo == 'Inscrição' && ($inscricao->status_liberar == 1) || strtotime($inscricao->data_inicial) <= strtotime(date('Y-m-d H:i')))
