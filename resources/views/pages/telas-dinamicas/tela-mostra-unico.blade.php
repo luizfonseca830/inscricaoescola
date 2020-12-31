@@ -61,14 +61,15 @@
                             </div>
                             @if ($tela->status_liberar == 0)
                                 <div id="data_liberar">
-                                    <p>Selecione uma Data para liberar a Tela</p>
-                                    <input type="datetime-local" id="input-data_liberar" name="data_liberar" value="{{date('d/m/Y H:i', strtotime($tela->data_liberar))}}">
+                                    <p>Selecione um intervalo para liberar a tela</p>
+                                    <input type="datetime-local" id="input-data_inicial" name="data_inicial" value="{{date('d/m/Y H:i', strtotime($tela->data_inicial))}}">
+                                    <input type="datetime-local" id="input-data_final" name="data_final" value="{{date('d/m/Y H:i', strtotime($tela->data_final))}}">
                                 </div>
                             @else
                                 <div id="data_liberar" hidden>
-                                    <p>Selecione uma Data para liberar a Tela</p>
-
-                                    <input type="date" id="input-data_liberar" name="data_liberar">
+                                    <p>Selecione um intervalo para liberar a tela</p>
+                                    <input type="datetime-local" id="input-data_inicial" name="data_inicial">
+                                    <input type="datetime-local" id="input-data_final" name="data_final">
                                 </div>
                             @endif
                             <input type="submit" name="next" id="confirma" class="acao" value="Editar"/>

@@ -56,8 +56,8 @@
         <section id="featured" class="featured">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    @if ($inscricao->status_liberar == '1' || !is_null($inscricao->data_liberar) )
-                        @if ($inscricao->nome_ou_anexo == 'Inscrição' && ($inscricao->status_liberar == 1) || strtotime($inscricao->data_liberar) <= strtotime(date('Y-m-d H:i')))
+                    @if ($inscricao->status_liberar == '1' || $inscricao->data_final > now() || $inscricao->data_inicial >= now())
+                        @if ($inscricao->nome_ou_anexo == 'Inscrição' && ($inscricao->status_liberar == 1) || strtotime($inscricao->data_inicial) <= strtotime(date('Y-m-d H:i')))
                             <div class="col-lg-4">
                                 <a href="{{route('registro')}}">
                                     <button class="icon-box">
@@ -68,8 +68,8 @@
                             </div>
                         @endif
                     @endif
-                    @if ($protocolo->status_liberar == '1' || !is_null($protocolo->data_liberar) )
-                        @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_liberar) <= strtotime(date('Y-m-d H:i')))
+                    @if ($protocolo->status_liberar == '1' || $protocolo->data_incial >= $protocolo->data_final)
+                        @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
                             <div class="col-lg-4 mt-4 mt-lg-0">
                                 <a href="{{route('protocolo')}}">
                                     <button class="icon-box">
@@ -86,8 +86,8 @@
 
 
     @foreach($pdfs as $pdf)
-        @if ($pdf->status_liberar == '1' || !is_null($pdf->data_liberar) )
-            @if (($pdf->status_liberar == '1') || strtotime($pdf->data_liberar) <= strtotime(date('Y-m-d H:i')))
+        @if($pdf->data_inical >= $pdf->data_final || $pdf->status_liberar == '1' )
+            @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
                 <!-- ======= Services Section ======= -->
                     <section id="services" class="services">
                         <div class="container">

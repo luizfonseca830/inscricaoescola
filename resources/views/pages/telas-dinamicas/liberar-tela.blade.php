@@ -18,8 +18,8 @@
                             <th scope="col">#</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Nome da Tela</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Data Liberar</th>
+                            <th scope="col">Data Encerrar</th>
                             <th scope="col">Opções</th>
                         </tr>
                         </thead>
@@ -33,13 +33,21 @@
                                 @else
                                     <th>{{$tela->nome_ou_anexo}}</th>
                                 @endif
-                                <th>{{$tela->status_liberar}}</th>
-                                @if (!is_null($tela->data_liberar))
-                                    <th>{{$tela->data_liberar}}</th>
-                                @elseif (is_null($tela->data_liberar) && $tela->status_liberar == '0')
-                                    <th>Essa tela não está liberada</th>
-                                @else
+                                @if (!is_null($tela->data_inicial))
+                                    <th>{{date('d/m/Y H:i', strtotime($tela->data_inicial))}}</th>
+                                @elseif ($tela->status_liberar == '1')
                                     <th>Essa tela está liberada</th>
+                                @else
+                                    <th>Essa tela não está liberada</th>
+
+                                @endif
+                                @if (!is_null($tela->data_final))
+                                    <th>{{date('d/m/Y H:i', strtotime($tela->data_final))}}</th>
+                                @elseif ($tela->status_liberar == '1')
+                                    <th>Essa tela está liberada</th>
+                                @else
+                                    <th>Essa tela não está liberada</th>
+
                                 @endif
                                 <th>
                                     <a href="{{route('tela-unica-mostra', $tela->id)}}" style="margin-right: 15px"><i class="material-icons" style="color: blue">create</i></a>

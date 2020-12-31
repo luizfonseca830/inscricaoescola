@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.13.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inscrição escola"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -181,11 +181,11 @@
 	<title>
 		<band height="188" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="116" y="24" width="430" height="36" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<reportElement style="Detail" x="100" y="24" width="455" height="36" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Center">
-					<font size="20" isBold="true"/>
+					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[RELATORIO NUMÉRICO]]></text>
+				<text><![CDATA[INSCRITOS  PARA O SORTEIO DE VAGAS                                                     ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Detail" x="156" y="106" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
@@ -202,25 +202,25 @@
 				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="246" y="70" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
+				<reportElement style="Detail" x="246" y="66" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ANO LETIVO:2021]]></text>
+				<text><![CDATA[ANO LETIVO: 2021]]></text>
 			</staticText>
 			<image>
 				<reportElement x="20" y="24" width="80" height="75" uuid="6e11be37-453f-43a4-b7b4-e8167651be96"/>
 				<imageExpression><![CDATA[$P{CAMINHO_IMAGEM}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="272" y="151" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
+				<reportElement x="319" y="151" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($P{Filtroescolaridade} == null , "Não selecionado", $F{nivel_escolaridade} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="192" y="150" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
+				<reportElement x="239" y="150" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>

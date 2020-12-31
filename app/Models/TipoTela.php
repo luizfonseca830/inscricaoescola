@@ -13,7 +13,8 @@ class TipoTela extends Model
         'tipo',
         'nome_ou_anexo',
         'status_liberar',
-        'data_liberar',
+        'data_inicial',
+        'data_final',
         'nome_anexo_mostrar'
     ];
 }

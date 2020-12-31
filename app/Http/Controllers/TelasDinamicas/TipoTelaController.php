@@ -14,7 +14,7 @@ class TipoTelaController extends Controller
     {
 
         //VERIFICAR SE N FOI MARCADO OS 2
-        if (!is_null($request->tela_nome) && $request->nome_pdf != '0' || ($request->status_liberar == '1' && !is_null($request->data_liberar)) ) {
+        if (!is_null($request->tela_nome) && $request->nome_pdf != '0' || ($request->status_liberar == '1' && !is_null($request->data_inicial)) ) {
             session()->put('error', 'Parece que algo de errado aconteceu!');
             return redirect()->route('tela-criar');
         }
@@ -36,7 +36,8 @@ class TipoTelaController extends Controller
                     'nome_anexo_mostrar' => $request->tela_nome_pdf,
                     'nome_ou_anexo' => $request->nome_pdf,
                     'status_liberar' => $request->status_liberar,
-                    'data_liberar' => $request->data_liberar,
+                    'data_inicial' => $request->data_inicial,
+                    'data_final' => $request->data_final,
                 ]);
                 session()->put('sucess', 'Tela Criada com sucesso!');
                 return redirect()->route('tela-criar');
@@ -53,7 +54,8 @@ class TipoTelaController extends Controller
                 'tipo' => 'Tela',
                 'nome_ou_anexo' => $request->tela_nome,
                 'status_liberar' => $request->status_liberar,
-                'data_liberar' => $request->data_liberar,
+                'data_inicial' => $request->data_inicial,
+                'data_final' => $request->data_final,
             ]);
             session()->put('sucess', 'Tela Criada com sucesso!');
             return redirect()->route('tela-criar');
@@ -88,7 +90,7 @@ class TipoTelaController extends Controller
 
     public function update(Request $request, $id){
         //VERIFICAR SE N FOI MARCADO A DATA E SELECIONADO O LIBERAR
-        if ($request->status_liberar == '1' && !is_null($request->data_liberar) ) {
+        if ($request->status_liberar == '1' && !is_null($request->data_inicial)) {
             session()->put('error', 'Parece que algo de errado aconteceu!');
             return redirect()->route('tela-unica-mostra', $id);
         }
@@ -105,10 +107,12 @@ class TipoTelaController extends Controller
             $tela->update([
                 'nome_ou_anexo' => $request->nome_ou_anexo,
                 'status_liberar' => $request->status_liberar,
-                'data_liberar' => $request->data_liberar
+                'data_inicial' => $request->data_inicial,
+                'data_final' => $request->data_final,
+
             ]);
             session()->put('sucess', 'Tela Editada com Sucesso!');
-            return redirect()->route('tela-unica-mostra', $id);
+            return redirect()->route('tela-liberar', $id);
         }
     }
 }

@@ -32,16 +32,16 @@ Route::get('/', function () {
     ]);
 })->name('inical');
 
+Route::group(['middleware' => 'validadata'], function () {
+    Route::get('/registro', function () {
+        $escolaridade = \App\Models\Escolaridade::all();
+        return view('registro.registro')->with([
+            'escolaridade' => $escolaridade
+        ]);
+    })->name('registro');
 
-Route::get('/registro', function () {
-    $escolaridade = \App\Models\Escolaridade::all();
-    return view('registro.registro')->with([
-        'escolaridade' => $escolaridade
-    ]);
-})->name('registro');
-
-Route::post('registros', 'RegistroController@store')->name('registros');
-
+    Route::post('registros', 'RegistroController@store')->name('registros');
+});
 
 Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
 
@@ -51,11 +51,10 @@ Route::get('/protocolo', 'ComprovanteController@protocolo')->name('protocolo');
 Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('comprovante-procurar');
 
 
-
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+    Route::get('table-list', function () {
+        return view('pages.table_list');
+    })->name('table');
 
     Route::get('/add-user', function () {
         return view('auth.register');
@@ -87,10 +86,10 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    Route::resource('user', 'UserController', ['except' => ['show']]);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
 Route::get('/gerarPDF/{comprovante}', 'ComprovanteController@gerarComprovanteCpf')->name('gerarpdf-comprovante');

@@ -53,8 +53,9 @@
                             </div>
 
                             <div id="data_liberar" hidden>
-                                <p>Selecione uma Data para liberar a Tela</p>
-                                <input type="datetime-local" name="data_liberar">
+                                <p>Selecione um intervalo para liberar a tela</p>
+                                <input type="datetime-local" name="data_inical">
+                                <input type="datetime-local" name="data_final">
                             </div>
 
                             <input type="submit" name="next" id="confirma" class="acao" value="Criar"/>

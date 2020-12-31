@@ -70,7 +70,7 @@ class JasperController extends Controller
 
         $jasper = new PHPJasper();
 
-         /*$compilando = $jasper->compile($input)->output();
+        /* $compilando = $jasper->compile($input)->output();
                dd($compilando);*/
 
         $x = $jasper->process(
@@ -79,7 +79,7 @@ class JasperController extends Controller
             $options
         )->execute();
 
-       /*dd($x);*/
+     /*  dd($x);*/
         return $output . '.pdf';
     }
 }

@@ -57,7 +57,7 @@ class ReportJasperController extends Controller
             $options
         )->execute();
 
-     /*   dd($x);*/
+       /* dd($x);*/
         return $output . '.pdf';
     }
 }
