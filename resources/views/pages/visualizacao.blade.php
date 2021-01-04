@@ -6,7 +6,7 @@
             <table id="example" class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Nº</th>
                     <th scope="col">Nome</th>
                     <th scope="col">CPF</th>
                     <th scope="col">Ações</th>
@@ -33,16 +33,14 @@
             </table>
         </div>
     </div>
-
-
 @endsection
 @section('script')
-    <script src="{{asset('js/area-restrita/functions.js')}}"></script>
+
     <script>$(document).ready(function () {
             // Setup - add a text input to each footer cell
             $('#example tfoot th').each(function () {
                 var title = $(this).text();
-                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+                $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
             });
 
             // DataTable
