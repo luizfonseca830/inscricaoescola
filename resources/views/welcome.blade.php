@@ -56,22 +56,22 @@
         <section id="featured" class="featured">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    @if ($inscricao->status_liberar == '1' && $inscricao->data_final == null && $inscricao->data_inicial == null
-                      || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
-                      || $inscricao->data_final == null && $inscricao->data_inicial <= now())
-                        @if ($inscricao->nome_ou_anexo == 'Inscrição' && ($inscricao->status_liberar == 1) || strtotime($inscricao->data_inicial) <= strtotime(date('Y-m-d H:i')))
-                            <div class="col-lg-4">
-                                <a href="{{route('registro')}}">
-                                    <button class="icon-box">
-                                        <i class="icofont-plus"></i>
-                                        <h3>Inscrição</h3>
-                                    </button>
-                                </a>
-                            </div>
-                        @endif
+                    @if ($inscricao->status_liberar == '1' && is_null($inscricao->data_final) &&  is_null($inscricao->data_inicial)
+                                    || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
+                                    || is_null($inscricao->data_final) && !is_null($inscricao->data_inicial) && $inscricao->data_inicial <= now())
+                        <div class="col-lg-4">
+                            <a href="{{route('registro')}}">
+                                <button class="icon-box">
+                                    <i class="icofont-plus"></i>
+                                    <h3>Inscrição</h3>
+                                </button>
+                            </a>
+                        </div>
                     @endif
 
-                    @if ($protocolo->nome_ou_anexo == 'Protocolo' && ($protocolo->status_liberar == 1) || strtotime($protocolo->data_inicial) <= strtotime(date('Y-m-d H:i')))
+                        @if ($inscricao->status_liberar == '1' && is_null($inscricao->data_final) &&  is_null($inscricao->data_inicial)
+                                         || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
+                                         || is_null($inscricao->data_final) && !is_null($inscricao->data_inicial) && $inscricao->data_inicial <= now())
                         <div class="col-lg-4 mt-4 mt-lg-0">
                             <a href="{{route('protocolo')}}">
                                 <button class="icon-box">
