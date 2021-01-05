@@ -2,7 +2,7 @@
 @extends('layouts.modal-message')
 @section('content')
     <div class="content">
-        <div class="row justify-content-center" id="carregando" style="display: block">
+        <div class="row justify-content-center" id="carregando">
             <img src="{{asset('/gifs/loading.gif')}}">
         </div>
         <div id="tabela-none" class="container-fluid" style="display: none">
