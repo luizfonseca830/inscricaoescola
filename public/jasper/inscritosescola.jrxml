@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 5.0.1  -->
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inscrição escola"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL.xml"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -191,55 +191,60 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="188" splitType="Stretch">
+		<band height="255" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="100" y="24" width="457" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<reportElement style="Detail" x="90" y="90" width="457" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="false"/>
 				</textElement>
 				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                                   DE VAGAS                                                                                 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="156" y="106" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
+				<reportElement style="Detail" x="143" y="174" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" mode="Transparent" x="288" y="120" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
+				<reportElement style="Detail" mode="Transparent" x="261" y="190" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
 				<textElement>
 					<font isItalic="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="246" y="70" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
+				<reportElement style="Detail" x="233" y="141" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ANO LETIVO: 2021]]></text>
 			</staticText>
 			<image>
-				<reportElement x="20" y="24" width="80" height="75" uuid="6e11be37-453f-43a4-b7b4-e8167651be96"/>
+				<reportElement x="288" y="10" width="80" height="75" uuid="6e11be37-453f-43a4-b7b4-e8167651be96">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<imageExpression><![CDATA[$P{CAMINHO_IMAGEM}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="173" y="151" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
+				<reportElement x="281" y="215" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($P{Filtroescolaridade} == null , "Não selecionado", $F{nivel_escolaridade} )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="414" y="150" width="107" height="30" uuid="3dc56417-1369-4d18-bd11-17d1a9b4bb17"/>
+				<reportElement x="250" y="233" width="170" height="20" uuid="3dc56417-1369-4d18-bd11-17d1a9b4bb17"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($P{Filtromodulo} == null, "Não selecionado", $F{descricao})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="93" y="150" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
+				<reportElement x="201" y="215" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -247,7 +252,7 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="365" y="150" width="49" height="15" uuid="558bf217-ac47-440c-951c-0f2435e0c1a2"/>
+				<reportElement x="201" y="233" width="49" height="15" uuid="558bf217-ac47-440c-951c-0f2435e0c1a2"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -264,45 +269,45 @@
 	<detail>
 		<band height="80" splitType="Stretch">
 			<rectangle>
-				<reportElement x="166" y="7" width="344" height="73" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+				<reportElement x="156" y="7" width="344" height="73" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
-				<reportElement key="" mode="Transparent" x="213" y="10" width="256" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="203" y="10" width="256" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="174" y="8" width="40" height="26" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
+				<reportElement key="" mode="Transparent" x="164" y="8" width="40" height="26" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="203" y="34" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
+				<reportElement key="" mode="Transparent" x="193" y="34" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="174" y="35" width="29" height="20" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
+				<reportElement key="" mode="Transparent" x="164" y="35" width="29" height="20" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[CPF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" mode="Transparent" x="174" y="56" width="68" height="16" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
+				<reportElement key="" mode="Transparent" x="164" y="56" width="68" height="16" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Protocolo:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="236" y="56" width="250" height="16" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
+				<reportElement key="" mode="Transparent" x="226" y="56" width="250" height="16" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
