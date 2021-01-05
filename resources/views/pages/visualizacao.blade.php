@@ -2,8 +2,11 @@
 @extends('layouts.modal-message')
 @section('content')
     <div class="content">
-        <div class="container-fluid">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <div class="row justify-content-center" id="carregando" style="display: block">
+            <img src="{{asset('/gifs/loading.gif')}}">
+        </div>
+        <div id="tabela-none" class="container-fluid" style="display: none">
+            <table id="example" class="table table-striped table-bordered" style="width:100%;">
                 <thead>
                 <tr>
                     <th>Nº</th>
@@ -81,6 +84,10 @@
                 }
             });
 
+            if (table) {
+                $("#tabela-none").css("display", "block");
+                $("#carregando").css("display", "none");
+            }
         });
     </script>
 @endsection
