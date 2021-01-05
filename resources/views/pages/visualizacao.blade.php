@@ -3,35 +3,6 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            {{--            <table id="example" class="table table-striped table-bordered">--}}
-            {{--                <thead>--}}
-            {{--                <tr>--}}
-            {{--                    <th scope="col">Nº</th>--}}
-            {{--                    <th scope="col">Nome</th>--}}
-            {{--                    <th scope="col">CPF</th>--}}
-            {{--                    <th scope="col">Ações</th>--}}
-            {{--                </tr>--}}
-            {{--                </thead>--}}
-            {{--                <tbody>--}}
-            {{--                @forelse($pessoas as $pessoa)--}}
-            {{--                    <tr>--}}
-            {{--                        <td>{{$pessoa->id}}</td>--}}
-            {{--                        <td>{{$pessoa->nome_completo}}</td>--}}
-            {{--                        <td>{{$pessoa->cpf}}</td>--}}
-            {{--                        <td><a href="{{route('visualizacao-pessoa', $pessoa->id)}}"> <input type="button"--}}
-            {{--                                                                                            class="btn btn-outline-info"--}}
-            {{--                                                                                            value="Visualizar"></a>--}}
-            {{--                        </td>--}}
-            {{--                    </tr>--}}
-
-            {{--                @empty--}}
-            {{--                    <tr>--}}
-            {{--                        <td colspan="2">Nenhum Resultado Encontrado</td>--}}
-            {{--                    </tr>--}}
-            {{--                @endforelse--}}
-            {{--                </tbody>--}}
-            {{--            </table>--}}
-
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
@@ -60,6 +31,7 @@
                     <th>Nº</th>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Ações</th>
                 </tr>
                 </tfoot>
             </table>
@@ -71,10 +43,10 @@
     <script>
         $(document).ready(function () {
             // Setup - add a text input to each footer cell
-            $('#example tfoot th').each(function () {
-                var title = $(this).text();
-                $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
-            });
+            // $('#example th').each(function () {
+            //     var title = $(this).text();
+            //     $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
+            // });
 
             // DataTable
             var table = $('#example').DataTable({
