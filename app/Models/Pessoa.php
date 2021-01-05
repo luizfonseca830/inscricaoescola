@@ -21,7 +21,13 @@ class Pessoa extends Model
         'responsavel',
         'cpf',
         'telefone',
-        'email'
+        'email',
+        'irmaos_na_escola',
+        'nome_irmaos_na_escola',
+        'serie_irmao_na_escola_id',
+        'irmaos_no_sorteio',
+        'nome_irmaos_no_sorteio',
+        'serie_irmao_no_sorteio_id'
     ];
 
     public function escolaridade()

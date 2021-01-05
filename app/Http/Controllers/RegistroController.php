@@ -13,7 +13,6 @@ class RegistroController extends Controller
 {
     public function store(Registro $request)
     {
-
         $endereco_id = Endereco::create([
             'endereco' => $request->endereco . ', ' . $request->numero,
             'bairro' => $request->bairro,
@@ -47,5 +46,19 @@ class RegistroController extends Controller
 
         return redirect()->route('registro/comprovante', $comprovante);
 
+    }
+
+    public function registro()
+    {
+        $escolaridade = \App\Models\Escolaridade::all();
+        $inscricao = \App\Models\TipoTela::where('nome_ou_anexo', 'Inscrição')->first();
+        if ($inscricao->status_liberar == '1' && is_null($inscricao->data_final) && is_null($inscricao->data_inicial)
+            || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
+            || is_null($inscricao->data_final) && !is_null($inscricao->data_inicial) && $inscricao->data_inicial <= now()) {
+            return view('registro.registro')->with([
+                'escolaridade' => $escolaridade
+            ]);
+        } else
+            return redirect()->route('inical');
     }
 }

@@ -69,9 +69,9 @@
                         </div>
                     @endif
 
-                        @if ($inscricao->status_liberar == '1' && is_null($inscricao->data_final) &&  is_null($inscricao->data_inicial)
-                                         || $inscricao->data_final >= now() && $inscricao->data_inicial <= now()
-                                         || is_null($inscricao->data_final) && !is_null($inscricao->data_inicial) && $inscricao->data_inicial <= now())
+                        @if ($protocolo->status_liberar == '1' && is_null($protocolo->data_final) &&  is_null($protocolo->data_inicial)
+                                         || $protocolo->data_final >= now() && $protocolo->data_inicial <= now()
+                                         || is_null($protocolo->data_final) && !is_null($protocolo->data_inicial) && $protocolo->data_inicial <= now())
                         <div class="col-lg-4 mt-4 mt-lg-0">
                             <a href="{{route('protocolo')}}">
                                 <button class="icon-box">

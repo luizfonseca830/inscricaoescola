@@ -1,13 +1,14 @@
 @extends('layouts.app', ['activePage' => '', 'titlePage' => __('')])
 @section('css')
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
-
 @endsection
 @section('content')
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 @csrf
+                <h4>Inscrito em:<input type="timestamp" value="{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}" disabled/></h4>
+
                 <div class="row">
                     <h2>Dados Pessoais do Aluno</h2>
                     <div class="col-sm-8">
@@ -52,7 +53,7 @@
                                 @endif
                                 @if ($pessoa->irmaos_na_escola == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão Na Escola</p>
-                                    <input size="50" type="text" value="{{$pessoa->escolaridade->nivel_escolaridade}}"
+                                    <input size="50" type="text" value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_na_escola_id)->nivel_escolaridade}}"
                                            disabled/>
                                 @endif
                                 <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
@@ -63,7 +64,7 @@
                                 @endif
                                 @if ($pessoa->irmaos_no_sorteio == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
-                                    <input size="50" type="text" value="{{$pessoa->escolaridade->nivel_escolaridade}}"
+                                    <input size="50" type="text" value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
                                            disabled/>
                                 @endif
 
@@ -93,5 +94,9 @@
 
     <script src="{{asset('js/area-restrita/functions.js')}}"></script>
     <script src="{{asset('js/registro/function.js')}}"></script>
+    <script src="{{asset('js/jquery.inputmask.min.js')}}"></script>
+    <script src="{{asset('js/registro/mask.js')}}"></script>
+    <script src="{{asset('js/registro/cep.js')}}"></script>
+    <script src="{{asset('js/registro/selecionador.js')}}"></script>
 
 @endsection
