@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
         <div class="row justify-content-center" id="carregando">
-            <img src="{{asset('/gifs/loading.gif')}}">
+            <img src="{{asset('/gifs/Spinner-1s-164px.gif')}}">
         </div>
         <div id="tabela-none" class="container-fluid" style="display: none">
             <table id="example" class="table table-striped table-bordered" style="width:100%;">
