@@ -48,16 +48,12 @@ class ReportJasperController extends Controller
 
         $jasper = new PHPJasper();
 
-      /*  $compilando = $jasper->compile($input)->output();
-              dd($compilando);*/
-
         $x = $jasper->process(
             $input,
             $output,
             $options
         )->execute();
 
-       /* dd($x);*/
         return $output . '.pdf';
     }
 }
