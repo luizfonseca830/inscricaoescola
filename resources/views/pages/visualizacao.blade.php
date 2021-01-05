@@ -3,17 +3,46 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <table id="example" class="table table-striped table-bordered">
+            {{--            <table id="example" class="table table-striped table-bordered">--}}
+            {{--                <thead>--}}
+            {{--                <tr>--}}
+            {{--                    <th scope="col">Nº</th>--}}
+            {{--                    <th scope="col">Nome</th>--}}
+            {{--                    <th scope="col">CPF</th>--}}
+            {{--                    <th scope="col">Ações</th>--}}
+            {{--                </tr>--}}
+            {{--                </thead>--}}
+            {{--                <tbody>--}}
+            {{--                @forelse($pessoas as $pessoa)--}}
+            {{--                    <tr>--}}
+            {{--                        <td>{{$pessoa->id}}</td>--}}
+            {{--                        <td>{{$pessoa->nome_completo}}</td>--}}
+            {{--                        <td>{{$pessoa->cpf}}</td>--}}
+            {{--                        <td><a href="{{route('visualizacao-pessoa', $pessoa->id)}}"> <input type="button"--}}
+            {{--                                                                                            class="btn btn-outline-info"--}}
+            {{--                                                                                            value="Visualizar"></a>--}}
+            {{--                        </td>--}}
+            {{--                    </tr>--}}
+
+            {{--                @empty--}}
+            {{--                    <tr>--}}
+            {{--                        <td colspan="2">Nenhum Resultado Encontrado</td>--}}
+            {{--                    </tr>--}}
+            {{--                @endforelse--}}
+            {{--                </tbody>--}}
+            {{--            </table>--}}
+
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
-                    <th scope="col">Nº</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Ações</th>
+                    <th>Nº</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
-                @forelse($pessoas as $pessoa)
+                @foreach($pessoas as $pessoa)
                     <tr>
                         <td>{{$pessoa->id}}</td>
                         <td>{{$pessoa->nome_completo}}</td>
@@ -23,20 +52,24 @@
                                                                                             value="Visualizar"></a>
                         </td>
                     </tr>
+                @endforeach
 
-                @empty
-                    <tr>
-                        <td colspan="2">Nenhum Resultado Encontrado</td>
-                    </tr>
-                @endforelse
                 </tbody>
+                <tfoot>
+                <tr>
+                    <th>Nº</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                </tr>
+                </tfoot>
             </table>
         </div>
     </div>
 @endsection
 @section('script')
 
-    <script>$(document).ready(function () {
+    <script>
+        $(document).ready(function () {
             // Setup - add a text input to each footer cell
             $('#example tfoot th').each(function () {
                 var title = $(this).text();
@@ -58,6 +91,21 @@
                             }
                         });
                     });
+                },
+                "language": {
+                    "search": "Pesquisa",
+                    "show": "Visualizar",
+                    "info": "Mostrando  uma _PAGE_ de _PAGES_ entradas",
+                    "lengthMenu": "Mostrando _MENU_ resultados por página",
+                    "infoEmpty": "Nenhum resultado foi encontrado.",
+                    "infoFiltered": "(filtrados _MAX_ entradas no total.)",
+                    "zeroRecords": "Nenhum resultado encontrado.",
+                    "paginate": {
+                        "first":      "Primeiro",
+                        "last":       "Último",
+                        "next":       "Próximo",
+                        "previous":   "Anterior"
+                    },
                 }
             });
 
