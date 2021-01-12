@@ -69,9 +69,9 @@
                         </div>
                     @endif
 
-                        @if ($protocolo->status_liberar == '1' && is_null($protocolo->data_final) &&  is_null($protocolo->data_inicial)
-                                         || $protocolo->data_final >= now() && $protocolo->data_inicial <= now()
-                                         || is_null($protocolo->data_final) && !is_null($protocolo->data_inicial) && $protocolo->data_inicial <= now())
+                    @if ($protocolo->status_liberar == '1' && is_null($protocolo->data_final) &&  is_null($protocolo->data_inicial)
+                                     || $protocolo->data_final >= now() && $protocolo->data_inicial <= now()
+                                     || is_null($protocolo->data_final) && !is_null($protocolo->data_inicial) && $protocolo->data_inicial <= now())
                         <div class="col-lg-4 mt-4 mt-lg-0">
                             <a href="{{route('protocolo')}}">
                                 <button class="icon-box">
@@ -88,7 +88,9 @@
 
     @foreach($pdfs as $pdf)
 
-        @if (($pdf->status_liberar == '1') || strtotime($pdf->data_inicial) <= strtotime(date('Y-m-d H:i')))
+        @if ($pdf->status_liberar == '1' && is_null($pdf->data_final) &&  is_null($pdf->data_inicial)
+                                         || $pdf->data_final >= now() && $pdf->data_inicial <= now()
+                                         || is_null($pdf->data_final) && !is_null($pdf->data_inicial) && $pdf->data_inicial <= now())
             <!-- ======= Services Section ======= -->
                 <section id="services" class="services">
                     <div class="container">
@@ -106,12 +108,148 @@
                                     </button>
                                 </a>
                             </div>
-                            @endif
-                            @endforeach
-                        </div>
 
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                </section><!-- End Services Section -->
+
+                <!-- ======= Services Section ======= -->
+                <section id="services" class="services">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>Edital</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </section><!-- End Services Section -->
+
+<!--                <section id="services" class="services">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>Lista de Alunos Sorteados</h2>
+                        </div>
+                        <div class="row justify-content-center">
+
+                            <div class="col-lg-4 col-md-6  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>1° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>2° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>3° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>4° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>5° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>6° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>7° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>8° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>9° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>1° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>2° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>3° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
 
     </main>
 @endsection

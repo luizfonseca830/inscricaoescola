@@ -73,6 +73,8 @@
                                 class="bx bxl-facebook"></i></a>
                         <a href="https://www.instagram.com/institutosaojose_isj/" class="instagram" target="_blank"><i
                                 class="bx bxl-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCavmywsWUE80dJqKM-azAUA/" class="youtube" target="_blank"><i
+                                class="bx bxl-youtube"></i></a>
                     </div>
                 </div>
 
