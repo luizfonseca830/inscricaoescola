@@ -98,7 +98,11 @@
                                 <a href="{{asset('pdf/'.$pdf->nome_ou_anexo)}}" target="_blank">
                                     <button class="icon-box">
                                         <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                        <h4>{{$pdf->nome_anexo_mostrar}}</h4>
+                                        <div class="box-text">
+
+                                            <h4>{{$pdf->nome_anexo_mostrar}}</h4>
+
+                                        </div>
                                         <p>Clique aqui para baixar</p>
                                     </button>
                                 </a>

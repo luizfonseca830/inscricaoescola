@@ -99,7 +99,8 @@ section {
 .services .icon-box {
     text-align: center;
     border: 1px solid #ededed;
-    padding: 80px 120px;
+    padding: 10px 120px;
+    height: 400px;
     margin-bottom: 5%;
     transition: all ease-in-out 0.3s;
 }
