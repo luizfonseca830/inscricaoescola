@@ -189,7 +189,7 @@
                                 <input type="checkbox" name="termo_de_privacidade" required>
                             </div>
                             <div class="col-8">
-                                <label>Concordo com os Termos de <a href="jasper/pdf/politicadeprivacidade2021.pdf" target="_blank">Política de Privacidade</a></label>
+                                <label>Concordo com os Termos de <a href="/jasper/pdf/politicadeprivacidade2021.pdf" target="_blank">Política de Privacidade</a></label>
                             </div>
                         </div>
                     </div>
