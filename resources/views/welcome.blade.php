@@ -88,29 +88,26 @@
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
-            <div class="container">
-                <div class="row justify-content-center">
-                    @foreach($pdfs as $pdf)
-                        @if ($pdf->status_liberar == '1' && is_null($pdf->data_final) &&  is_null($pdf->data_inicial)
-                                                         || $pdf->data_final >= now() && $pdf->data_inicial <= now()
-                                                         || is_null($pdf->data_final) && !is_null($pdf->data_inicial) && $pdf->data_inicial <= now())
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                                <a href="{{asset('pdf/'.$pdf->nome_ou_anexo)}}" target="_blank">
-                                    <button class="icon-box">
-                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                        <div class="box-text">
-
-                                            <h4>{{$pdf->nome_anexo_mostrar}}</h4>
-
-                                        </div>
-                                        <p>Clique aqui para baixar</p>
-                                    </button>
-                                </a>
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
+            <div class="row justify-content-center" style="margin-left: 10%">
+                @foreach($pdfs as $pdf)
+                    @if ($pdf->status_liberar == '1' && is_null($pdf->data_final) &&  is_null($pdf->data_inicial)
+                                                     || $pdf->data_final >= now() && $pdf->data_inicial <= now()
+                                                     || is_null($pdf->data_final) && !is_null($pdf->data_inicial) && $pdf->data_inicial <= now())
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="margin-bottom: 2%">
+                            <a href="{{asset('pdf/'.$pdf->nome_ou_anexo)}}" target="_blank">
+                                <div class="card" style="width: 18rem;">
+                                    <i class="card-img-top bx bxl-adobe"
+                                       style="font-size: 150px; color: orangered; text-align: center"></i>
+                                    <div class="card-body">
+                                        <p class="card-text">{{$pdf->nome_anexo_mostrar}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
             </div>
+
         </section>
 
         <!-- End Services Section -->
