@@ -99,7 +99,7 @@
                                     <i class="card-img-top bx bxl-adobe"
                                        style="font-size: 150px; color: orangered; text-align: center"></i>
                                     <div class="card-body">
-                                        <p class="card-text">{{$pdf->nome_anexo_mostrar}}</p>
+                                        <p class="card-text text-center">{{$pdf->nome_anexo_mostrar}}</p>
                                     </div>
                                 </div>
                             </a>
