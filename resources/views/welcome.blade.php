@@ -96,7 +96,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-4 col-md-6  align-items-stretch">
-                                <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
+                                <a href="{{asset('pdf/'.$pdf->nome_ou_anexo)}}" target="_blank">
                                     <button class="icon-box">
                                         <div class="icon"><i class="bx bxl-adobe"></i></div>
                                         <h4>{{$pdf->nome_anexo_mostrar}}</h4>

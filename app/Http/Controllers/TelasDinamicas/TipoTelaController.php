@@ -12,33 +12,35 @@ class TipoTelaController extends Controller
     //
     public function store(Request $request)
     {
-
+//        dd($request->all());
         //VERIFICAR SE N FOI MARCADO OS 2
         if (!is_null($request->tela_nome) && $request->nome_pdf != '0' || ($request->status_liberar == '1' && !is_null($request->data_inicial)) ) {
             session()->put('error', 'Parece que algo de errado aconteceu!');
             return redirect()->route('tela-criar');
         }
+//        dd(2);
         //SALVA PDF
         if ($request->tipo_tela == 'PDF') {
             //VERIFICAR SE O PDF VEIO
-            if ($request->nome_pdf == '0') {
+            if (!isset($request->arquivo_pdf)) {
+//                dd(1);
                 session()->put('error', 'Parece que você não selecionou o PDF!');
                 return redirect()->route('tela-criar');
-            } else {
+            }
+            else {
                 //VERIFICAR SE O NOME JA EXISTE
-                $tipoTela = TipoTela::where('nome_ou_anexo', $request->nome_pdf)->first();
-                if (!is_null($tipoTela)){
-                    session()->put('error', 'Parece que esse anexo já está sendo utilizado!');
-                    return redirect()->route('tela-criar');
-                }
-                TipoTela::create([
+//                dd($request->all());
+                $file = $request->file('arquivo_pdf');
+                $fileName = time() . '-.' . $file->getClientOriginalName();
+                $tela = TipoTela::create([
                     'tipo' => 'PDF',
                     'nome_anexo_mostrar' => $request->tela_nome_pdf,
-                    'nome_ou_anexo' => $request->nome_pdf,
+                    'nome_ou_anexo' => $fileName,
                     'status_liberar' => $request->status_liberar,
                     'data_inicial' => $request->data_inicial,
                     'data_final' => $request->data_final,
                 ]);
+                $file->move(public_path('pdf'), $fileName);
                 session()->put('sucess', 'Tela Criada com sucesso!');
                 return redirect()->route('tela-criar');
             }
@@ -104,8 +106,17 @@ class TipoTelaController extends Controller
         }
         else {
             //EDITAR A TELA
+            $fileName = null;
+            if (!is_null($request->arquivo_pdf)) {
+                $file = $request->file('arquivo_pdf');
+                $fileName = time() . '-.' . $file->getClientOriginalName();
+                $file->move(public_path('pdf'), $fileName);
+            }
+            if (isset($request->nome_ou_anexo)) {
+                $fileName = $request->nome_ou_anexo;
+            }
             $tela->update([
-                'nome_ou_anexo' => $request->nome_ou_anexo,
+                'nome_ou_anexo' => $fileName,
                 'status_liberar' => $request->status_liberar,
                 'data_inicial' => $request->data_inicial,
                 'data_final' => $request->data_final,

@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 <div class="row">
-                    <form id="formulario_registro" method="post" action="{{route('tela-editar', $tela->id)}}">
+                    <form id="formulario_registro" method="post" action="{{route('tela-editar', $tela->id)}}" enctype="multipart/form-data">
                         @csrf
                         <ul id="progress">
                             <li class="ativo" style="width: 100%">Editar Tela</li>
@@ -30,18 +30,12 @@
                             @else
                                 <div id="pdf">
                                     <p>Escolha o PDF</p>
-                                    <select name="nome_ou_anexo">
-                                        <option value="0">Não Selecionado</option>
-                                        @foreach($arquivos as $arquivo)
-                                            @if (substr($arquivo, 57) == $tela->nome_ou_anexo)
-                                                <option value="{{substr($arquivo, 45)}}"
-                                                        selected>{{substr($arquivo, 57)}}</option>
-                                            @else
-                                                <option value="{{substr($arquivo, 45)}}"
-                                                        >{{substr($arquivo, 57)}}</option>
-                                            @endif
-                                        @endforeach
-                                    </select>
+                                    @if(!is_null($tela->nome_ou_anexo))
+                                        <div class="row">
+                                            <a target="_blank" href="{{asset('pdf/'.$tela->nome_ou_anexo)}}">: Anexo antigo</a>
+                                        </div>
+                                    @endif
+                                    <input type="file" name="arquivo_pdf">
                                 </div>
                             @endif
                             <div id="liberar">
@@ -62,8 +56,10 @@
                             @if ($tela->status_liberar == 0)
                                 <div id="data_liberar">
                                     <p>Selecione um intervalo para liberar a tela</p>
-                                    <input type="datetime-local" id="input-data_inicial" name="data_inicial" value="{{date('d/m/Y H:i', strtotime($tela->data_inicial))}}">
-                                    <input type="datetime-local" id="input-data_final" name="data_final" value="{{date('d/m/Y H:i', strtotime($tela->data_final))}}">
+                                    <input type="datetime-local" id="input-data_inicial" name="data_inicial"
+                                           value="{{date('d/m/Y H:i', strtotime($tela->data_inicial))}}">
+                                    <input type="datetime-local" id="input-data_final" name="data_final"
+                                           value="{{date('d/m/Y H:i', strtotime($tela->data_final))}}">
                                 </div>
                             @else
                                 <div id="data_liberar" hidden>
