@@ -24,11 +24,14 @@
                             <input type="text" value="{{$tela->tipo}}" name="tipo" disabled/>
                             @if ($tela->tipo == 'Tela')
                                 <div id="tela">
-                                    <p>Informe o nome da Tela</p>
+                                    <p>Editar o nome da Tela</p>
                                     <input type="text" name="nome_ou_anexo" value="{{$tela->nome_ou_anexo}}"/>
                                 </div>
                             @else
                                 <div id="pdf">
+                                    {{--@dd($tela)--}}
+                                    <p>Editar o nome da Tela</p>
+                                    <input type="text" name="tela_nome_pdf" value="{{$tela->nome_anexo_mostrar}}"/>
                                     <p>Escolha o PDF</p>
                                     @if(!is_null($tela->nome_ou_anexo))
                                         <div class="row">

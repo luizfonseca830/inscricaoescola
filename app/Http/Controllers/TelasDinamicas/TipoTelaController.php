@@ -116,6 +116,7 @@ class TipoTelaController extends Controller
                 $fileName = $request->nome_ou_anexo;
             }
             $tela->update([
+                'nome_anexo_mostrar' => $request->tela_nome_pdf,
                 'nome_ou_anexo' => $fileName,
                 'status_liberar' => $request->status_liberar,
                 'data_inicial' => $request->data_inicial,
