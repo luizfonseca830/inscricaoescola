@@ -111,7 +111,7 @@
                     @endforeach
                 </section><!-- End Services Section -->
 
-                <section id="services" class="services">
+<!--                <section id="services" class="services">
                     <div class="container">
                         <div class="section-title">
                             <h2>Lista de Alunos Sorteados</h2>
@@ -234,7 +234,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section>-->
     </main>
 @endsection
 
