@@ -14,7 +14,7 @@
                 @foreach($arquivos as $arquivo)
                 @endforeach
                 <div class="row">
-                    <form id="formulario_registro" method="post" action="{{route('tela-criar-salvar')}}">
+                    <form id="formulario_registro" method="post" action="{{route('tela-criar-salvar')}}" enctype="multipart/form-data">
                         @csrf
                         <ul id="progress">
                             <li class="ativo" style="width: 100%">Criar Tela</li>
@@ -36,12 +36,7 @@
                                 <p>Nome da Tela</p>
                                 <input type="text" name="tela_nome_pdf" value=""/>
                                 <p>Escolha o PDF</p>
-                                <select name="nome_pdf">
-                                    <option value="0">Não Selecionado</option>
-                                    @foreach($arquivos as $arquivo)
-                                        <option value="{{substr($arquivo, 45)}}">{{substr($arquivo, 57)}}</option>
-                                    @endforeach
-                                </select>
+                                <input type="file" name="arquivo_pdf" />
                             </div>
 
                             <div id="liberar">
