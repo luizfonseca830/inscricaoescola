@@ -117,121 +117,120 @@
                             <h2>Lista de Alunos Sorteados</h2>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="row">
-                                <div class="col-lg-4 align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>1° ano do Ensino Fundamental I</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>2° ano do Ensino Fundamental I</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>3° ano do Ensino Fundamental I</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
+
+                            <div class="col-lg-4 align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>1° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4 align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>4° ano do Ensino Fundamental I</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 col-md-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>5° ano do Ensino Fundamental I</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>6° ano do Ensino Fundamental II</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
+                            <div class="col-lg-4 align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>2° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>7° ano do Ensino Fundamental II</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>8° ano do Ensino Fundamental II</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>9° ano do Ensino Fundamental II</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>3° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>1° ano do Ensino Médio</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>2° ano do Ensino Médio</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4  align-items-stretch">
-                                    <a href="#" target="_blank">
-                                        <button class="icon-box">
-                                            <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                            <h4>3° ano do Ensino Médio</h4>
-                                            <p>Clique aqui para baixar</p>
-                                        </button>
-                                    </a>
-                                </div>
+                            <br>
+
+                            <div class="col-lg-4 align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>4° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>5° ano do Ensino Fundamental I</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>6° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <br>
+
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>7° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>8° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>9° ano do Ensino Fundamental II</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <br>
+
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>1° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>2° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-4  align-items-stretch">
+                                <a href="#" target="_blank">
+                                    <button class="icon-box">
+                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
+                                        <h4>3° ano do Ensino Médio</h4>
+                                        <p>Clique aqui para baixar</p>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
