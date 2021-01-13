@@ -47,7 +47,7 @@
                     <h4>Links mais Usados</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#" target="_blank">Política de Privacidade</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="public/jasper/pdf/politicadeprivacidade2021.pdf" target="_blank">Política de Privacidade</a>
                         </li>
                     </ul>
                 </div>

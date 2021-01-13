@@ -95,10 +95,6 @@
                 <section id="services" class="services">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="section-title" data-aos="fade-up">
-                                <h2>Relatórios</h2>
-                            </div>
-                            <br>
                             <div class="col-lg-4 col-md-6  align-items-stretch">
                                 <a href="{{asset($pdf->nome_ou_anexo)}}" target="_blank">
                                     <button class="icon-box">
@@ -115,22 +111,6 @@
                     @endforeach
                 </section><!-- End Services Section -->
 
-                <!-- ======= Services Section ======= -->
-                <section id="services" class="services">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-6  align-items-stretch">
-                                <a href="#" target="_blank">
-                                    <button class="icon-box">
-                                        <div class="icon"><i class="bx bxl-adobe"></i></div>
-                                        <h4>Edital</h4>
-                                        <p>Clique aqui para baixar</p>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section><!-- End Services Section -->
 
 <!--                <section id="services" class="services">
                     <div class="container">
