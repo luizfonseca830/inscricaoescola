@@ -13,7 +13,7 @@ class Escolaridade extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        /*Schema::disableForeignKeyConstraints();*/
         Schema::create('escolaridade', function(Blueprint $table)
         {
             $table->engine = 'InnoDB';
@@ -24,7 +24,7 @@ class Escolaridade extends Migration
             $table->foreign('modulo_id')->references('id')->on('modulo');
             $table->timestamps();
         });
-        Schema::enableForeignKeyConstraints();
+       /* Schema::enableForeignKeyConstraints();*/
     }
 
     /**
