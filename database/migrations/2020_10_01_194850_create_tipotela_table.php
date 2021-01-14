@@ -17,7 +17,7 @@ class CreateTipotelaTable extends Migration
             $table->id();
             $table->string('tipo', 100);
             $table->string('nome_anexo_mostrar', 250)->unique()->nullable();
-            $table->string('nome_ou_anexo', 250)->unique();
+            $table->string('nome_ou_anexo', 250)->unique()->nullable();
             $table->boolean('status_liberar')->default(0);
             $table->dateTime('data_inicial')->nullable();
             $table->dateTime('data_final')->nullable();
