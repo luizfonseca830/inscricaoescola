@@ -60,7 +60,7 @@
                         R. Floriano Peixoto, 722<br>
                         Rio Branco - AC <br><br>
                         <strong>Telefone:</strong> (68) 3223-5518<br>
-                        <strong>E-mail</strong> secretaria.isj@csmracre.com.br<br>
+                        <strong>E-mail:</strong> secretaria.isj@csmracre.com.br<br>
                         <strong>CEP:</strong> 69900-090<br>
                     </p>
 
