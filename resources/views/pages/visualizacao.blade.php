@@ -93,4 +93,5 @@
             }
         });
     </script>
+    <script src="{{asset('js/area-restrita/functions.js')}}"></script>
 @endsection

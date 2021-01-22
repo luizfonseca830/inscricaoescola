@@ -11,10 +11,8 @@ class Transparencia extends Model
     protected $table = 'transparencia';
     protected $fillable = [
         'id',
-        'instrutor_id',
+        'user_id',
         'pessoa_id',
-        'tela',
-        'pontuacao_total',
         'motivo'
     ];
 

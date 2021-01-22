@@ -35,7 +35,7 @@ class VisualizarPessoaController extends Controller
             session()->put('error', 'Essa Pessoa não poder ser deletado!');
         }
 
-        return redirect()->route('pages.visualizar-pessoa');
+        return redirect()->route('/visualizacao');
     }
 
     public function update($id, Request $request){
@@ -63,6 +63,6 @@ class VisualizarPessoaController extends Controller
         ]);
 
         session()->put('sucess', 'A pessoa foi alterada com sucesso!');
-        return redirect()->route('pages.visualizar-pessoa');
+        return redirect()->route('/visualizacao');
     }
 }
