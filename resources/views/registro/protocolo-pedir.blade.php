@@ -18,7 +18,7 @@
             @csrf
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Digite seu CPF</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Digite o seu CPF do canditado</span>
                 </div>
                 <input type="text" id="cpf" name="cpf" class="form-control" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm">
