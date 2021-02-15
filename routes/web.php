@@ -96,3 +96,6 @@ Route::get('pdf', function () {
 })->name('pdf');
 
 Route::get('visualizacao-pessoa/{id}', 'VisualizarPessoaController@show')->name('visualizacao-pessoa');
+Route::get('delete-pessoa/{id}', 'VisualizarPessoaController@delete')->name('delete-pessoa');
+Route::get('aparece-pessoa/{id}', 'VisualizarPessoaController@aparece')->name('aparece-pessoa');
+Route::match(['post', 'get'],'edit-pessoa/{id}', 'VisualizarPessoaController@update')->name('edit-pessoa');

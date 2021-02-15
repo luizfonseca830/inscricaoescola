@@ -21,9 +21,12 @@
                         <td>{{$pessoa->id}}</td>
                         <td>{{$pessoa->nome_completo}}</td>
                         <td>{{$pessoa->cpf}}</td>
-                        <td><a href="{{route('visualizacao-pessoa', $pessoa->id)}}"> <input type="button"
-                                                                                            class="btn btn-outline-info"
-                                                                                            value="Visualizar"></a>
+
+                        <td>
+                            <a href="{{route('visualizacao-pessoa', $pessoa->id)}}"><i class="fa fa-search" style="color: green"></i></a>
+                            <a href="{{route('aparece-pessoa', $pessoa->id)}}"><i class="fa fa-user" style="color: #2180e8"></i></a>
+                            <a href="{{route('delete-pessoa', $pessoa->id)}}"><i class="fa fa-trash" style="color: red"></i></a>
+
                         </td>
                     </tr>
                 @endforeach
@@ -76,10 +79,10 @@
                     "infoFiltered": "(filtrados _MAX_ entradas no total.)",
                     "zeroRecords": "Nenhum resultado encontrado.",
                     "paginate": {
-                        "first":      "Primeiro",
-                        "last":       "Último",
-                        "next":       "Próximo",
-                        "previous":   "Anterior"
+                        "first": "Primeiro",
+                        "last": "Último",
+                        "next": "Próximo",
+                        "previous": "Anterior"
                     },
                 }
             });
@@ -90,4 +93,5 @@
             }
         });
     </script>
+    <script src="{{asset('js/area-restrita/functions.js')}}"></script>
 @endsection
