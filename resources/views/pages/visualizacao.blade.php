@@ -24,8 +24,8 @@
 
                         <td>
                             <a href="{{route('visualizacao-pessoa', $pessoa->id)}}"><i class="fa fa-search" style="color: green"></i></a>
-                            <a href="{{route('aparece-pessoa', $pessoa->id)}}"><i class="fa fa-user" style="color: #2180e8"></i></a>
-                            <a href="{{route('delete-pessoa', $pessoa->id)}}"><i class="fa fa-trash" style="color: red"></i></a>
+<!--                            <a href="{{route('aparece-pessoa', $pessoa->id)}}"><i class="fa fa-user" style="color: #2180e8"></i></a>
+                            <a href="{{route('delete-pessoa', $pessoa->id)}}"><i class="fa fa-trash" style="color: red"></i></a>-->
 
                         </td>
                     </tr>
