@@ -7,13 +7,14 @@
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 @csrf
-                <h4>Inscrito em:<input type="timestamp" value="{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}" disabled/></h4>
+                <h4>Inscrito em:<input type="timestamp" value="{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}"
+                                       disabled/></h4>
 
                 <div class="row">
                     <h2>Dados Pessoais do Aluno</h2>
                     <div class="col-sm-8">
                         <p>Nome Completo</p>
-                        <input size="50" type="text" id="focosAtivo" name="nome_completo"
+                        <input type="text" id="focosAtivo" name="nome_completo"
                                value="{{$pessoa->nome_completo}}"
                                disabled/>
                         <p>CPF</p>
@@ -52,8 +53,13 @@
                                     <input type="text" value="Não" disabled/>
                                 @endif
                                 @if ($pessoa->irmaos_na_escola == 'Sim')
+                                    <p>NOME DO IRMÃO(A) ESTUDANDO NA ESCOLA?</p>
+                                    <input size="50" type="text" value="{{$pessoa->nome_irmaos_na_escola}}" disabled/>
+                                @endif
+                                @if ($pessoa->irmaos_na_escola == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão Na Escola</p>
-                                    <input size="50" type="text" value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_na_escola_id)->nivel_escolaridade}}"
+                                    <input size="50" type="text"
+                                           value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_na_escola_id)->nivel_escolaridade}}"
                                            disabled/>
                                 @endif
                                 <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
@@ -63,8 +69,13 @@
                                     <input type="text" value="Não" disabled/>
                                 @endif
                                 @if ($pessoa->irmaos_no_sorteio == 'Sim')
+                                    <p>NOME DO IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS</p>
+                                    <input size="50" type="text" value="{{$pessoa->nome_irmaos_no_sorteio}}" disabled/>
+                                @endif
+                                @if ($pessoa->irmaos_no_sorteio == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
-                                    <input size="50" type="text" value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
+                                    <input size="50" type="text"
+                                           value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
                                            disabled/>
                                 @endif
 
