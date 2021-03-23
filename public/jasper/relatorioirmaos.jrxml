@@ -190,7 +190,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="258" splitType="Stretch">
+		<band height="225" splitType="Stretch">
 			<staticText>
 				<reportElement style="Detail" x="4" y="90" width="540" height="30" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Center">
@@ -199,21 +199,21 @@
 				<text><![CDATA[INSCRITOS  COM IRMÃOS ESTUDANDO NA ESCOLA                ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="94" y="176" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
+				<reportElement style="Detail" x="94" y="163" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[CONGREGAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" mode="Transparent" x="220" y="190" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
+				<reportElement style="Detail" mode="Transparent" x="220" y="177" width="114" height="19" uuid="1ecceb6a-c67a-4651-b62b-1fd05552e493"/>
 				<textElement>
 					<font isItalic="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="182" y="135" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
+				<reportElement style="Detail" x="182" y="127" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
@@ -229,14 +229,14 @@
 				<imageExpression><![CDATA[$P{CAMINHO_IMAGEM}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="241" y="218" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
+				<reportElement x="241" y="200" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($P{Filtroescolaridade} == null , "Não selecionado", $F{nivel_escolaridade} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="170" y="218" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
+				<reportElement x="170" y="200" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
