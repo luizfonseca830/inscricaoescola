@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.13.0  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inscrição escola"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inscricaodb"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -15,7 +15,6 @@
 		</conditionalStyle>
 	</style>
 	<parameter name="CAMINHO_IMAGEM" class="java.lang.String"/>
-	<parameter name="Filtromodulo" class="java.lang.String"/>
 	<parameter name="Filtroescolaridade" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select * from pessoa p
@@ -23,9 +22,8 @@
          left join escolaridade e on p.escolaridade_id = e.id
          left join modulo m on e.modulo_id = m.id
         where
-        ($P{Filtromodulo} is null) or  $P{Filtromodulo} = m.id and
         ($P{Filtroescolaridade} is null) or $P{Filtroescolaridade}  = e.id and 
-      p.irmaos_na_escola = "Sim" or p.irmaos_no_sorteio = "Sim"]]>
+      	p.irmaos_na_escola = "Sim"]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -194,11 +192,11 @@
 	<title>
 		<band height="258" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="4" y="90" width="540" height="50" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<reportElement style="Detail" x="4" y="90" width="540" height="30" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="false"/>
 				</textElement>
-				<text><![CDATA[INSCRITOS  COM IRMÃOS ESTUDANDO NA ESCOLA  OU CONCORRENDO A VAGA                        ]]></text>
+				<text><![CDATA[INSCRITOS  COM IRMÃOS ESTUDANDO NA ESCOLA                ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Detail" x="94" y="176" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
@@ -215,7 +213,7 @@
 				<text><![CDATA[INSTITUTO SÃO JOSÉ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Detail" x="182" y="141" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
+				<reportElement style="Detail" x="182" y="135" width="190" height="30" uuid="a751cb1a-23c1-4a59-a560-0039eb9db8e7"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
@@ -231,18 +229,11 @@
 				<imageExpression><![CDATA[$P{CAMINHO_IMAGEM}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="250" y="218" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
+				<reportElement x="241" y="218" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($P{Filtroescolaridade} == null , "Não selecionado", $F{nivel_escolaridade} )]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="220" y="238" width="170" height="20" uuid="3dc56417-1369-4d18-bd11-17d1a9b4bb17"/>
-				<textElement textAlignment="Left">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[IF($P{Filtromodulo} == null, "Não selecionado", $F{descricao})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="170" y="218" width="80" height="18" uuid="0b21b183-e556-4ee7-9458-44a29a891c37"/>
@@ -251,13 +242,6 @@
 				</textElement>
 				<text><![CDATA[Escolaridade:
 ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="170" y="238" width="49" height="15" uuid="558bf217-ac47-440c-951c-0f2435e0c1a2"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Modulo:]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -270,7 +254,7 @@
 	<detail>
 		<band height="183" splitType="Stretch">
 			<rectangle>
-				<reportElement x="57" y="3" width="497" height="167" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+				<reportElement x="57" y="3" width="497" height="147" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
 				<reportElement key="" mode="Transparent" x="102" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
@@ -287,7 +271,7 @@
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="90" y="31" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
+				<reportElement key="" mode="Transparent" x="91" y="31" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
@@ -343,7 +327,7 @@
 				<text><![CDATA[Telefone:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="240" y="120" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="222" y="120" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
@@ -355,20 +339,6 @@
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="237" y="143" width="306" height="20" uuid="42df0d20-eb79-4a3c-b568-d61308baa773"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[ IF($F{irmaos_no_sorteio} == "Nao" , "Não tem", $F{nome_irmaos_no_sorteio} )]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="61" y="143" width="178" height="20" uuid="b071448c-5eb0-4e28-b6b0-53d1309cd663"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Nome do irmão(a) no sorteio:]]></text>
 			</staticText>
 		</band>
 	</detail>

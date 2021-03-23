@@ -22,9 +22,9 @@ $(function () {
     });
 
     $('select[name="escolaridade"]').on('change', function () {
-        var escolaridade = this.value;
+        var modulo = this.value;
 
-        $('select[name="CARGO"] option').each(function () {
+        $('select[name="modulo"] option').each(function () {
             var $this = $(this);
 
             if ($this.data('escolaridade') == escolaridade) $this.show();
@@ -44,8 +44,9 @@ $(function () {
     })
     $('#escolaridade').click(function () {
         var nivel = $('#escolaridade').val()
-        if (nivel == 1 || nivel == 2 || nivel == 3) {
-            $('#cargo-div').removeAttr('hidden', false);
+        if (nivel == 1 || nivel == 2 || nivel == 3 || nivel == 4 || nivel == 5 || nivel == 6 || nivel == 7 || nivel == 8
+            || nivel == 9 || nivel == 10 || nivel == 11 || nivel == 12) {
+            $('#modulo-div').removeAttr('hidden', false);
         }
     });
 });

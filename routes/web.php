@@ -72,6 +72,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/relatorionumerico-gerar', 'RelatorioNumericoController@requestPDFJasper')->name('gerar-relatorionumerico');
 
 
+    Route::get('/relatorioirmaos', 'RelatorioIrmaosController@index')->name('relatorioirmaos');
+    Route::post('/relatorioirmaos-gerar', 'RelatorioIrmaosController@requestPDFJasper')->name('gerar-relatorioirmaos');
+
     Route::get('/tela-criar', 'TelasDinamicas\TelaCriarController@index')->name('tela-criar');
     Route::get('/tela-liberar', 'TelasDinamicas\TelaLiberarController@index')->name('tela-liberar');
     Route::post('tela-criar-salvar', 'TelasDinamicas\TipoTelaController@store')->name('tela-criar-salvar');
