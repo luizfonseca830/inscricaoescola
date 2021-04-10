@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inscricaodb"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql.xml"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -17,13 +17,13 @@
 	<parameter name="CAMINHO_IMAGEM" class="java.lang.String"/>
 	<parameter name="Filtroescolaridade" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from pessoa p
-         inner join comprovante c on p.comprovante_id = c.id
-         left join escolaridade e on p.escolaridade_id = e.id
-         left join modulo m on e.modulo_id = m.id
-        where
-        ($P{Filtroescolaridade} is null) or $P{Filtroescolaridade}  = e.id and 
-      	p.irmaos_na_escola = "Sim"]]>
+		<![CDATA[select distinct * from pessoa p
+                  inner join comprovante c on p.comprovante_id = c.id
+                  left join escolaridade e on p.escolaridade_id = e.id
+                  left join escolaridade e2 on p.serie_irmao_na_escola_id = e2.id
+                  left join modulo m on e.modulo_id = m.id
+where p.irmaos_na_escola='SIM' =1 and escolaridade_id = 1
+ORDER BY nome_completo]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -168,6 +168,21 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="COLUMN_25" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
+	</field>
+	<field name="COLUMN_26" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
+	</field>
+	<field name="COLUMN_27" class="java.math.BigInteger">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
 	<field name="modulo_id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="modulo_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="modulo_id"/>
@@ -180,11 +195,61 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="COLUMN_30" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_31" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_32" class="java.math.BigInteger">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_33" class="java.math.BigInteger">
+		<property name="com.jaspersoft.studio.field.name" value="modulo_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="modulo_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_34" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nivel_escolaridade"/>
+		<property name="com.jaspersoft.studio.field.label" value="nivel_escolaridade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_35" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_36" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
+	</field>
+	<field name="COLUMN_37" class="java.math.BigInteger">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
+	</field>
 	<field name="descricao" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="descricao"/>
 		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_39" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
+	</field>
+	<field name="COLUMN_40" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -252,9 +317,9 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="183" splitType="Stretch">
+		<band height="120" splitType="Stretch">
 			<rectangle>
-				<reportElement x="57" y="3" width="497" height="147" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+				<reportElement x="57" y="3" width="497" height="107" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
 				<reportElement key="" mode="Transparent" x="102" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
@@ -271,74 +336,46 @@
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement key="" mode="Transparent" x="91" y="31" width="230" height="22" forecolor="#000000" uuid="7838f212-0546-476b-98a2-ee09ed721afc"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement key="" mode="Transparent" x="62" y="32" width="29" height="20" forecolor="#000000" uuid="32f979f9-5261-4de8-8a71-d54a76d7b288"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[CPF:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="" mode="Transparent" x="62" y="53" width="68" height="16" forecolor="#000000" uuid="21d5e905-ed9d-4857-9e6e-60283209c9e9"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Protocolo:]]></text>
-			</staticText>
-			<textField>
-				<reportElement key="" mode="Transparent" x="130" y="53" width="250" height="16" forecolor="#000000" uuid="0c4f040c-40d7-401c-a445-5cba3ef2e0dc"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="102" y="74" width="228" height="20" uuid="e3a88b53-79ef-4792-a8f6-468d37ef9b65"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="62" y="74" width="40" height="20" uuid="e02d4f35-7a4e-42d3-8c1a-915e746198fc"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Email:]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="125" y="97" width="228" height="20" uuid="015005b4-5203-4f90-9711-5f8b046c985d"/>
+				<reportElement x="121" y="39" width="228" height="20" uuid="015005b4-5203-4f90-9711-5f8b046c985d"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="62" y="97" width="62" height="20" uuid="a7b7dec4-578e-4eb4-970b-1789966ba37d"/>
+				<reportElement x="62" y="39" width="62" height="20" uuid="a7b7dec4-578e-4eb4-970b-1789966ba37d"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Telefone:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="222" y="120" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="236" y="62" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "Nao" , "Não tem", $F{nome_irmaos_na_escola} )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "Nao" , "Não Informado", $F{nome_irmaos_na_escola} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="62" y="120" width="178" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
+				<reportElement x="62" y="62" width="178" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="82" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{COLUMN_34} == null , "Não Informado", $F{COLUMN_34} )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="63" y="82" width="216" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Escolaridade do irmão(a) na escola:]]></text>
 			</staticText>
 		</band>
 	</detail>

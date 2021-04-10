@@ -47,12 +47,20 @@ class ReportIrmaosController extends Controller
         }
 
         $jasper = new PHPJasper();
-
         $x = $jasper->process(
             $input,
             $output,
             $options
         )->execute();
+
+        //verificando erro
+
+//       $x = $jasper->process(
+//            $input,
+//            $output,
+//            $options
+//        )->output();
+//        dd($x);
 
         return $output . '.pdf';
     }
