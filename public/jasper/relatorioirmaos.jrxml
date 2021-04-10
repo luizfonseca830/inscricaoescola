@@ -336,7 +336,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="204" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="203" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -364,7 +364,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Escolaridade do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="116" y="30" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
+				<reportElement x="116" y="31" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
