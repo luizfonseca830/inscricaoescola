@@ -322,60 +322,60 @@ ORDER BY nome_completo]]>
 				<reportElement x="57" y="3" width="497" height="107" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
-				<reportElement key="" mode="Transparent" x="102" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="96" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="" mode="Transparent" x="62" y="5" width="40" height="26" forecolor="#000000" uuid="372e4c41-a92f-49d7-871c-ebeb589fe746"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="122" y="39" width="228" height="20" uuid="015005b4-5203-4f90-9711-5f8b046c985d"/>
+				<reportElement x="204" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="62" y="39" width="62" height="20" uuid="a7b7dec4-578e-4eb4-970b-1789966ba37d"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Telefone:]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="237" y="62" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
-				<textElement>
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "Nao" , "Não Informado", $F{nome_irmaos_na_escola} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="62" y="62" width="178" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
+				<reportElement x="62" y="50" width="148" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="281" y="82" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<reportElement x="237" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{COLUMN_34} == null , "Não Informado", $F{COLUMN_34} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="63" y="82" width="216" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
+				<reportElement x="63" y="70" width="174" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Escolaridade do irmão(a) na escola:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="116" y="30" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="63" y="31" width="56" height="15" uuid="87c9fed2-8762-473d-8ce3-957b625e17bf"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Protocolo:]]></text>
 			</staticText>
 		</band>
 	</detail>
