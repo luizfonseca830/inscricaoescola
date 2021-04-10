@@ -336,28 +336,28 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="203" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="222" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "Nao" , "Não Informado", $F{nome_irmaos_na_escola} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="62" y="50" width="148" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
+				<reportElement x="62" y="50" width="228" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="237" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<reportElement x="255" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{COLUMN_34} == null , "Não Informado", $F{COLUMN_34} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="63" y="70" width="174" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
+				<reportElement x="63" y="70" width="254" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
