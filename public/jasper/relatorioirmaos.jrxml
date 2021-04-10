@@ -322,7 +322,7 @@ ORDER BY nome_completo]]>
 				<reportElement x="57" y="3" width="497" height="107" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
-				<reportElement key="" mode="Transparent" x="96" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="98" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -336,7 +336,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="222" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="219" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -350,7 +350,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="255" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<reportElement x="257" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -364,7 +364,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Escolaridade do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="116" y="31" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
+				<reportElement x="118" y="31" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
