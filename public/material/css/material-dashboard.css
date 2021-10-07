@@ -15449,9 +15449,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
 }
 
-.sidebar[data-color="orange"] li.active > a {
-    background-color: #ff9800;
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+.sidebar[data-color="blue"] li.active > a {
+    background-color: #0275d8;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(65, 163, 257, 0.4);
 }
 
 .sidebar[data-color="danger"] li.active > a {

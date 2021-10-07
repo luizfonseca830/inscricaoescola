@@ -33,7 +33,7 @@
                                 @endforeach
                             </select>
 
-                            <input type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
+                            <input class="btn-primary" type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>
                     </form>
                 </div>
