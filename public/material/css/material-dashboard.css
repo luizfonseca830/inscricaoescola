@@ -9450,23 +9450,23 @@ a.text-dark:focus {
 
 .btn.btn-primary {
     color: #fff;
-    background-color: #9c27b0;
-    border-color: #9c27b0;
-    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+    background-color: #0275d8;
+    border-color: #03a9f4;
+    box-shadow: 0 2px 2px 0 rgba(65, 163, 257, 0.14), 0 3px 1px -2px rgba(65, 163, 257, 0.2), 0 1px 5px 0 rgba(65, 163, 257, 0.12);
 }
 
 .btn.btn-primary:hover {
     color: #fff;
-    background-color: #9124a3;
-    border-color: #701c7e;
+    background-color: #0275d8;
+    border-color: #03a9f4;
 }
 
 .btn.btn-primary:focus,
 .btn.btn-primary.focus,
 .btn.btn-primary:hover {
     color: #fff;
-    background-color: #9124a3;
-    border-color: #701c7e;
+    background-color: #0275d8;
+    border-color: #03a9f4;
 }
 
 .btn.btn-primary:active,
@@ -9522,7 +9522,7 @@ a.text-dark:focus {
 .btn.btn-primary:focus,
 .btn.btn-primary:active,
 .btn.btn-primary:hover {
-    box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+    box-shadow: 0 14px 26px -12px rgba(65, 163, 257, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(65, 163, 257, 0.2);
 }
 
 .btn.btn-primary.btn-link {
@@ -10424,9 +10424,9 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 .btn.btn-outline-primary:focus,
 .btn.btn-outline-primary.focus,
 .btn.btn-outline-primary:hover {
-    color: #9c27b0;
+    color: #0275d8;
     background-color: rgba(153, 153, 153, 0.2);
-    border-color: #9c27b0;
+    border-color: #0275d8;
 }
 
 .btn.btn-outline-primary:active,
@@ -12020,7 +12020,7 @@ fieldset[disabled] .is-focused .switch label:focus {
 
 .form-control,
 .is-focused .form-control {
-    background-image: linear-gradient(to top, #9c27b0 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+    background-image: linear-gradient(to top, #0275d8 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
 }
 
 .form-control:invalid {
@@ -12167,7 +12167,7 @@ fieldset[disabled][disabled] .form-control,
 
 .is-focused [class^='bmd-label'],
 .is-focused [class*=' bmd-label'] {
-    color: #9c27b0;
+    color: #0275d8;
 }
 
 .is-focused .bmd-label-placeholder {
@@ -15449,9 +15449,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
 }
 
-.sidebar[data-color="orange"] li.active > a {
-    background-color: #ff9800;
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+.sidebar[data-color="blue"] li.active > a {
+    background-color: #0275d8;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(65, 163, 257, 0.4);
 }
 
 .sidebar[data-color="danger"] li.active > a {
@@ -17450,7 +17450,7 @@ label {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    background: linear-gradient(60deg, #0275d8, #00acc1);
 }
 
 .card .card-header-info .card-icon,

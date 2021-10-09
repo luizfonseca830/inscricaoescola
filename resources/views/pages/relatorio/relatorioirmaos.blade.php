@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'RelatoriosIrmaos', 'titlePage' => __('Relatórios De Irmãos Na Escola')])
+ @extends('layouts.app', ['activePage' => 'RelatoriosIrmaos', 'titlePage' => __('Relatórios De Irmãos Na Escola')])
 @section('title')
     <title>INSTITUTO SÃO JOSÉ</title>
 @endsection
@@ -24,7 +24,7 @@
                                     <option value="{{$escolaridade->id}}">{{$escolaridade->nivel_escolaridade}}</option>
                                 @endforeach
                             </select>
-                            <input type="submit" name="next" id="confirma" class="acao" style="width: auto"
+                            <input  ype="submit" name="next" id="confirma" class="acao" style="width: auto"
                                    value="Gerar Relatório"/>
                         </fieldset>
                     </form>
