@@ -96,7 +96,7 @@ body{
 
 #formulario_registro .acao {
     width: 100px;
-    background: rgba(0, 0, 0, 0.4);
+    background: #0275d8;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -106,7 +106,7 @@ body{
 }
 
 #formulario_registro .acao:hover{
-    background: rgba(0, 0, 0, 0.4);
+    background: #0275d8;
     cursor: pointer;
 }
 

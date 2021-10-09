@@ -54,6 +54,7 @@
                             </div>
 
                             <input type="submit" name="next" id="confirma" class="acao" value="Criar"/>
+
                         </fieldset>
                     </form>
                 </div>
