@@ -7,6 +7,7 @@
     -->
     <div class="logo">
         <a href="{{ route('home') }}" class="simple-text logo-normal">
+            <img src="{{asset('images/logoinstituto.png')}}" width="50" alt="logo instituto">
             {{ __('Instituto São José') }}
         </a>
     </div>

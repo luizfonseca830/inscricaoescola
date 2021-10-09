@@ -17,7 +17,12 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{{route('inical')}}"><span>INSTITUTO SÃO JOSÉ</span></a></h1>
+
+            <h1 class="text-light"><a href="{{route('inical')}}">
+                    <img src="{{asset('images/logoinstituto.png')}}" alt="logo instituto">
+                    <span>INSTITUTO SÃO JOSÉ</span></a>
+
+            </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -47,7 +52,8 @@
                     <h4>Links mais Usados</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/jasper/pdf/politicadeprivacidade2021.pdf" target="_blank">Política de Privacidade</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/jasper/pdf/politicadeprivacidade2021.pdf"
+                                                                   target="_blank">Política de Privacidade</a>
                         </li>
                     </ul>
                 </div>
@@ -74,7 +80,8 @@
                                 class="bx bxl-facebook"></i></a>
                         <a href="https://www.instagram.com/institutosaojose_isj/" class="instagram" target="_blank"><i
                                 class="bx bxl-instagram"></i></a>
-                        <a href="https://www.youtube.com/channel/UCavmywsWUE80dJqKM-azAUA/" class="youtube" target="_blank"><i
+                        <a href="https://www.youtube.com/channel/UCavmywsWUE80dJqKM-azAUA/" class="youtube"
+                           target="_blank"><i
                                 class="bx bxl-youtube"></i></a>
                     </div>
                 </div>
