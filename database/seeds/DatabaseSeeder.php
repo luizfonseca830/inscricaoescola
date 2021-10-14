@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
 
       /*  $this->call(PessoaTableSeeder::class);
         Schema::enableForeignKeyConstraints();*/
+        $this->call(ComprovanteTableSeeder::class);
     }
 }
