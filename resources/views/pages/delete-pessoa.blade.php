@@ -4,11 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
-                <form method="POST" action="">
+                <form id="form" method="POST" action="{{ route('delete-pessoa', $id) }}">
+                    @csrf
                     <Label>Motivo</Label>
-                    <textarea name="motivo" class="form-control">
+                    <textarea id="motivo" name="motivo" class="form-control">
                     </textarea>
-                    <input type="hidden" name="id_pessoa" value="{{ $id }}">
 
                     <button id="excluir" class="btn btn-danger">Excluir</button>
                 </form>
@@ -38,22 +38,20 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    swalWithBootstrapButtons.fire(
-                        'Excluido!',
-                        'Esta pessoa foi excluida.',
-                        'success'
-                    )
-                } else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                ) {
-                    swalWithBootstrapButtons.fire(
-                        'Cancelado',
-                        'Nada aconteceu :)',
-                        'error'
-                    )
+                    document.getElementById('form').submit();
+                } else
+                    if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                            'Cancelado',
+                            'Nada aconteceu :)',
+                            'error'
+                        )
+                    }
                 }
-            })
-        });
+            )
+            });
     </script>
 @endsection

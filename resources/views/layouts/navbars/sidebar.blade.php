@@ -78,6 +78,13 @@
                 </a>
             </li>
 
+
+            <li class="nav-item{{ $activePage == 'audit' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('audit') }}">
+                    <i class="material-icons">library_books</i>
+                    <p>{{ __('Transparência') }}</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

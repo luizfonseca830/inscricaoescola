@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Audit;
 use App\Models\Pessoa;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VisualizarPessoaController extends Controller
 {
@@ -25,17 +27,30 @@ class VisualizarPessoaController extends Controller
         ]);
     }
 
-    public function delete($id){
-        dd($id);
-        $pessoa = Pessoa::find($id);
-        if($pessoa->delete()){
-            session()->put('sucess', 'Pessoa deletada com sucesso!');
-        }
-        else {
-            session()->put('error', 'Essa Pessoa não poder ser deletado!');
+    public function delete(Request $request,$id){
+        try {
+            DB::beginTransaction();
+            $pessoa = Pessoa::find($id);
+            $audit = new Audit();
+            $audit->pessoa = json_encode($pessoa);
+            $audit->motivo = $request->motivo;
+            $audit->user_id = auth()->user()->id;
+            if($pessoa->delete()){
+                $audit->save();
+                session()->put('sucess', 'Pessoa deletada com sucesso!');
+            }
+            else {
+                session()->put('error', 'Essa Pessoa não poder ser deletado!');
+            }
+            DB::commit();
+            return redirect()->route('/visualizacao');
+        }catch (\Exception $e){
+            DB::rollBack();
+            return redirect()->back()->withErrors([
+                'error' => $e->getMessage()
+            ]);
         }
 
-        return redirect()->route('/visualizacao');
     }
 
     public function update($id, Request $request){
