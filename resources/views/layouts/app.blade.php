@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
+{{--    <link rel="stylesheet" href=" sweetalert2/package/dist /sweetalert2.min.css">--}}
     <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet"/>
     <style>
             .auth-bg:hover {
@@ -83,6 +85,9 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('material') }}/demo/demo.js"></script>
 <script src="{{ asset('material') }}/js/settings.js"></script>
+{{--<script src="sweetalert2/package/dist /sweetalert2.min.js"></script>--}}
+{{--<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
 @yield('script')
 @stack('js')
 </body>

@@ -84,6 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('busca-candidato', 'BuscaCandidatos\BuscaCandidatosController@index')->name('busca-candidatos');
     Route::post('pesquisa-candidato', 'BuscaCandidatos\BuscaCandidatosController@show')->name('pesquisa-candidato');
+
+    Route::get('motivo-delete/{id}', 'VisualizarPessoaController@motivo')->name('motivo.delete');
 });
 
 Route::group(['middleware' => 'auth'], function () {
