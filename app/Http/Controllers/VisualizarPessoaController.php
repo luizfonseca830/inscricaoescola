@@ -26,7 +26,7 @@ class VisualizarPessoaController extends Controller
     }
 
     public function delete($id){
-
+        dd($id);
         $pessoa = Pessoa::find($id);
         if($pessoa->delete()){
             session()->put('sucess', 'Pessoa deletada com sucesso!');
@@ -64,5 +64,10 @@ class VisualizarPessoaController extends Controller
 
         session()->put('sucess', 'A pessoa foi alterada com sucesso!');
         return redirect()->route('/visualizacao');
+    }
+
+    public function motivo($id)
+    {
+        return view('pages.delete-pessoa', compact('id'));
     }
 }
