@@ -14,6 +14,7 @@ class AreaRestritaController extends Controller
 
 
         $pessoas = Pessoa::all();
+//        dd($pessoas[0]);
         return view('pages.visualizacao')->with('pessoas', $pessoas);
     }
 }

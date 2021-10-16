@@ -12,6 +12,8 @@
                     <th>Nº</th>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Inicio do Período</th>
+                    <th>Fim do Período</th>
                     <th>Ações</th>
                 </tr>
                 </thead>
@@ -21,6 +23,8 @@
                         <td>{{$pessoa->id}}</td>
                         <td>{{$pessoa->nome_completo}}</td>
                         <td>{{$pessoa->cpf}}</td>
+                        <td>{{date('d/m/Y',strtotime($pessoa->periodo_inicio))}}</td>
+                        <td>{{date('d/m/Y',strtotime($pessoa->periodo_fim))}}</td>
 
                         <td>
                             <a href="{{route('visualizacao-pessoa', $pessoa->id)}}"><i class="fa fa-search" style="color: green"></i></a>
@@ -36,6 +40,8 @@
                     <th>Nº</th>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Inicio do Período</th>
+                    <th>Fim do Período</th>
                     <th>Ações</th>
                 </tr>
                 </tfoot>

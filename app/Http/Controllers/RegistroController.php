@@ -18,6 +18,7 @@ class RegistroController extends Controller
             'bairro' => $request->bairro,
             'cep' => $request->cep,
         ])->id;
+        $inscricao =  \App\Models\TipoTela::where('nome_ou_anexo', 'Inscrição')->first();
 
         $pessoa_id = Pessoa::create([
             'escolaridade_id' => $request->escolaridade,
@@ -37,6 +38,8 @@ class RegistroController extends Controller
             'telefone' => $request->telefone,
             'email' => strtoupper($request->email),
             'data_nascimento' => $request->data_nascimento,
+            'periodo_inicio' => $inscricao->data_inicial,
+            'periodo_fim' => $inscricao->data_final
         ]);
 
         $pessoa = Pessoa::find($pessoa_id->id);
