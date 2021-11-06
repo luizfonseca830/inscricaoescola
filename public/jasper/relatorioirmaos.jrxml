@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="dbinscricaoescolar.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -16,13 +16,17 @@
 	</style>
 	<parameter name="CAMINHO_IMAGEM" class="java.lang.String"/>
 	<parameter name="Filtroescolaridade" class="java.lang.String"/>
+	<parameter name="Filtroperiodoinicio" class="java.util.Date"/>
+	<parameter name="Filtroperiodofim" class="java.util.Date"/>
 	<queryString language="SQL">
 		<![CDATA[select distinct * from pessoa p
                   inner join comprovante c on p.comprovante_id = c.id
                   left join escolaridade e on p.escolaridade_id = e.id
                   left join escolaridade e2 on p.serie_irmao_na_escola_id = e2.id
                   left join modulo m on e.modulo_id = m.id
-where p.irmaos_na_escola='SIM' and escolaridade_id = $P{Filtroescolaridade}
+where p.irmaos_na_escola='SIM' and escolaridade_id = $P{Filtroescolaridade} and
+        p.periodo_inicio >= ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} and
+        p.periodo_fim <= ($P{Filtroperiodofim} is null) or $P{Filtroperiodofim}
 ORDER BY nome_completo]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
@@ -157,7 +161,19 @@ ORDER BY nome_completo]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="COLUMN_23" class="java.math.BigInteger">
+	<field name="periodo_inicio" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="periodo_inicio"/>
+		<property name="com.jaspersoft.studio.field.label" value="periodo_inicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo_fim" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="periodo_fim"/>
+		<property name="com.jaspersoft.studio.field.label" value="periodo_fim"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COLUMN_25" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
@@ -168,17 +184,17 @@ ORDER BY nome_completo]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="COLUMN_25" class="java.sql.Timestamp">
+	<field name="COLUMN_27" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
 	</field>
-	<field name="COLUMN_26" class="java.sql.Timestamp">
+	<field name="COLUMN_28" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="comprovante"/>
 	</field>
-	<field name="COLUMN_27" class="java.math.BigInteger">
+	<field name="COLUMN_29" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
@@ -195,42 +211,42 @@ ORDER BY nome_completo]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="COLUMN_30" class="java.sql.Timestamp">
+	<field name="COLUMN_32" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_31" class="java.sql.Timestamp">
+	<field name="COLUMN_33" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_32" class="java.math.BigInteger">
+	<field name="COLUMN_34" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_33" class="java.math.BigInteger">
+	<field name="COLUMN_35" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="modulo_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="modulo_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_34" class="java.lang.String">
+	<field name="COLUMN_36" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nivel_escolaridade"/>
 		<property name="com.jaspersoft.studio.field.label" value="nivel_escolaridade"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_35" class="java.sql.Timestamp">
+	<field name="COLUMN_37" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_36" class="java.sql.Timestamp">
+	<field name="COLUMN_38" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="escolaridade"/>
 	</field>
-	<field name="COLUMN_37" class="java.math.BigInteger">
+	<field name="COLUMN_39" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
@@ -241,12 +257,12 @@ ORDER BY nome_completo]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="COLUMN_39" class="java.sql.Timestamp">
+	<field name="COLUMN_41" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
 	</field>
-	<field name="COLUMN_40" class="java.sql.Timestamp">
+	<field name="COLUMN_42" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>

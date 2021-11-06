@@ -33,6 +33,11 @@
                                 @endforeach
                             </select>
 
+                            <h3>Inicio do periodo</h3>
+                            <input class="form-control" type="date" name="periodo_inicio">
+                            <h3>Fim periodo</h3>
+                            <input class="form-control" type="date" name="periodo_fim">
+
                             <input class="btn-primary" type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>
                     </form>

@@ -24,7 +24,12 @@
                                     <option value="{{$escolaridade->id}}">{{$escolaridade->nivel_escolaridade}}</option>
                                 @endforeach
                             </select>
-                            <input type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
+                            <h3>Inicio do periodo</h3>
+                            <input class="form-control" type="date" name="periodo_inicio" >
+                            <h3>Fim periodo</h3>
+                            <input class="form-control" type="date" name="periodo_fim">
+                            <input type="submit" name="next" id="confirma" class="acao" style="width: auto"
+                                   value="Gerar Relatório"/>
                         </fieldset>
                     </form>
                 </div>
