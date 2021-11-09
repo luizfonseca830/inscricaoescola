@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  laravel-app:
+    build: .
+    ports:
+      - "8585:80"
+#      para não matar minha mudança ao dar docker compose down
+    volumes:
+      - ./:/usr/share/nginx
