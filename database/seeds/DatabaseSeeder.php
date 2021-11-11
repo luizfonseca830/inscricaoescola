@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//       Schema::disableForeignKeyConstraints();
+       Schema::disableForeignKeyConstraints();
        $this->call([EnderecoTableSeeder::class]);
         $this->call([ComprovanteTableSeeder::class]);
         $this->call([\ModuloTableSeeder::class]);
@@ -31,6 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call([EscolaridadeTableSeeder::class]);
         $this->call([TipotelaTableSeeder::class]);
         $this->call([UsersTableSeeder::class]);
-//        Schema::enableForeignKeyConstraints();
+        Schema::enableForeignKeyConstraints();
     }
 }
