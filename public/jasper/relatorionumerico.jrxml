@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -227,13 +227,6 @@
 	<title>
 		<band height="244" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="39" y="86" width="455" height="36" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
-				<textElement textAlignment="Center">
-					<font size="20" isBold="false"/>
-				</textElement>
-				<text><![CDATA[INSCRITOS  PARA O SORTEIO DE VAGAS                                                     ]]></text>
-			</staticText>
-			<staticText>
 				<reportElement style="Detail" x="95" y="169" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
 					<font isBold="false"/>
@@ -272,6 +265,13 @@
 				</textElement>
 				<text><![CDATA[Escolaridade:
 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Detail" x="60" y="100" width="455" height="46" uuid="960bb536-0c26-41bc-a4e6-44c2ecbfb1b5"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO DE VAGAS                                                                                 ]]></text>
 			</staticText>
 		</band>
 	</title>

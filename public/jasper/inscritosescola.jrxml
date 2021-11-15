@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -27,8 +27,8 @@
         where
         ($P{Filtromodulo} is null) or  $P{Filtromodulo} = m.id and
         ($P{Filtroescolaridade} is null) or $P{Filtroescolaridade}  = e.id and
-        p.periodo_inicio >= ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} and
-        p.periodo_fim <= ($P{Filtroperiodofim} is null) or $P{Filtroperiodofim}]]>
+        ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} = periodo_inicio and
+      	($P{Filtroperiodofim} is null) or $P{Filtroperiodofim} = periodo_fim]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -247,13 +247,13 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="264" splitType="Stretch">
+		<band height="293" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="51" y="95" width="457" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
-				<textElement textAlignment="Center">
-					<font size="20" isBold="false"/>
+				<reportElement style="Detail" x="60" y="100" width="455" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="false"/>
 				</textElement>
-				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO                                   DE VAGAS                                                                                 ]]></text>
+				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO DE VAGAS                                                                                 ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Detail" x="94" y="176" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
@@ -313,6 +313,27 @@
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Modulo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="221" y="247" width="100" height="30" uuid="6489c974-afcb-4e3a-a5ba-05d55b220e32"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodoinicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="246" width="100" height="30" uuid="18a52cbc-22b5-4ce3-a43b-1eb74e745331"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodofim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="170" y="248" width="60" height="24" uuid="48410a21-dd1c-40dd-9e4c-8830dc74dd01"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo:]]></text>
 			</staticText>
 		</band>
 	</title>

@@ -87,7 +87,7 @@ class JasperController extends Controller
                 ]
             ];
         } elseif (!is_null($request->Filtroescolaridade) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && !is_null($request->Filtromodulo)) {
-//           dd($request->all());
+
             $options = [
                 'format' => ['pdf'],
                 'params' => [
@@ -95,9 +95,9 @@ class JasperController extends Controller
                     'Filtroescolaridade' => $request->Filtroescolaridade,
                     'Filtromodulo' => $request->Filtromodulo,
                     'Filtroperiodoinicio' => date('Y-m-d H:i:s',strtotime($request->periodo_inicio)),
-//                    $request->periodo_inicio,
+
                     'Filtroperiodofim' => date('Y-m-d H:i:s',strtotime($request->periodo_fim))
-//                    $request->periodo_fim
+
                 ],
                 'db_connection' => [
                     'driver' => getenv('DB_CONNECTION'),
@@ -108,7 +108,7 @@ class JasperController extends Controller
                     'port' => getenv('DB_PORT'),
                 ]
             ];
-//            dd($options);
+
         } elseif (is_null($request->Filtroescolaridade) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && is_null($request->Filtromodulo)) {
             $options = [
                 'format' => ['pdf'],
@@ -132,7 +132,9 @@ class JasperController extends Controller
                 'params' => [
                     'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
                     'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroescolaridade' => $request->Filtroescolaridade
+                    'Filtroescolaridade' => $request->Filtroescolaridade,
+                    'Filtroperiodoinicio' => $request->periodo_inicio,
+                    'Filtroperiodofim' => $request->periodo_fim
                 ],
 
                 'db_connection' => [
@@ -153,7 +155,15 @@ class JasperController extends Controller
             $output,
             $options
         )->execute();
-//       dd($stmt);
+
+        //verificando erro
+
+//       $stmt = $jasper->process(
+//            $input,
+//            $output,
+//            $options
+//        )->output();
+//        dd($stmt);
         return $output . '.pdf';
     }
 }

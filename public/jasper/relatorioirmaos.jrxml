@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -273,13 +273,6 @@ ORDER BY nome_completo]]>
 	<title>
 		<band height="225" splitType="Stretch">
 			<staticText>
-				<reportElement style="Detail" x="4" y="90" width="540" height="30" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
-				<textElement textAlignment="Center">
-					<font size="20" isBold="false"/>
-				</textElement>
-				<text><![CDATA[INSCRITOS  COM IRMÃOS ESTUDANDO NA ESCOLA                ]]></text>
-			</staticText>
-			<staticText>
 				<reportElement style="Detail" x="94" y="163" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
 					<font isBold="false"/>
@@ -324,6 +317,13 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Escolaridade:
 ]]></text>
 			</staticText>
+			<staticText>
+				<reportElement style="Detail" x="60" y="100" width="455" height="46" uuid="5b4932f3-f8f2-4cd3-b459-20d5d2246bbc"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO DE VAGAS                                                                                 ]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -352,7 +352,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="219" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="248" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -366,7 +366,7 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="257" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<reportElement x="294" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
