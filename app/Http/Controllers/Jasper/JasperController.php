@@ -34,105 +34,15 @@ class JasperController extends Controller
                     'port' => getenv('DB_PORT'),
                 ]
             ];
-        } elseif (!is_null($request->Filtromodulo) && is_null($request->Filtroescolaridade) && is_null($request->periodo_inicio) && is_null($request->periodo_fim)) {
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtromodulo' => $request->Filtromodulo,
-                ],
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
-        } elseif (!is_null($request->Filtromodulo) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && is_null($request->Filtroescolaridade)) {
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroperiodoinicio' => $request->periodo_inicio,
-                    'Filtroperiodofim' => $request->periodo_fim
-                ],
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
-        } elseif (!is_null($request->Filtroescolaridade) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && is_null($request->Filtromodulo)) {
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtroescolaridade' => $request->Filtroescolaridade,
-                    'Filtroperiodoinicio' => $request->periodo_inicio,
-                    'Filtroperiodofim' => $request->periodo_fim
-                ],
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
-        } elseif (!is_null($request->Filtroescolaridade) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && !is_null($request->Filtromodulo)) {
-//           dd($request->all());
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtroescolaridade' => $request->Filtroescolaridade,
-                    'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroperiodoinicio' => date('Y-m-d H:i:s',strtotime($request->periodo_inicio)),
-//                    $request->periodo_inicio,
-                    'Filtroperiodofim' => date('Y-m-d H:i:s',strtotime($request->periodo_fim))
-//                    $request->periodo_fim
-                ],
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
-//            dd($options);
-        } elseif (is_null($request->Filtroescolaridade) && !is_null($request->periodo_inicio) && !is_null($request->periodo_fim) && is_null($request->Filtromodulo)) {
-            $options = [
-                'format' => ['pdf'],
-                'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
-                    'Filtroperiodoinicio' => $request->periodo_inicio,
-                    'Filtroperiodofim' => $request->periodo_fim
-                ],
-                'db_connection' => [
-                    'driver' => getenv('DB_CONNECTION'),
-                    'username' => getenv('DB_USERNAME'),
-                    'password' => getenv('DB_PASSWORD'),
-                    'host' => getenv('DB_HOST'),
-                    'database' => getenv('DB_DATABASE'),
-                    'port' => getenv('DB_PORT'),
-                ]
-            ];
         } else {
             $options = [
                 'format' => ['pdf'],
                 'params' => [
                     'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
+                    'Filtroescolaridade' => $request->Filtroescolaridade,
                     'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroescolaridade' => $request->Filtroescolaridade
+                    'Filtroperiodoinicio' => date('d-m-Y H:i:s',strtotime($request->periodo_inicio)),
+                    'Filtroperiodofim' => date('d-m-Y H:i:s',strtotime($request->periodo_fim))
                 ],
 
                 'db_connection' => [
@@ -148,12 +58,21 @@ class JasperController extends Controller
 
         $jasper = new PHPJasper();
 
-        $stmt = $jasper->process(
+        $jasper->process(
             $input,
             $output,
             $options
         )->execute();
-//       dd($stmt);
+
+        //verificando erro
+
+//       $stmt = $jasper->process(
+//            $input,
+//            $output,
+//            $options
+//        )->output();
+//        dd($stmt);
+
         return $output . '.pdf';
     }
 }

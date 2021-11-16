@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
 	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -20,14 +20,13 @@
 	<parameter name="Filtroperiodofim" class="java.util.Date"/>
 	<queryString language="SQL">
 		<![CDATA[select distinct * from pessoa p
-                  inner join comprovante c on p.comprovante_id = c.id
-                  left join escolaridade e on p.escolaridade_id = e.id
-                  left join escolaridade e2 on p.serie_irmao_na_escola_id = e2.id
-                  left join modulo m on e.modulo_id = m.id
-where p.irmaos_na_escola='SIM' and escolaridade_id = $P{Filtroescolaridade} and
-        p.periodo_inicio >= ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} and
-        p.periodo_fim <= ($P{Filtroperiodofim} is null) or $P{Filtroperiodofim}
-ORDER BY nome_completo]]>
+		inner join comprovante c on p.comprovante_id = c.id
+		left join escolaridade e on p.escolaridade_id = e.id
+		left join escolaridade e2 on p.serie_irmao_na_escola_id = e2.id
+		left join modulo m on e.modulo_id = m.id
+		where p.irmaos_na_escola = 'SIM' and
+		p.escolaridade_id = $P{Filtroescolaridade}
+		and (p.periodo_inicio =  $P{Filtroperiodoinicio} and p.periodo_fim = $P{Filtroperiodofim}) ORDER BY nome_completo]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -271,14 +270,7 @@ ORDER BY nome_completo]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="225" splitType="Stretch">
-			<staticText>
-				<reportElement style="Detail" x="4" y="90" width="540" height="30" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
-				<textElement textAlignment="Center">
-					<font size="20" isBold="false"/>
-				</textElement>
-				<text><![CDATA[INSCRITOS  COM IRMÃOS ESTUDANDO NA ESCOLA                ]]></text>
-			</staticText>
+		<band height="266" splitType="Stretch">
 			<staticText>
 				<reportElement style="Detail" x="94" y="163" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
@@ -310,7 +302,7 @@ ORDER BY nome_completo]]>
 				<imageExpression><![CDATA[$P{CAMINHO_IMAGEM}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="242" y="200" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
+				<reportElement x="246" y="200" width="192" height="18" uuid="4aeb7a3c-d51b-4f83-8adb-43f6212b162d"/>
 				<textElement textAlignment="Left">
 					<font isBold="true"/>
 				</textElement>
@@ -324,6 +316,34 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Escolaridade:
 ]]></text>
 			</staticText>
+			<staticText>
+				<reportElement style="Detail" x="60" y="100" width="455" height="46" uuid="5b4932f3-f8f2-4cd3-b459-20d5d2246bbc"/>
+				<textElement textAlignment="Justified">
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO DE VAGAS                                                                                 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="220" width="60" height="24" uuid="c982bc60-49b0-4330-9c41-588b6eb0c2ba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="221" y="219" width="100" height="30" uuid="a2e974a3-f8e4-4780-b29a-a7443b2f6d6a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodoinicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="219" width="100" height="30" uuid="2176dd4b-0508-46e9-8de3-86b21885f650"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodofim}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
@@ -335,10 +355,10 @@ ORDER BY nome_completo]]>
 	<detail>
 		<band height="120" splitType="Stretch">
 			<rectangle>
-				<reportElement x="57" y="3" width="497" height="107" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
+				<reportElement x="57" y="3" width="497" height="97" uuid="b78cce36-de23-43b1-96e8-b2474eeb94c1"/>
 			</rectangle>
 			<textField>
-				<reportElement key="" mode="Transparent" x="98" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
+				<reportElement key="" mode="Transparent" x="100" y="7" width="268" height="22" forecolor="#000000" uuid="6f8bbb40-fe99-4cbc-9b8c-6633ff130e81"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -352,42 +372,42 @@ ORDER BY nome_completo]]>
 				<text><![CDATA[Aluno:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="219" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
+				<reportElement x="211" y="50" width="304" height="20" uuid="5f28bb15-f252-4beb-bde4-d349302e8ddd"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "Nao" , "Não Informado", $F{nome_irmaos_na_escola} )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[IF($F{irmaos_na_escola} == "nao","Não Informado",$F{nome_irmaos_na_escola})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="62" y="50" width="228" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
+				<reportElement x="62" y="50" width="148" height="20" uuid="07dc32af-c5b4-44f2-a803-21f50f091856"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Nome do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="257" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
+				<reportElement x="243" y="70" width="250" height="20" uuid="67737122-24e9-425e-9892-a03065b86e12"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[IF($F{COLUMN_34} == null , "Não Informado", $F{COLUMN_34} )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[IF($F{COLUMN_34} == null , "Não Informado", $F{COLUMN_36} )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="63" y="70" width="254" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
+				<reportElement x="61" y="70" width="182" height="20" uuid="6e4c0702-dadc-4870-b780-31ad3c29fc70"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Escolaridade do irmão(a) na escola:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="118" y="31" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
+				<reportElement x="122" y="31" width="280" height="16" uuid="f81f0336-a1be-4cd4-a19d-997881fc2f21"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{comprovante}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="63" y="31" width="56" height="15" uuid="87c9fed2-8762-473d-8ce3-957b625e17bf"/>
+				<reportElement x="63" y="31" width="66" height="15" uuid="87c9fed2-8762-473d-8ce3-957b625e17bf"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>

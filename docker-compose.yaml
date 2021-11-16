@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  laravel-app:
+    build: .
+    ports:
+      - "8181:80"
+      #      para não matar minha mudança ao dar docker compose down
+    volumes:
+      - ./:/usr/share/nginx
+    networks:
+      - app-network
+  mysql-app:
+    image: mysql:8.0.27
+    ports:
+      - "3305:3305"
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+

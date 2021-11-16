@@ -17,7 +17,10 @@
                         </ul>
 
                         <fieldset>
-                            <h2>Relatório</h2>
+                            <div class="alert alert-warning" role="alert">
+                            Atenção: Para o funcionamento correto é necessário informa todos os filtros
+                                <br>
+                                Ou caso queira trazer todos os inscritos click em gerar relatório</div>
                             <h3>Selecione a Escolaridade</h3>
                             <select name="Filtroescolaridade">
                                 <option value="">Não selecionado</option>
@@ -33,11 +36,10 @@
                                 @endforeach
                             </select>
 
-                            <h3>Inicio do periodo</h3>
-                            <input class="form-control" type="date" name="periodo_inicio">
-                            <h3>Fim periodo</h3>
+                            <h3>Inicio do periodo de inscrição</h3>
+                            <input class="form-control" type="date" name="periodo_inicio" >
+                            <h3>Fim periodo de inscrição</h3>
                             <input class="form-control" type="date" name="periodo_fim">
-
                             <input class="btn-primary" type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>
                     </form>
