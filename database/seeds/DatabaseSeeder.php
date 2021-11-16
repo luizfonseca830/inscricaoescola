@@ -20,10 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call([EscolaridadeTableSeeder::class]);
         $this->call([TipotelaTableSeeder::class]);
         $this->call([PessoaTableSeeder::class]);
-        $this->call([ComprovanteTableSeeder::class]);
-        $this->call([EnderecoTableSeeder::class]);
-        $this->call([EscolaridadeTableSeeder::class]);
-        $this->call([UsersTableSeeder::class]);
         Schema::enableForeignKeyConstraints();
     }
 }

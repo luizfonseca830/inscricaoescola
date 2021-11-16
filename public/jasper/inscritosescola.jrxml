@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -20,15 +20,14 @@
 	<parameter name="Filtroperiodoinicio" class="java.util.Date"/>
 	<parameter name="Filtroperiodofim" class="java.util.Date"/>
 	<queryString language="SQL">
-		<![CDATA[select * from pessoa p
-         inner join comprovante c on p.comprovante_id = c.id
-         left join escolaridade e on p.escolaridade_id = e.id
-         left join modulo m on e.modulo_id = m.id
-        where
-        ($P{Filtromodulo} is null) or  $P{Filtromodulo} = m.id and
-        ($P{Filtroescolaridade} is null) or $P{Filtroescolaridade}  = e.id and
-        ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} = periodo_inicio and
-      	($P{Filtroperiodofim} is null) or $P{Filtroperiodofim} = periodo_fim]]>
+		<![CDATA[select * from pessoa p 
+		inner join comprovante c on p.comprovante_id = c.id
+		left join escolaridade e on p.escolaridade_id = e.id
+		left join modulo m on e.modulo_id = m.id
+		where $P{Filtromodulo} = e.modulo_id
+		and  $P{Filtroescolaridade} = p.escolaridade_id
+		and	($P{Filtroperiodoinicio} = p.periodo_inicio	
+		and $P{Filtroperiodofim} = p.periodo_fim)]]>
 	</queryString>
 	<field name="id" class="java.math.BigInteger">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -247,7 +246,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="293" splitType="Stretch">
+		<band height="285" splitType="Stretch">
 			<staticText>
 				<reportElement style="Detail" x="60" y="100" width="455" height="46" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement textAlignment="Justified">
@@ -314,15 +313,15 @@
 				</textElement>
 				<text><![CDATA[Modulo:]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="221" y="247" width="100" height="30" uuid="6489c974-afcb-4e3a-a5ba-05d55b220e32"/>
+			<textField pattern="M/d/yy h:mm a">
+				<reportElement key="" x="220" y="250" width="100" height="30" uuid="6489c974-afcb-4e3a-a5ba-05d55b220e32"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{Filtroperiodoinicio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="313" y="246" width="100" height="30" uuid="18a52cbc-22b5-4ce3-a43b-1eb74e745331"/>
+				<reportElement x="325" y="250" width="100" height="30" uuid="18a52cbc-22b5-4ce3-a43b-1eb74e745331"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>

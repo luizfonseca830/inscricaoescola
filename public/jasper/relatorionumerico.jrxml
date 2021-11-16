@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inscritosescola" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -19,13 +19,13 @@
 	<parameter name="Filtroperiodoinicio" class="java.util.Date"/>
 	<parameter name="Filtroperiodofim" class="java.util.Date"/>
 	<queryString language="SQL">
-		<![CDATA[select * from pessoa p
-         inner join comprovante c on p.comprovante_id = c.id
-         left join escolaridade e on p.escolaridade_id = e.id
-        where
-        ($P{Filtroescolaridade} is null) or $P{Filtroescolaridade}  = e.id and
-        p.periodo_inicio >= ($P{Filtroperiodoinicio} is null)  or $P{Filtroperiodoinicio} and
-        p.periodo_fim <= ($P{Filtroperiodofim} is null) or $P{Filtroperiodofim}
+		<![CDATA[select * from pessoa p 
+		inner join comprovante c on p.comprovante_id = c.id
+		left join escolaridade e on p.escolaridade_id = e.id
+		where
+		p.escolaridade_id = $P{Filtroescolaridade} and
+		p.periodo_inicio = $P{Filtroperiodoinicio} and
+		p.periodo_fim = $P{Filtroperiodofim}
         order by
         p.nome_completo]]>
 	</queryString>
@@ -225,7 +225,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="244" splitType="Stretch">
+		<band height="265" splitType="Stretch">
 			<staticText>
 				<reportElement style="Detail" x="95" y="169" width="370" height="14" uuid="958e6d98-2412-4bc3-946d-73bcffee849f"/>
 				<textElement textAlignment="Center">
@@ -273,6 +273,27 @@
 				</textElement>
 				<text><![CDATA[BILHETES DE INSCRITOS  PARA O SORTEIO DE VAGAS                                                                                 ]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="177" y="236" width="60" height="14" uuid="9cf7c100-9d99-42cf-a812-f5a964c60d57"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="235" width="100" height="24" uuid="25d63afd-557e-4aeb-9ec8-6573726ce67b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodoinicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="235" width="100" height="24" uuid="fd1651c9-7a82-4af4-a632-1e4ac77e72e4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Filtroperiodofim}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>

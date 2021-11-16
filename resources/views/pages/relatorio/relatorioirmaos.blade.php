@@ -17,6 +17,10 @@
                         </ul>
 
                         <fieldset>
+                            <div class="alert alert-warning" role="alert">
+                                Atenção: Para o funcionamento correto é necessário informa todos os filtros
+                                <br>
+                                Ou caso queira trazer todos os inscritos click em gerar relatório</div>
                             <h3>Selecione o Escolaridade</h3>
                             <select name="Filtroescolaridade">
                                 <option value="">Todas</option>
@@ -24,10 +28,10 @@
                                     <option value="{{$escolaridade->id}}">{{$escolaridade->nivel_escolaridade}}</option>
                                 @endforeach
                             </select>
-                            <h3>Inicio do periodo</h3>
-                            <input class="form-control" type="date" name="periodo_inicio" >
-                            <h3>Fim periodo</h3>
-                            <input class="form-control" type="date" name="periodo_fim">
+                            <h3>Inicio do periodo de inscrição</h3>
+                            <input class="form-control" type="datetime-local" name="periodo_inicio" >
+                            <h3>Fim periodo de inscrição</h3>
+                            <input class="form-control" type="datetime-local" name="periodo_fim">
                             <input  type="submit" name="next" id="confirma" class="acao" style="width: auto"
                                    value="Gerar Relatório"/>
                         </fieldset>
