@@ -4,8 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
-                <form id="form" method="POST" action="{{ route('delete-pessoa', $id) }}">
+                @dd($pessoa)
+                <form id="form" method="POST" action="{{ route('delete-pessoa', $pessoa->id) }}">
                     @csrf
+                    <label>Nome</label>
+                    <input type="text" class="form-control" value="{{$pessoa->nome_completo}}" disabled>
                     <Label>Motivo</Label>
                     <textarea id="motivo" name="motivo" class="form-control">
                     </textarea>
