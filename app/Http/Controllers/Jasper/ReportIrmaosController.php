@@ -50,7 +50,7 @@ class ReportIrmaosController extends Controller
         }
 
         $jasper = new PHPJasper();
-
+//        $jasper->compile($input)->execute();
         $jasper->process(
             $input,
             $output,
