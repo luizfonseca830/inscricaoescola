@@ -10,7 +10,7 @@ class ReportJasperController extends Controller
 {
     static public function index(Request $request)
     {
-        $input = public_path() . '/jasper/relatorionumerico.jasper';
+        $input = public_path() . '/jasper/relatorionumerico.jrxml';
         $output = public_path() . '/jasper/pdf/relatorionumerico';
         if (is_null($request->Filtroescolaridade) && is_null($request->periodo_inicio) && is_null($request->periodo_fim)) {
             $options = [
@@ -50,19 +50,19 @@ class ReportJasperController extends Controller
         }
 
         $jasper = new PHPJasper();
-
-        $jasper->process(
-            $input,
-            $output,
-            $options
-        )->execute();
-
-//        $x = $jasper->process(
+        $jasper->compile($input)->execute();
+//        $jasper->process(
 //            $input,
 //            $output,
 //            $options
-//        )->output();
-//        dd($x);
+//        )->execute();
+
+        $x = $jasper->process(
+            $input,
+            $output,
+            $options
+        )->output();
+        dd($x);
 
         return $output . '.pdf';
     }

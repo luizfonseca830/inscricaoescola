@@ -60,11 +60,11 @@ class JasperController extends Controller
 
 //        $jasper->compile($input)->execute();
 
-        $jasper->process(
-            $input,
-            $output,
-            $options
-        )->execute();
+//        $jasper->process(
+//            $input,
+//            $output,
+//            $options
+//        )->execute();
 
         //verificando erro
 
