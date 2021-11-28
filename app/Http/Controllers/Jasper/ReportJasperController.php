@@ -10,7 +10,7 @@ class ReportJasperController extends Controller
 {
     static public function index(Request $request)
     {
-        $input = public_path() . '/jasper/relatorionumerico.jrxml';
+        $input = public_path() . '/jasper/relatorionumerico.jasper';
         $output = public_path() . '/jasper/pdf/relatorionumerico';
         if (is_null($request->Filtroescolaridade) && is_null($request->periodo_inicio) && is_null($request->periodo_fim)) {
             $options = [
@@ -32,7 +32,7 @@ class ReportJasperController extends Controller
             $options = [
                 'format' => ['pdf'],
                 'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
+//                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
                     'Filtroescolaridade' => $request->Filtroescolaridade,
                     'Filtroperiodoinicio' => date('d-m-Y H:i:s',strtotime($request->periodo_inicio)),
                     'Filtroperiodofim' => date('d-m-Y H:i:s',strtotime($request->periodo_fim))
@@ -50,19 +50,20 @@ class ReportJasperController extends Controller
         }
 
         $jasper = new PHPJasper();
-        $jasper->compile($input)->execute();
-//        $jasper->process(
-//            $input,
-//            $output,
-//            $options
-//        )->execute();
-
-        $x = $jasper->process(
+//        $x = $jasper->compile($input)->execute();
+//        dd($x);
+        $jasper->process(
             $input,
             $output,
             $options
-        )->output();
-        dd($x);
+        )->execute();
+
+//        $x = $jasper->process(
+//            $input,
+//            $output,
+//            $options
+//        )->output();
+//        dd($x);
 
         return $output . '.pdf';
     }
