@@ -41,8 +41,8 @@ class JasperController extends Controller
                     'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
                     'Filtroescolaridade' => $request->Filtroescolaridade,
                     'Filtromodulo' => $request->Filtromodulo,
-                    'Filtroperiodoinicio' => date('d-m-Y H:i:s',strtotime($request->periodo_inicio)),
-                    'Filtroperiodofim' => date('d-m-Y H:i:s',strtotime($request->periodo_fim))
+                    'Filtroperiodoinicio' => date('d-m-Y H:i:s', strtotime($request->periodo_inicio)),
+                    'Filtroperiodofim' => date('d-m-Y H:i:s', strtotime($request->periodo_fim))
                 ],
 
                 'db_connection' => [
@@ -57,6 +57,8 @@ class JasperController extends Controller
         }
 
         $jasper = new PHPJasper();
+
+//        $jasper->compile($input)->execute();
 
         $jasper->process(
             $input,
