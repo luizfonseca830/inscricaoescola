@@ -83,6 +83,7 @@ class VisualizarPessoaController extends Controller
 
     public function motivo($id)
     {
-        return view('pages.delete-pessoa', compact('id'));
+        $pessoa = Pessoa::findOrFail($id);
+        return view('pages.delete-pessoa', compact('pessoa'));
     }
 }

@@ -70,8 +70,7 @@
                     <p>{{ __('Relatório Numérico') }}</p>
                 </a>
             </li>
-
-            <li class="nav-item{{ $activePage == 'RelatorioIrmaos' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'RelatoriosIrmaos' ? ' active' : '' }}">
                 <a class="nav-link" href="{{route('relatorioirmaos')}}">
                     <i class="material-icons">library_books</i>
                     <p>{{ __('Relatório Irmãos') }}</p>

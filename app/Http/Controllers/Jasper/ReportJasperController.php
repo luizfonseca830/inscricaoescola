@@ -32,7 +32,7 @@ class ReportJasperController extends Controller
             $options = [
                 'format' => ['pdf'],
                 'params' => [
-                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
+//                    'CAMINHO_IMAGEM' => public_path() . '/jasper/logoinstituto.png',
                     'Filtroescolaridade' => $request->Filtroescolaridade,
                     'Filtroperiodoinicio' => date('d-m-Y H:i:s',strtotime($request->periodo_inicio)),
                     'Filtroperiodofim' => date('d-m-Y H:i:s',strtotime($request->periodo_fim))
@@ -50,7 +50,8 @@ class ReportJasperController extends Controller
         }
 
         $jasper = new PHPJasper();
-
+//        $x = $jasper->compile($input)->execute();
+//        dd($x);
         $jasper->process(
             $input,
             $output,
