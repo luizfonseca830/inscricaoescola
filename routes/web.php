@@ -66,14 +66,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/pesquisa-transparencia', 'TransparenciaController@search')->name('pesquisa-transparencia');
 
     Route::get('/relatorios', 'RelatoriosController@index')->name('relatorios');
-    Route::post('/relatorio-gerar', 'RelatoriosController@requestPDFJasper')->name('gerar-relatorio');
+    Route::post('/relatorio-gerar', 'RelatoriosController@downloadRelatorio')->name('gerar-relatorio');
 
     Route::get('/relatorionumerico', 'RelatorioNumericoController@index')->name('relatorionumerico');
-    Route::post('/relatorionumerico-gerar', 'RelatorioNumericoController@requestPDFJasper')->name('gerar-relatorionumerico');
+    Route::post('/relatorionumerico-gerar', 'RelatorioNumericoController@downloadRelatorio')->name('gerar-relatorionumerico');
 
 
     Route::get('/relatorioirmaos', 'RelatorioIrmaosController@index')->name('relatorioirmaos');
-    Route::post('/relatorioirmaos-gerar', 'RelatorioIrmaosController@requestPDFJasper')->name('gerar-relatorioirmaos');
+    Route::post('/relatorioirmaos-gerar', 'RelatorioIrmaosController@downloadRelatorio')->name('gerar-relatorioirmaos');
 
     Route::get('/tela-criar', 'TelasDinamicas\TelaCriarController@index')->name('tela-criar');
     Route::get('/tela-liberar', 'TelasDinamicas\TelaLiberarController@index')->name('tela-liberar');

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Modulo;
+use App\Models\Modulo;
 use Illuminate\Database\Eloquent\Model;
 
 class Escolaridade extends Model
@@ -16,5 +16,9 @@ class Escolaridade extends Model
     ];
     public function modulo(){
         return $this->hasOne(Modulo::class, 'id', 'modulo_id');
+    }
+
+    public function pessoas(){
+        return $this->hasMany(Pessoa::class, 'escolaridade_id', 'id');
     }
 }
