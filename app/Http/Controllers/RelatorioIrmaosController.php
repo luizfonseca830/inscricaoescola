@@ -40,6 +40,6 @@ class RelatorioIrmaosController extends Controller
         }
 //        return view('pdf.inscritoescola', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
         $pdf = PDF::setOption('enable-local-file-access', true)->loadView('pdf.irmao', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
-        return $pdf->download('relatorioNumerico_emitido_'.date('m-d-Y').'.pdf');
+        return $pdf->download('relatorioIrmaos_emitido_'.date('m-d-Y').'.pdf');
     }
 }
