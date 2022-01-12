@@ -42,5 +42,11 @@ class Pessoa extends Model
         return $this->hasOne(Endereco::class, 'id', 'endereco_id');
     }
 
+    public function comprovante(){
+        return $this->belongsTo(Comprovante::class, 'comprovante_id', 'id');
+    }
 
+    public function serieIrmao(){
+        return $this->belongsTo(Escolaridade::class, 'serie_irmao_na_escola_id', 'id');
+    }
 }

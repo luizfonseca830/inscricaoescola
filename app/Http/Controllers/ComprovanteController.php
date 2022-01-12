@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ComprovanteRequest;
 use App\Models\Comprovante;
 use App\Models\Pessoa;
-use Illuminate\Http\Request;
 use PDF;
 
 class ComprovanteController extends Controller

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Jasper\JasperController;
 use App\Models\Escolaridade;
 use App\Models\Modulo;
-use App\Models\Sorteios;
 use Illuminate\Http\Request;
+use PDF;
 
 class RelatoriosController extends Controller
 {
@@ -16,17 +15,24 @@ class RelatoriosController extends Controller
         $modulos = Modulo::all();
         $escolaridades = Escolaridade::all();
         return view('pages.relatorio.relatorios', [
-            'modulos'=>$modulos,
-            'escolaridades'=>$escolaridades
+            'modulos' => $modulos,
+            'escolaridades' => $escolaridades
         ]);
     }
 
-    public function requestPDFJasper(Request $request)
+    public function downloadRelatorio(Request $request)
     {
-        $file = JasperController::index($request);
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
-        return response()->download($file, 'relatorio.pdf', $headers);
+        $modulo = $request->Filtromodulo;
+        $data_inicio = $request->periodo_inicio;
+        $data_fim = $request->periodo_fim;
+        if (is_null($request->Filtroescolaridade)) $escolaridades = Escolaridade::all();
+        else {
+            $escolaridades = Escolaridade::where('id', $request->Filtroescolaridade);
+            if(!is_null($modulo)) $escolaridades = $escolaridades->where('modulo_id', $modulo);
+            $escolaridades = $escolaridades->get();
+        }
+//        return view('pdf.inscritoescola', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
+        $pdf = PDF::setOption('enable-local-file-access', true)->loadView('pdf.inscritoescola', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
+        return $pdf->download('inscritoescola_emitido_'.date('m-d-Y').'.pdf');
     }
 }
