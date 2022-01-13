@@ -12,15 +12,12 @@ class TipoTelaController extends Controller
     //
     public function store(Request $request)
     {
-//        dd($request->all());
-        //VERIFICAR SE N FOI MARCADO OS 2
-        if (!is_null($request->tela_nome) && $request->nome_pdf != '0' || ($request->status_liberar == '1' && !is_null($request->data_inicial)) ) {
-            session()->put('error', 'Parece que algo de errado aconteceu!');
-            return redirect()->route('tela-criar');
-        }
-//        dd(2);
         //SALVA PDF
         if ($request->tipo_tela == 'PDF') {
+            if(is_null($request->tela_nome_pdf)){
+                session()->put('error', 'Nome do PDF vazio');
+                return redirect()->route('tela-criar');
+            }
             //VERIFICAR SE O PDF VEIO
             if (!isset($request->arquivo_pdf)) {
 //                dd(1);
@@ -46,8 +43,12 @@ class TipoTelaController extends Controller
             }
         } //SALVAR TELA
         else if ($request->tipo_tela == 'Tela') {
+            if (is_null($request->tela_nome)){
+                session()->put('error', 'Nome da tela vazio');
+                return redirect()->route('tela-criar');
+            }
             //VERIFICAR SE O NOME JA EXISTE
-            $tipoTela = TipoTela::where('nome_ou_anexo', $request->nome_tela)->first();
+            $tipoTela = TipoTela::where('nome_ou_anexo', $request->nome_tela)->where('tipo','Tela')->first();
             if (!is_null($tipoTela)){
                 session()->put('error', 'Parece que esse nome já está sendo utilizado!');
                 return redirect()->route('tela-criar');
