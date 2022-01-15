@@ -166,7 +166,7 @@ return [
          * Package Service Providers...
          */
         Barryvdh\DomPDF\ServiceProvider::class,
-        JasperPHP\JasperPHPServiceProvider::class,
+        //JasperPHP\JasperPHPServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
 
 

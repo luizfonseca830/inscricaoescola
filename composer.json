@@ -12,7 +12,6 @@
         "barryvdh/laravel-dompdf": "^0.9.0",
         "barryvdh/laravel-snappy": "^0.4.8",
         "consoletvs/charts": "7.*",
-        "copam/phpjasper": "^1.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "fzaninotto/faker": "^1.9",
