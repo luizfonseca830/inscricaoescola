@@ -43,7 +43,8 @@ Route::post('registros', 'RegistroController@store')->name('registros');
 
 Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
 
-Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
+Route::post('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
+Route::get('/filtrar', 'AreaRestritaController@filter')->name('/filter');
 
 
 Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('comprovante-procurar');
