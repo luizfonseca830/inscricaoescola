@@ -13,7 +13,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">Total de Inscrições</p>
+                            <p class="card-category">Total de Inscrições 2021</p>
                             <h3 class="card-title">{{$inscricao_total}}</h3>
                         </div>
                         <div class="card-footer">
@@ -26,7 +26,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">Total de Inscrições a partir de 2022</p>
+                            <p class="card-category">Total de Inscrições 2022</p>
                             <h3 class="card-title">{{$inscritos_2022->total}}</h3>
                         </div>
                         <div class="card-footer">
