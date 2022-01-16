@@ -18,7 +18,7 @@
 @endif
 
 @if (session()->has('error'))
-    <div class="modal" id="modal" tabindex="-1" role="dialog" style="display: block">
+    <div class="modal" id="modal" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -35,4 +35,10 @@
     </div>
     {{session()->forget('error')}}
 @endif
-
+@section('script')
+    <script>
+        $('#close').click(function (){
+            $('#modal').hide();
+        });
+    </script>
+@endsection
