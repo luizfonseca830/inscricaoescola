@@ -4,9 +4,9 @@
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
-                @dd($pessoa)
                 <form id="form" method="POST" action="{{ route('delete-pessoa', $pessoa->id) }}">
                     @csrf
+                    @method('DELETE')
                     <label>Nome</label>
                     <input type="text" class="form-control" value="{{$pessoa->nome_completo}}" disabled>
                     <Label>Motivo</Label>

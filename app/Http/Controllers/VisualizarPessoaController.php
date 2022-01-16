@@ -43,7 +43,7 @@ class VisualizarPessoaController extends Controller
                 session()->put('error', 'Essa Pessoa não poder ser deletado!');
             }
             DB::commit();
-            return redirect()->route('/visualizacao');
+            return redirect()->route('/filter');
         }catch (\Exception $e){
             DB::rollBack();
             return redirect()->back()->withErrors([
