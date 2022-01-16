@@ -27,7 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pessoa2021 = Pessoa::all()->count();
+        $pessoa2021 = Pessoa::all();
+        $arrayPessoas2021 = [];
+        foreach ($pessoa2021 as $pessoa) {
+            if (date('Y', strtotime($pessoa->periodo_inicio)) == '2021') {
+                array_push($arrayPessoas2021, $pessoa);
+            }
+        }
 //        $pessoa2022 = DB::select("SELECT count(id) as total FROM pessoa where DATE_FORMAT (periodo_inicio,'%Y') >= 2022");
         $pessoa2022 = Pessoa::all();
         $arrayPessoas = [];
@@ -38,7 +44,7 @@ class HomeController extends Controller
         }
 
         return view('dashboard', [
-            'inscricao_total' => $pessoa2021,
+            'inscricao_total' => count($arrayPessoas2021),
             'inscritos_2022' => count($arrayPessoas)
         ]);
     }
