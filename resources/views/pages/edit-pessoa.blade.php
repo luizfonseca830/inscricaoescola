@@ -34,7 +34,7 @@
                             @if ($pessoa->sexo == 'H')
                                 <input type="text" value="Masculino" />
                             @else
-                                <input type="text" value="Femino" />
+                                <input type="text" value="Feminino" />
                             @endif
                             <p>Email</p>
                             <input size="40" type="email" value="{{$pessoa->email}}" />

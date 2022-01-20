@@ -37,7 +37,7 @@
                         @if ($pessoa->sexo == 'H')
                             <input class="form-control" type="text" value="Masculino" disabled/>
                         @else
-                            <input class="form-control" type="text" value="Femino" disabled/>
+                            <input class="form-control" type="text" value="Feminino" disabled/>
                         @endif
                         <p>Email</p>
                         <input class="form-control" size="40" type="email" value="{{$pessoa->email}}" disabled/>
