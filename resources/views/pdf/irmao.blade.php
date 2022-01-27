@@ -35,7 +35,7 @@
                     </div>
                     <div style="margin-top: 10px; margin-bottom: 10px;">
                         <label style="margin-left: 10px; ">ESCOLARIDADE DO IRMÃO(A) NA ESCOLA:
-                            <b>{{$pessoa->serieIrmao->nivel_escolaridade}}</b></label><br>
+                            <b>{{!is_null($pessoa->serieIrmao) ? $pessoa->serieIrmao->nivel_escolaridade : ''}}</b></label><br>
                     </div>
                 </div>
             @elseif(is_null($data_inicio) && is_null($data_fim))
