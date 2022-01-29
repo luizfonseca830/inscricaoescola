@@ -5,6 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .keep-together {
+            page-break-inside: avoid;
+        }
+
+        .break-before {
+            page-break-before: always;
+        }
+
+        .break-after {
+            page-break-after: always;
+        }
+    </style>
     <title>Relatório Inscrito</title>
 </head>
 <body>
@@ -21,7 +34,7 @@
         <b>Módulo: {{$escolaridade->modulo->descricao}}</b>
         @foreach($escolaridade->pessoas as $pessoa)
             @if (strtotime(date('Y-m-d', strtotime($pessoa->periodo_inicio))) >= strtotime($data_inicio) && strtotime(date('Y-m-d', strtotime($pessoa->periodo_fim))) <= strtotime($data_fim))
-                <div style="border: 1px solid #000; margin-top: 20px">
+                <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                     <div style="margin-top: 10px; margin-bottom: 10px;">
                         <label style="margin-left: 10px; ">ALUNO: <b>{{$pessoa->nome_completo}}</b></label><br>
                     </div>
@@ -34,7 +47,7 @@
                     </div>
                 </div>
             @elseif(is_null($data_inicio) && is_null($data_fim))
-                <div style="border: 1px solid #000; margin-top: 20px">
+                <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                     <div style="margin-top: 10px; margin-bottom: 10px;">
                         <label style="margin-left: 10px; ">ALUNO: <b>{{$pessoa->nome_completo}}</b></label><br>
                     </div>

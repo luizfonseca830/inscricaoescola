@@ -38,7 +38,7 @@ class RelatorioIrmaosController extends Controller
             if(!is_null($modulo)) $escolaridades = $escolaridades->where('modulo_id', $modulo);
             $escolaridades = $escolaridades->get();
         }
-//        return view('pdf.inscritoescola', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
+//        return view('pdf.irmao', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
         $pdf = PDF::setOption('enable-local-file-access', true)->loadView('pdf.irmao', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
         return $pdf->download('relatorioIrmaos_emitido_'.date('m-d-Y').'.pdf');
     }
