@@ -14,4 +14,3 @@ yarn-error.log
 .idea
 /public/jasper/pdf/*.pdf
 /html/
-docker
