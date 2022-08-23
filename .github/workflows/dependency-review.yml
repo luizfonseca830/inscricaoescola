@@ -20,4 +20,3 @@ jobs:
         uses: actions/dependency-review-action@v2
         with:
           allow-licenses: MIT
-          deny-licenses: Apache-1.1, Apache-2.0
