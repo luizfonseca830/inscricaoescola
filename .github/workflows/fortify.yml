@@ -22,7 +22,7 @@ name: Fortify on Demand Scan
 on:
   workflow_dispatch:
   push:
-    branches: [ "master","develope" ]
+    branches: [ "master" ]
   schedule:
     - cron: '32 12 * * 0'
 
