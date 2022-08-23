@@ -39,9 +39,9 @@
 @endsection
 @section('script')
     <!-- Charting library -->
-    <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="public/js/http_unpkg.com_chart.js@2.9.3_dist_Chart.js"></script>
     <!-- Chartisan -->
-    <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+    <script src="public/js/http_unpkg.com_@chartisan_chartjs@^2.1.0_dist_chartisan_chartjs.umd.js"></script>
     <script src="{{asset('js/area-restrita/functions.js')}}"></script>
     <script>
         const incricao = new Chartisan({
