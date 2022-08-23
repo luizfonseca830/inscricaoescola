@@ -6,7 +6,6 @@ namespace App\Charts;
 
 use App\Models\Pessoa;
 use Chartisan\PHP\Chartisan;
-use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 
 class AvaliacoesChart extends BaseChart
