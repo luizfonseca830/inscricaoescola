@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TipoTela;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,33 +22,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sair', function () {
     auth()->logout();
-    return redirect()->route('inical');
+    return redirect()->route('inicial');
 })->name('sair');
 
 Route::get('/', function () {
     return view('welcome', [
-        'pdfs' => \App\Models\TipoTela::where('tipo', 'PDF')->get(),
-        'inscricao' => \App\Models\TipoTela::where('nome_ou_anexo', 'Inscrição')->first(),
-        'protocolo' => \App\Models\TipoTela::where('nome_ou_anexo', 'Protocolo')->first(),
+        'pdfs' => TipoTela::where('tipo', 'PDF')->get(),
+        'inscricao' => TipoTela::where('nome_ou_anexo', 'Inscrição')->first(),
+        'protocolo' => TipoTela::where('nome_ou_anexo', 'Protocolo')->first(),
     ]);
-})->name('inical');
+})->name('inicial');
 
 
-Route::get('/registro', 'RegistroController@registro')->name('registro');
-
-Route::get('/protocolo', 'ComprovanteController@protocolo')
-    ->name('protocolo');
-
-Route::post('registros', 'RegistroController@store')->name('registros');
-
-
-Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
-
-Route::post('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
-Route::get('/filtrar', 'AreaRestritaController@filter')->name('/filter');
-
-
-Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('comprovante-procurar');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -101,6 +87,15 @@ Route::get('pdf', function () {
     return view('pdf');
 })->name('pdf');
 
+
+
+Route::get('/registro', 'RegistroController@registro')->name('registro');
+Route::get('/protocolo', 'ComprovanteController@protocolo')
+    ->name('protocolo');
+Route::post('registros', 'RegistroController@store')->name('registros');
+Route::get('/comprovante/{comprovante}', 'ComprovanteController@index')->name('registro/comprovante'); //
+Route::get('/visualizacao', 'AreaRestritaController@index')->name('/visualizacao');
+Route::post('comprovante-procurar', 'ComprovanteController@procurar')->name('comprovante-procurar');
 Route::get('visualizacao-pessoa/{id}', 'VisualizarPessoaController@show')->name('visualizacao-pessoa');
 Route::delete('deletar-pessoa/{id}', 'VisualizarPessoaController@delete')->name('delete-pessoa');
 Route::get('aparece-pessoa/{id}', 'VisualizarPessoaController@aparece')->name('aparece-pessoa');

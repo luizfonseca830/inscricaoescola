@@ -51,7 +51,7 @@
             </li>
 
             <li class="nav-item{{ $activePage == 'avaliacao' ? ' active' : '' }}">
-                <a class="nav-link" href="{{ route('/filter') }}">
+                <a class="nav-link" href="{{ route('/visualizacao') }}">
                     <i class="material-icons">library_books</i>
                     <p>{{ __('Inscritos') }}</p>
                 </a>

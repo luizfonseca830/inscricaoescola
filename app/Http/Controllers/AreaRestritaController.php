@@ -14,7 +14,6 @@ class AreaRestritaController extends Controller
         //
         $data_inicio = date('Y-m-d', strtotime($request->data_inicio));
         $data_fim = date('Y-m-d', strtotime($request->data_fim));
-//        $pessoas = DB::select("SELECT * FROM pessoa where DATE_FORMAT (periodo_inicio,'%Y-%m-%d') BETWEEN '$data_inicio' AND '$data_fim'");
         $pessoasdb = Pessoa::all();
         $pessoas = [];
         foreach ($pessoasdb as $pessoa){

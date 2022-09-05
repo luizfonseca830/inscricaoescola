@@ -13,17 +13,14 @@ class ComprovanteController extends Controller
     //
     static public function store($comprovate)
     {
-        $comprovante_id = Comprovante::create([
+        return Comprovante::create([
             'comprovante' => $comprovate,
         ])->id;
-
-        return $comprovante_id;
     }
 
-    static public function gerarComprovante($pessoa)
+    static public function gerarComprovante($pessoa): string
     {
-        $comprovante = 'INSTITUTOSAOJOSE' . time() . $pessoa->id;
-        return $comprovante;
+        return 'INSTITUTOSAOJOSE' . time() . $pessoa->id;
     }
 
     public function index($comprovante)
@@ -38,9 +35,8 @@ class ComprovanteController extends Controller
             || $protocolo->data_final >= now() && $protocolo->data_inicial <= now()
             || is_null($protocolo->data_final) && !is_null($protocolo->data_inicial) && $protocolo->data_inicial <= now()) {
             return view('registro.protocolo-pedir');
-        } else
-            return redirect()->route('inical');
-
+        }
+        return redirect()->route('inicial');
     }
 
     public function procurar(ComprovanteRequest $request)
@@ -54,12 +50,5 @@ class ComprovanteController extends Controller
         $comprovante = Comprovante::findOrFail($pessoa->comprovante_id);
         session()->put('sucess', $comprovante->comprovante);
         return redirect()->route('protocolo');
-    }
-
-    public function gerarComprovanteCpf($comprovante)
-    {
-        $comprovante = Comprovante::where('comprovante', $comprovante)->first();
-        $pdf = PDF::loadView('pdf', ['comprovante' => $comprovante]);
-        return $pdf->setPaper('a4')->stream('file_pdf.pdf');;
     }
 }

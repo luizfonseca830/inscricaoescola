@@ -17,28 +17,17 @@ class RelatorioNumericoController extends Controller
         ]);
     }
 
-    public function requestPDFJasper(Request $request)
-    {
-        $file = ReportJasperController::index($request);
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
-        return response()->download($file, 'relatorioNumerico.pdf', $headers);
-    }
 
     public function downloadRelatorio(Request $request)
     {
         $modulo = $request->Filtromodulo;
-        $data_inicio = $request->periodo_inicio;
-        $data_fim = $request->periodo_fim;
-        if (is_null($request->Filtroescolaridade)) $escolaridades = Escolaridade::all();
+        if(is_null($request->Filtroescolaridade)){ $escolaridades = Escolaridade::all();}
         else {
             $escolaridades = Escolaridade::where('id', $request->Filtroescolaridade);
-            if(!is_null($modulo)) $escolaridades = $escolaridades->where('modulo_id', $modulo);
+            if(!is_null($modulo)){ $escolaridades = $escolaridades->where('modulo_id', $modulo);}
             $escolaridades = $escolaridades->get();
         }
-//        return view('pdf.inscritoescola', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
-        $pdf = PDF::setOption('enable-local-file-access', true)->loadView('pdf.numerico', compact('escolaridades', 'modulo', 'data_fim', 'data_inicio'));
+        $pdf = PDF::setOption('enable-local-file-access', true)->loadView('pdf.numerico', compact('escolaridades', 'modulo'));
         return $pdf->download('relatorioNumerico_emitido_'.date('m-d-Y').'.pdf');
     }
 }

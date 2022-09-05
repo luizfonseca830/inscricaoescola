@@ -1,4 +1,4 @@
- @extends('layouts.app', ['activePage' => 'RelatoriosIrmaos', 'titlePage' => __('Relatórios De Irmãos Na Escola')])
+@extends('layouts.app', ['activePage' => 'RelatoriosIrmaos', 'titlePage' => __('Relatórios De Irmãos Na Escola')])
 @section('title')
     <title>INSTITUTO SÃO JOSÉ</title>
 @endsection
@@ -21,18 +21,14 @@
                                 Atenção: Para o funcionamento correto é necessário informa todos os filtros
                                 <br>
                                 Ou caso queira trazer todos os inscritos click em gerar relatório</div>
-                            <h3>Selecione o Escolaridade</h3>
+                            <h3>Selecione a Escolaridade</h3>
                             <select name="Filtroescolaridade">
                                 <option value="">Todas</option>
                                 @foreach($escolaridades as $escolaridade)
                                     <option value="{{$escolaridade->id}}">{{$escolaridade->nivel_escolaridade}}</option>
                                 @endforeach
                             </select>
-                            <h3>Inicio do periodo de inscrição</h3>
-                            <input class="form-control" type="datetime-local" name="periodo_inicio" >
-                            <h3>Fim periodo de inscrição</h3>
-                            <input class="form-control" type="datetime-local" name="periodo_fim">
-                            <input  type="submit" name="next" id="confirma" class="acao" style="width: auto"
+                            <input type="submit" name="next" id="confirma" class="acao" style="width: auto"
                                    value="Gerar Relatório"/>
                         </fieldset>
                     </form>

@@ -13,7 +13,7 @@
                     <form id="formulario_registro" method="post" action="{{route('gerar-relatorio')}}">
                         @csrf
                         <ul id="progress">
-                            <li class="ativo" style="width: 100%">Relatório</li>
+                            <li class="ativo" style="width: 100%">Relatório De Inscritos</li>
                         </ul>
 
                         <fieldset>
@@ -36,10 +36,6 @@
                                 @endforeach
                             </select>
 
-                            <h3>Inicio do periodo de inscrição</h3>
-                            <input class="form-control" type="date" name="periodo_inicio" >
-                            <h3>Fim periodo de inscrição</h3>
-                            <input class="form-control" type="date" name="periodo_fim">
                             <input class="btn-primary" type="submit" name="next" id="confirma" class="acao" style="width: auto" value="Gerar Relatório"/>
                         </fieldset>
                     </form>

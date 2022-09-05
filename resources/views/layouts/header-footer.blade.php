@@ -18,18 +18,16 @@
 
         <div class="logo mr-auto">
 
-            <h1 class="text-light"><a href="{{route('inical')}}">
+            <h1 class="text-light"><a href="{{route('inicial')}}">
                     <img src="{{asset('images/logoinstituto.png')}}" alt="logo instituto">
                     <span>INSTITUTO SÃO JOSÉ</span></a>
 
             </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li class="active"><a href="{{route('inical')}}">Início</a></li>
+                <li class="active"><a href="{{route('inicial')}}">Início</a></li>
                 <li><a href="{{route('login')}}">Área Restrita</a></li>
                 @if(auth()->check())
                     <li><a href="{{route('sair')}}">Sair</a></li>
@@ -51,8 +49,8 @@
                 <div class="col-lg-6 col-md-6 footer-links">
                     <h4>Links mais Usados</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="/jasper/pdf/politicadeprivacidade2021.pdf"
+                        <li><em class="bx bx-chevron-right"></em> <a href="#">Início</a></li>
+                        <li><em class="bx bx-chevron-right"></em> <a href="/jasper/pdf/politicadeprivacidade2021.pdf"
                                                                    target="_blank">Política de Privacidade</a>
                         </li>
                     </ul>

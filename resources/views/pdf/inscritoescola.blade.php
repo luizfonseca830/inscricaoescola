@@ -22,7 +22,7 @@
 </head>
 <body>
 <div style="text-align: center">
-        <img src="{{public_path('images/logoinstituto.png')}}" width="25%">
+        <img src="{{public_path('images/logoinstituto.png')}}" width="25%" alt="logo institucional">
     <h3>BILHETES DE INSCRITOS PARA O SORTEIO DE VAGAS</h3>
     <h3 style="font-weight: bold">ANO SELETIVO: {{date('Y')}}</h3>
     <p>CONGREGRAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE</p>
@@ -30,36 +30,21 @@
 </div>
 @foreach($escolaridades as $escolaridade)
     <div style="margin-left: 20%; width: 60%;">
-        <b>Escolaridade: {{$escolaridade->nivel_escolaridade}}</b> <br>
-        <b>Módulo: {{$escolaridade->modulo->descricao}}</b>
+        <strong>Escolaridade: {{$escolaridade->nivel_escolaridade}}</strong> <br>
+        <strong>Módulo: {{$escolaridade->modulo->descricao}}</strong>
         @foreach($escolaridade->pessoas as $pessoa)
-            @if (strtotime(date('Y-m-d', strtotime($pessoa->periodo_inicio))) >= strtotime($data_inicio) && strtotime(date('Y-m-d', strtotime($pessoa->periodo_fim))) <= strtotime($data_fim))
                 <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                     <div style="margin-top: 10px; margin-bottom: 10px;">
-                        <label style="margin-left: 10px; ">ALUNO: <b>{{$pessoa->nome_completo}}</b></label><br>
+                        <label style="margin-left: 10px; ">ALUNO: <strong>{{$pessoa->nome_completo}}</strong></label><br>
                     </div>
                     <div style="margin-top: 10px; margin-bottom: 10px;">
-                        <label style="margin-left: 10px; ">CPF: <b>{{$pessoa->cpf}}</b></label><br>
+                        <label style="margin-left: 10px; ">CPF: <strong>{{$pessoa->cpf}}</strong></label><br>
                     </div>
                     <div style="margin-top: 10px; margin-bottom: 10px;">
                         <label style="margin-left: 10px; ">PROTOCOLO:
-                            <b>{{$pessoa->comprovante->comprovante}}</b></label><br>
+                            <strong>{{$pessoa->comprovante->comprovante}}</strong></label><br>
                     </div>
                 </div>
-            @elseif(is_null($data_inicio) && is_null($data_fim))
-                <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
-                    <div style="margin-top: 10px; margin-bottom: 10px;">
-                        <label style="margin-left: 10px; ">ALUNO: <b>{{$pessoa->nome_completo}}</b></label><br>
-                    </div>
-                    <div style="margin-top: 10px; margin-bottom: 10px;">
-                        <label style="margin-left: 10px; ">CPF: <b>{{$pessoa->cpf}}</b></label><br>
-                    </div>
-                    <div style="margin-top: 10px; margin-bottom: 10px;">
-                        <label style="margin-left: 10px; ">PROTOCOLO:
-                            <b>{{$pessoa->comprovante->comprovante}}</b></label><br>
-                    </div>
-                </div>
-            @endif
             <br>
         @endforeach
     </div>

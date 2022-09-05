@@ -14,3 +14,5 @@ yarn-error.log
 .idea
 /public/jasper/pdf/*.pdf
 /html/
+*/laravel.log
+/public/CUsersJorgeProjetosinscricaoescolastoragelogs/
