@@ -31,7 +31,9 @@
                     <input type="text" name="nome_completo" id="nome_completo" autocomplete="nome_completo"
                            value="{{old('nome_completo')}}"
                            class="@error('nome_completo') is-invalid @enderror form-control"
-                           placeholder="Informe seu Nome Completo" autofocus/>
+                           placeholder="Informe seu Nome Completo"
+                           style="text-transform: uppercase"
+                           autofocus/>
                     @error('nome_completo')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -45,15 +47,19 @@
                     <input type="text" name="escola_de_origem" id="escola_de_origem" autocomplete="escola_de_origem"
                            value="{{old('escola_de_origem')}}"
                            class="@error('escola_de_origem') is-invalid @enderror form-control"
-                           placeholder="Informe Sua Escola De Origem" autofocus/>
+                           placeholder="Informe Sua Escola De Origem"
+                           style="text-transform: uppercase"
+                           autofocus/>
                     @error('escola_de_origem')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-                    <select name="escolaridade" id="escolaridade">
+                    <select name="escolaridade" id="escolaridade" autofocus>
                         <option value="">Selecione a escolaridade desejada</option>
                         @foreach($escolaridade as $esc)
-                            <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                            <option value="{{$esc->id}}" @if(old('escolaridade')==$esc->id) {{'selected'}} @endif>
+                                {{$esc->nivel_escolaridade}}
+                            </option>
                         @endforeach
                     </select>
                     @error('escolaridade')
@@ -76,7 +82,8 @@
 
                     <input type="number" name="idade" min="5" id="idade" autocomplete="idade"
                            value="{{old('idade')}}"
-                           class="@error('idade') is-invalid @enderror form-control" placeholder="Informe sua idade"/>
+                           class="@error('idade') is-invalid @enderror form-control"
+                           placeholder="Informe sua idade"/>
                     @error('idade')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -84,7 +91,8 @@
                     <input type="text" name="responsavel" id="responsavel" autocomplete="responsavel"
                            value="{{old('responsavel')}}"
                            class="@error('responsavel') is-invalid @enderror form-control"
-                           placeholder="Nome Do Responsável"/>
+                           placeholder="Nome Do Responsável"
+                           style="text-transform: uppercase"/>
                     @error('responsavel')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -97,7 +105,9 @@
                     @enderror
 
                     <input type="email" name="email" id="email" autocomplete="email" value="{{old('email')}}"
-                           class="@error('email') is-invalid @enderror form-control" placeholder="Informe seu Email"/>
+                           class="@error('email') is-invalid @enderror form-control"
+                           placeholder="Informe seu Email"
+                           style="text-transform:lowercase"/>
                     @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -107,37 +117,60 @@
 
                 <fieldset>
                     <h2>Dados Adicionais</h2>
-
                     <p>TEM IRMÃO(A) ESTUDANDO NA ESCOLA?</p>
+{{--                    @dd($errors)--}}
                     <select name="irmaos_na_escola" id="irmaos_na_escola">
-                        <option value="Sim">Sim</option>
-                        <option value="Nao" selected>Nao</option>
+                        <option value="Nao" {{old('irmaos_na_escola') == 'Nao' ? 'selected' : ''}}>Não</option>
+                        <option value="Sim" {{old('irmaos_na_escola') == 'Sim' ? 'selected' : ''}}>Sim</option>
+
                     </select>
-                    <div class="divIrmaoEscola" hidden="true">
-                        <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
-                               placeholder="Nome do Irmão(a)"/>
-                        <select name="serie_irmao_na_escola_id" id="serie_irmao_na_escola_id">
+                    <div class="divIrmaoEscolaSeleciona" {{old('irmaos_na_escola') == 'Sim' ? '' : 'hidden'}}>
+                        <select class="@error('serie_irmao_na_escola_id') is-invalid @enderror form-control" name="serie_irmao_na_escola_id" id="serie_irmao_na_escola_id">
                             <option value="">Selecione a série</option>
                             @foreach($escolaridade as $esc)
-                                <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                                <option value="{{$esc->id}}" {{old('serie_irmao_na_escola_id') == $esc->id ? 'selected' : ''}}>{{$esc->nivel_escolaridade}}</option>
                             @endforeach
                         </select>
+                        @error('serie_irmao_na_escola_id')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="divIrmaoEscolaInput" {{ is_null(old('serie_irmao_na_escola_id')) ? 'hidden' : ''}}>
+                    <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
+                           placeholder="Nome do Irmão(a)"
+                           style="text-transform: uppercase"
+                           autofocus
+                           class="@error('nome_irmaos_na_escola') is-invalid @enderror form-control"/>
+                        @error('nome_irmaos_na_escola')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <p>TEM IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS?</p>
                     <select name="irmaos_no_sorteio" id="irmaos_no_sorteio">
-                        <option value="Sim">Sim</option>
-                        <option value="Nao" selected>Nao</option>
+                        <option value="Nao" {{old('irmaos_no_sorteio') == 'Nao' ? 'selected' : ''}}>Não</option>
+                        <option value="Sim" {{old('irmaos_no_sorteio') == 'Sim' ? 'selected' : ''}}>Sim</option>
                     </select>
-                    <div class="divIrmaoSorteio" hidden="true">
-                        <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
-                               placeholder="Nome do Irmão(a)"/>
-                        <select name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
+                    <div class="divIrmaoSorteioSeleciona" {{old('irmaos_no_sorteio') == 'Sim' ? '' : 'hidden'}}>
+                        <select class="@error('serie_irmao_no_sorteio_id') is-invalid @enderror form-control" name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
                             <option value="">Selecione a série</option>
                             @foreach($escolaridade as $esc)
-                                <option value="{{$esc->id}}">{{$esc->nivel_escolaridade}}</option>
+                                <option value="{{$esc->id}}" {{old('serie_irmao_no_sorteio_id') == $esc->id ? 'selected' : ''}}>{{$esc->nivel_escolaridade}}</option>
                             @endforeach
                         </select>
+                        @error('serie_irmao_no_sorteio_id')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+                    <div class="divIrmaoSorteioInput" {{ is_null(old('serie_irmao_no_sorteio_id')) ? 'hidden' : ''}}>
+                        <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
+                               placeholder="Nome do Irmão(a)"
+                               style="text-transform: uppercase"
+                               class="@error('nome_irmaos_no_sorteio') is-invalid @enderror form-control"/>
+                        @error('nome_irmaos_no_sorteio')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     <input type="button" name="next" id="next" class="next acao" value="Proximo"/>
                     <input type="button" name="prev" id="prev" class="prev acao" value="Anterior"/>
                 </fieldset>

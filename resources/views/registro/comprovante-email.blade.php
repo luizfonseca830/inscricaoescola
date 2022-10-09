@@ -3,7 +3,7 @@
 
     <main class="container">
         <div class="row">
-            <h2>Comprovante de Inscrição Para O Sortei de Vagas – ANO LETIVO 2022: </h2>
+            <h2>Comprovante de Inscrição Para O Sorteio de Vagas – ANO LETIVO:{{date("Y", strtotime($comprovante->pessoa->created_at))}} </h2>
         </div>
         <div>
             <h4>{{$comprovante}}</h4>

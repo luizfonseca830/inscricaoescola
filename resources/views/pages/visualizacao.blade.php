@@ -30,6 +30,14 @@
                 @endforeach
 
                 </tbody>
+                <tfoot>
+                <tr>
+                    <th>Nº</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Ações</th>
+                </tr>
+                </tfoot>
             </table>
         </div>
     </div>

@@ -12,10 +12,7 @@
 @section('content')
     <main class="container">
         <div class="row">
-            <h2>Comprovante de Inscrição: </h2>
-        </div>
-        <div>
-            <h4>{{$comprovante}}</h4>
+            <h2>Comprovante de Inscrição: {{$comprovante}}</h2>
         </div>
         <div class="row">
             <a href="{{route('gerarpdf-comprovante', $comprovante)}}" target="_blank">Download Do Comprovante de Inscrição</a>

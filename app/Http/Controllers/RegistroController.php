@@ -5,46 +5,54 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Registro;
 use App\Models\Endereco;
 use App\Models\Pessoa;
-use App\Models\Termos;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Exception;
 
 class RegistroController extends Controller
 {
     public function store(Registro $request)
     {
-        $endereco_id = Endereco::create([
-            'endereco' => $request->endereco . ', ' . $request->numero,
-            'bairro' => $request->bairro,
-            'cep' => $request->cep,
-        ])->id;
+        try {
+            DB:: beginTransaction();
 
-        $pessoa_id = Pessoa::create([
-            'escolaridade_id' => $request->escolaridade,
-            'endereco_id' => $endereco_id,
-            'nome_completo' => strtoupper($request->nome_completo),
-            'escola_de_origem' => strtoupper($request->escola_de_origem),
-            'cpf' => strtoupper($request->cpf),
-            'idade' => $request->idade,
-            'irmaos_na_escola' => $request->irmaos_na_escola,
-            'nome_irmaos_na_escola' => strtoupper($request->nome_irmaos_na_escola),
-            'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola_id,
-            'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
-            'nome_irmaos_no_sorteio' => strtoupper($request->nome_irmaos_no_sorteio),
-            'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio_id,
-            'responsavel' => strtoupper($request->responsavel),
-            'sexo' => $request->sexo,
-            'telefone' => $request->telefone,
-            'email' => strtoupper($request->email),
-            'data_nascimento' => $request->data_nascimento
-        ]);
+            $endereco_id = Endereco::create([
+                'endereco' => $request->endereco . ', ' . $request->numero,
+                'bairro' => $request->bairro,
+                'cep' => $request->cep,
+            ])->id;
 
-        $pessoa = Pessoa::find($pessoa_id->id);
-        $comprovante = ComprovanteController::gerarComprovante($pessoa);
-        $comprovante_id = ComprovanteController::store($comprovante);
-        PessoaController::updateIDs($pessoa, $comprovante_id);
+            $pessoa_id = Pessoa::create([
+                'escolaridade_id' => $request->escolaridade,
+                'endereco_id' => $endereco_id,
+                'nome_completo' => strtoupper($request->nome_completo),
+                'escola_de_origem' => strtoupper($request->escola_de_origem),
+                'cpf' => strtoupper($request->cpf),
+                'idade' => $request->idade,
+                'irmaos_na_escola' => $request->irmaos_na_escola,
+                'nome_irmaos_na_escola' => strtoupper($request->nome_irmaos_na_escola),
+                'serie_irmao_na_escola_id' => $request->serie_irmao_na_escola_id,
+                'irmaos_no_sorteio' => $request->irmaos_no_sorteio,
+                'nome_irmaos_no_sorteio' => strtoupper($request->nome_irmaos_no_sorteio),
+                'serie_irmao_no_sorteio_id' => $request->serie_irmao_no_sorteio_id,
+                'responsavel' => strtoupper($request->responsavel),
+                'sexo' => $request->sexo,
+                'telefone' => $request->telefone,
+                'email' => strtoupper($request->email),
+                'data_nascimento' => $request->data_nascimento
+            ]);
 
-        return redirect()->route('registro/comprovante', $comprovante);
+            $pessoa = Pessoa::find($pessoa_id->id);
+            $comprovante = (new ComprovanteController)->gerarComprovante($pessoa);
+            $comprovante_id = (new ComprovanteController)->store($comprovante);
+            PessoaController::updateIDs($pessoa, $comprovante_id);
+            DB::commit();
+            return redirect()->route('registro/comprovante', $comprovante);
+        } catch (Exception $ex) {
+            DB::rollBack();
+            return response()->withException($ex->getMessage());
+
+        }
+
 
     }
 
@@ -59,8 +67,6 @@ class RegistroController extends Controller
                 'escolaridade' => $escolaridade
             ]);
         }
-            return redirect()->route('inicial');
-
-
+        return redirect()->route('inicial');
     }
 }

@@ -9,16 +9,14 @@ use PDF;
 
 class ComprovanteController extends Controller
 {
-    //
-    //
-    static public function store($comprovate)
+    public function store($comprovate)
     {
         return Comprovante::create([
             'comprovante' => $comprovate,
         ])->id;
     }
 
-    static public function gerarComprovante($pessoa): string
+    public function gerarComprovante($pessoa)
     {
         return 'INSTITUTOSAOJOSE' . time() . $pessoa->id;
     }
@@ -35,8 +33,7 @@ class ComprovanteController extends Controller
             || $protocolo->data_final >= now() && $protocolo->data_inicial <= now()
             || is_null($protocolo->data_final) && !is_null($protocolo->data_inicial) && $protocolo->data_inicial <= now()) {
             return view('registro.protocolo-pedir');
-        }
-        return redirect()->route('inicial');
+        }return redirect()->route('inicial');
     }
 
     public function procurar(ComprovanteRequest $request)
@@ -50,5 +47,12 @@ class ComprovanteController extends Controller
         $comprovante = Comprovante::findOrFail($pessoa->comprovante_id);
         session()->put('sucess', $comprovante->comprovante);
         return redirect()->route('protocolo');
+    }
+
+    public function gerarComprovanteCpf($comprovante)
+    {
+        $comprovante = Comprovante::where('comprovante', $comprovante)->first();
+        $pdf = PDF::loadView('pdf', ['comprovante' => $comprovante]);
+        return $pdf->setPaper('a4')->stream('file_pdf.pdf');
     }
 }

@@ -104,7 +104,6 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{asset('js/area-restrita/avaliar-radio-recusar.js')}}"></script>
     <script src="{{asset('js/area-restrita/functions.js')}}"></script>
     <script src="{{asset('js/registro/function.js')}}"></script>
 @endsection

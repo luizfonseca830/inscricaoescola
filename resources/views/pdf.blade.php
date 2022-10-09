@@ -15,7 +15,7 @@
 
     <img height="150" width="200" src="{{public_path().'/images/logoinstituto.png'}}"/>
     <h1><u>Comprovante de inscrição para o sorteio de vagas</u>
-        <br>Ano Letivo: {{ date("Y") }}</h1>
+        <br>Ano Letivo: {{date("Y", strtotime($comprovante->pessoa->created_at))}}</h1>
 </div>
 <div style="margin-left: 1%;">
     <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>

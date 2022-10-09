@@ -16,3 +16,4 @@ yarn-error.log
 /html/
 */laravel.log
 /public/CUsersJorgeProjetosinscricaoescolastoragelogs/
+/docker/dbdata/

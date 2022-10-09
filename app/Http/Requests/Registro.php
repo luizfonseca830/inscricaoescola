@@ -2,9 +2,13 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\IrmaosEscola;
+use App\Rules\IrmaosEscolaNome;
+use App\Rules\IrmaoSorteio;
+use App\Rules\IrmaoSorteiNome;
+use App\Rules\SerieIrmaNoSorteio;
+use App\Rules\SerieIrmaoNaEscola;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\MessageBag;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class Registro extends FormRequest
 {
@@ -31,17 +35,22 @@ class Registro extends FormRequest
             'bairro' => 'required|string|max:50',
             'cep' => 'required|formato_cep',
             'idade' => 'required|numeric|digits_between:1,5|min:0',
-            'nome_completo' => 'required|string|min:10|max:50',
+            'nome_completo' => 'required|string|min:10|max:50|regex:/^[A-zÀ-ú\s]+$/',
             'cpf' => 'required|cpf|formato_cpf|unique:App\Models\Pessoa,cpf',
             'data_nascimento' => 'required|date',
             'telefone' => 'required|celular_com_ddd',
-            'responsavel' => 'required|string|min:10|max:50',
+            'responsavel' => 'required|string|min:10|max:50|regex:/^[A-zÀ-ú\s]+$/',
             'email' => 'required|string|max:100',
             'escolaridade' => 'required|exists:escolaridade,id',
+            'serie_irmao_na_escola_id' => new SerieIrmaoNaEscola(request('irmaos_na_escola')),
+            'nome_irmaos_na_escola' => new IrmaosEscolaNome(request('irmaos_na_escola')),
+            'serie_irmao_no_sorteio_id' => new SerieIrmaNoSorteio(request('irmaos_no_sorteio')),
+            'nome_irmaos_no_sorteio' => new IrmaoSorteiNome(request('irmaos_no_sorteio')),
+
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return ([
             'nome_completo.required' => 'O campo nome é obrigatório.',
