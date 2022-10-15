@@ -15,7 +15,7 @@
 <!-- ======= Header ======= -->
 <header id="header">
     <div class="container d-flex">
-
+        <p class="ribbon flipped positioned" data-content="EM HOMOLOGAÇÃO"></p>
         <div class="logo mr-auto">
 
             <h1 class="text-light"><a href="{{route('inicial')}}">

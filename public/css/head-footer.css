@@ -422,4 +422,72 @@
     color: #fff;
 }
 
+.bestseller:before {
+    content: "";
+    z-index: -1;
+    overflow: hidden;
+    transform: rotate(-135deg);
+    width: 120px;
+    display: block;
+    background: #a70a0a;
+    background: linear-gradient(#c90d0d 0%, #a70a0a 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 34px;
+    right: 1353px;
+    clip-path: polygon(130px 4px, 31px -18px, 54px -7px, 10px 20px, 10px 30px,  110px 30px);
+    height: 20px;
+    width: 120px;
+}
+.bestseller:after {
+    content: "HOMOLOGAÇÃO";
+    z-index: 1;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    width: 120px;
+    display: block;
+    background: #a70a0a;
+    background: linear-gradient(#c9290d 0%, #a70f0a 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 20px;
+    /*right: -30px;*/
+    polygon(114px 4px, 31px -18px, 53px -21px, 0px 9px, 12px 30px,  5px 30px)
+}
 
+p.positioned { /* specificity to avoid using !important in this example */
+    top: 0;
+    bottom: auto;
+}
+
+.ribbon {
+    --f: 10px; /* control the folded part*/
+    --r: 25px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+
+    position: absolute;
+    inset: auto auto var(--t) calc(-1.4*var(--f));
+    padding: 0 10px var(--f) calc(10px + var(--r));
+    clip-path:
+        polygon(0 0,
+        100% 0,
+        100% calc(100% - var(--f)),
+        calc(100% - var(--f)) 100%,
+        calc(100% - var(--f)) calc(100% - var(--f)),
+        0 calc(100% - var(--f)),
+        var(--r) calc(50% - var(--f)/2));
+    box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+    color: white; /* Added from your code */
+    background: #a70a0a; /* Added from your code */
+}
+
+.flipped:before {
+    content: attr(data-content); /* getting data from atribute data-content */
+    display: block; /* this enables transform scale trick. */
+}
