@@ -74,12 +74,6 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-                    <p>Sexo</p>
-                    <select class="@error('sexo') is-invalid @enderror form-control" name="sexo" id="sexo">
-                        <option value="H">Masculino</option>
-                        <option value="M">Feminino</option>
-                    </select>
-
                     <input type="number" name="idade" min="5" id="idade" autocomplete="idade"
                            value="{{old('idade')}}"
                            class="@error('idade') is-invalid @enderror form-control"
@@ -87,6 +81,13 @@
                     @error('idade')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
+                    <select class="@error('sexo') is-invalid @enderror form-control" name="sexo" id="sexo"   placeholder="Sexo do aluno">
+                        <option value="H">Masculino</option>
+                        <option value="M">Feminino</option>
+                    </select>
+
+                    <h2>Dados do Responsavel</h2>
 
                     <input type="text" name="responsavel" id="responsavel" autocomplete="responsavel"
                            value="{{old('responsavel')}}"
@@ -118,7 +119,6 @@
                 <fieldset>
                     <h2>Dados Adicionais</h2>
                     <p>TEM IRMÃO(A) ESTUDANDO NA ESCOLA?</p>
-{{--                    @dd($errors)--}}
                     <select name="irmaos_na_escola" id="irmaos_na_escola">
                         <option value="Nao" {{old('irmaos_na_escola') == 'Nao' ? 'selected' : ''}}>Não</option>
                         <option value="Sim" {{old('irmaos_na_escola') == 'Sim' ? 'selected' : ''}}>Sim</option>
