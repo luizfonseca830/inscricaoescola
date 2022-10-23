@@ -1,16 +1,16 @@
-@extends('layouts.app', ['activePage' => 'TelaLiberar', 'titlePage' => __('TelaLiberar')])
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'TelaLiberar', 'title' => __('TelaLiberar')])
 @extends('layouts.modal-message')
 @section('title')
     <title>INSTITUTO SÃO JOSÉ</title>
-@endsection
-@section('css')
-    <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
 @endsection
 @section('content')
     <div class="content">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
+                    <div class="col-12 text-right">
+                        <a href="{{route('tela-criar')}}" class="btn btn-sm btn-primary">Adicionar Tela/PDF</a>
+                    </div>
                     <input class="form-control" id="pesquisa" type="text" placeholder="Procurar..">
                     <table class="table">
                         <thead>
@@ -50,8 +50,8 @@
 
                                 @endif
                                 <th>
-                                    <a href="{{route('tela-unica-mostra', $tela->id)}}" style="margin-right: 15px"><i class="material-icons" style="color: blue">create</i></a>
-                                    <a href="{{route('tela-deletar', $tela->id)}}"><i class="material-icons" style="color: red">delete</i></a>
+                                    <a href="{{route('tela-unica-mostra', $tela->id)}}" style="margin-right: 15px"><i class="fa fa-pencil" style="color: blue"></i></a>
+                                    <a href="{{route('tela-deletar', $tela->id)}}"><i class="fa fa-trash" style="color: red"></i></a>
                                 </th>
                             </tr>
                         @empty

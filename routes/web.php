@@ -37,13 +37,10 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('table-list', function () {
-        return view('pages.table_list');
-    })->name('table');
 
-    Route::get('/add-user', function () {
-        return view('auth.register');
-    })->name('add-user');
+    Route::get('table-list', function () { return view('pages.table_list'); })->name('table');
+
+    Route::get('/add-user', function () {  return view('auth.register'); })->name('add-user');
     Route::post('add-create', 'AddUserController@store')->name('add-create');
     Route::get('delete-user/{id}', 'UserController@delete')->name('delete-user');
     Route::get('edit-user/{id}', 'UserController@show')->name('edit-user');

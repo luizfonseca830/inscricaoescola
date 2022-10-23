@@ -39,7 +39,7 @@ class TipoTelaController extends Controller
                 ]);
                 $file->move(public_path('pdf'), $fileName);
                 session()->put('sucess', 'Tela Criada com sucesso!');
-                return redirect()->route('tela-criar');
+                return redirect()->route('tela-liberar');
             }
         } //SALVAR TELA
         else if ($request->tipo_tela == 'Tela') {
@@ -61,7 +61,7 @@ class TipoTelaController extends Controller
                 'data_final' => $request->data_final,
             ]);
             session()->put('sucess', 'Tela Criada com sucesso!');
-            return redirect()->route('tela-criar');
+            return redirect()->route('tela-liberar');
         } //ERROS FINAIS
         else {
             session()->put('error', 'Parece que algo de errado aconteceu!');

@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-                <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+                <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
                     <i class="material-icons">build</i>
                     <p>{{ __('Configurações') }}
                         <b class="caret"></b>
@@ -32,12 +32,6 @@
                             <a class="nav-link" href="{{ route('user.index') }}">
                                 <span class="sidebar-mini"> GU </span>
                                 <span class="sidebar-normal"> {{ __('Gestão de Usuário') }} </span>
-                            </a>
-                        </li>
-                        <li class="nav-item{{ $activePage == 'TelaCriar' ? ' active' : '' }}">
-                            <a class="nav-link" href="{{route('tela-criar')}}">
-                                <span class="sidebar-mini"> LT </span>
-                                <span class="sidebar-normal"> {{ __('Criar Tela/Anexos') }} </span>
                             </a>
                         </li>
                         <li class="nav-item{{ $activePage == 'TelaLiberar' ? ' active' : '' }}">

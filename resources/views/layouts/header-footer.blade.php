@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/head-footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/icofont/icofont/icofont.min.css')}}">
+    <link rel="icon" type="imagem/png" href="{{asset('images/favicon.ico')}}" />
     @yield('css')
 </head>
 <body>

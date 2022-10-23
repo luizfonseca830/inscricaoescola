@@ -30,11 +30,10 @@ class CreatePessoaTable extends Migration
             $table->string('irmaos_no_sorteio')->nullable();
             $table->string('nome_irmaos_no_sorteio')->nullable();
             $table->string('responsavel');
-            $table->string('cpf')->unique();
+            $table->string('cpf');
             $table->string('email');
             $table->string('telefone');
             $table->boolean('status_aprovado')->nullable();
-
             $table->foreign('escolaridade_id')->references('id')->on('escolaridade');
             $table->foreign('serie_irmao_na_escola_id')->references('id')->on('escolaridade');
             $table->foreign('serie_irmao_no_sorteio_id')->references('id')->on('escolaridade');

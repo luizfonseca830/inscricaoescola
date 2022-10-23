@@ -4,90 +4,105 @@
     <title>INSTITUTO SÃO JOSÉ</title>
 @endsection
 @section('css')
-<style>
-    label{
-        position: initial !important;
-    }
-</style>
+    <style>
+        label {
+            position: initial !important;
+        }
+    </style>
 @endsection
 @section('content')
-<div class="container" style="margin-top: 60px; margin-bottom: 60px">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" style="background-color: #0275d8; font-weight: bold; color: white" >{{ __('Login') }}</div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('add-create') }}">
-                        @csrf
+    <div class="container" style="margin-top: 60px; margin-bottom: 60px">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"
+                         style="background-color: #0275d8; font-weight: bold; color: white">{{ __('Login') }}</div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('add-create') }}">
+                            @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Nome Completo:') }}</label>
+                            <div class="form-group row">
+                                <label for="email"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Nome Completo:') }}</label>
 
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required autofocus>
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                                           required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </div>
-                                @endif
+                                    @if ($errors->has('name'))
+                                        <div id="email-error" class="error text-danger pl-3" for="email"
+                                             style="display: block;">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Endereço de E-mail:') }}</label>
+                            <div class="form-group row">
+                                <label for="email"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Endereço de E-mail:') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
+                                           value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @if ($errors->has('email'))
-                                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </div>
-                                @endif
+                                    @if ($errors->has('email'))
+                                        <div id="email-error" class="error text-danger pl-3" for="email"
+                                             style="display: block;">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha:') }}</label>
+                            <div class="form-group row">
+                                <label for="password"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Senha:') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div class="col-md-6">
+                                    <input id="password" type="password"
+                                           class="form-control @error('password') is-invalid @enderror" name="password"
+                                           required autocomplete="current-password">
 
-                                @if ($errors->has('password'))
-                                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </div>
-                                @endif
+                                    @if ($errors->has('password'))
+                                        <div id="email-error" class="error text-danger pl-3" for="email"
+                                             style="display: block;">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Confirma senha:') }}</label>
+                            <div class="form-group row">
+                                <label for="password"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirma senha:') }}</label>
 
-                            <div class="col-md-6">
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control"  required>
+                                <div class="col-md-6">
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                           class="form-control" required>
 
-                                @if ($errors->has('password_confirmation'))
-                                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </div>
-                                @endif
+                                    @if ($errors->has('password_confirmation'))
+                                        <div id="email-error" class="error text-danger pl-3" for="email"
+                                             style="display: block;">
+                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Cadastrar') }}
-                                </button>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Cadastrar') }}
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

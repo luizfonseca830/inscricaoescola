@@ -6,7 +6,6 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-12 text-right">
                     <a href="{{route('add-user')}}" class="btn btn-sm btn-primary">Adicionar Usuário</a>

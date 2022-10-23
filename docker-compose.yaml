@@ -10,7 +10,7 @@ services:
     networks:
       - app-network
   mysql-app:
-    image: mysql:8.0.27
+    image: mariadb:10.3
     ports:
       - "3307:3306"
     volumes:

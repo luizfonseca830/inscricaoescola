@@ -15,9 +15,5 @@ class ModuloTableSeeder extends Seeder
         DB::table('modulo')->insert([
             'descricao' => 'Ensino Fundamental'
         ]);
-
-        DB::table('modulo')->insert([
-            'descricao' => 'Ensino Médio'
-        ]);
     }
 }
