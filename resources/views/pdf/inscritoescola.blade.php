@@ -24,7 +24,7 @@
 <div style="text-align: center">
         <img src="{{public_path('images/logoinstituto.png')}}" width="25%" alt="logo institucional">
     <h3>BILHETES DE INSCRITOS PARA O SORTEIO DE VAGAS</h3>
-    <h3 style="font-weight: bold">ANO SELETIVO:{{date("Y")+1}}</h3>
+    <h3 style="font-weight: bold">ANO SELETIVO:{{date("Y")}}</h3>
     <p>CONGREGRAÇÃO DAS SERVAS DE MARIA REPARADORAS - ACRE</p>
     <p>INSTITUTO SÃO JOSÉ</p>
 </div>
