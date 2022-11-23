@@ -17,10 +17,6 @@
                         </ul>
 
                         <fieldset>
-                            <div class="alert alert-warning" role="alert">
-                                Atenção: Para o funcionamento correto é necessário informa todos os filtros
-                                <br>
-                                Ou caso queira trazer todos os inscritos click em gerar relatório</div>
                             <h3>Selecione a Escolaridade</h3>
                             <select name="Filtroescolaridade">
                                 <option value="">Todas</option>

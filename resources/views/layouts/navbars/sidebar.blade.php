@@ -40,6 +40,18 @@
                                 <span class="sidebar-normal"> {{ __('Liberar Tela/Anexos') }} </span>
                             </a>
                         </li>
+                        <li class="nav-item{{ $activePage == 'ModuloRequest' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{route('modulos')}}">
+                                    <span class="sidebar-mini"> EC</span>
+                                <span class="sidebar-normal"> {{ __('Escolaridade') }} </span>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'EscolaridadeRequest' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{route('escolaridades')}}">
+                                <span class="sidebar-mini"> SE</span>
+                                <span class="sidebar-normal"> {{ __('Séries') }} </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

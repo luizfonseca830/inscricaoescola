@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => '', 'titlePage' => __('')])
+@extends('layouts.app', ['activePage' => 'audit', 'titlePage' => __('Typography')])
 @section('css')
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
     <style>

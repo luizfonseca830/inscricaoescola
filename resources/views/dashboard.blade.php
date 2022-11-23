@@ -13,7 +13,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">Total de Inscrições De {{ date("Y") }}</p>
+                            <p class="card-category">Total de Inscrições</p>
                             <h3 class="card-title">{{$inscricao_total}}</h3>
                         </div>
                         <div class="card-footer">

@@ -99,3 +99,9 @@ Route::get('aparece-pessoa/{id}', 'VisualizarPessoaController@aparece')->name('a
 Route::match(['post', 'get'],'edit-pessoa/{id}', 'VisualizarPessoaController@update')->name('edit-pessoa');
 Route::get('transparencia', 'AuditController@index')->name('audit');
 Route::get('transparencia/{id}/pessoa', 'AuditController@pessoa')->name('audit.pessoa');
+Route::get('modulo', 'ModuloController@index')->name('modulos');
+Route::get('/modulo-criar', 'ModuloController@create')->name('modulo-criar');
+Route::post('modulo-salvar', 'ModuloController@store')->name('modulo-salvar');
+Route::get('escolaridade', 'EscolaridadeController@index')->name('escolaridades');
+Route::get('/escolaridade-criar', 'EscolaridadeController@create')->name('escolaridade-criar');
+Route::post('escolaridade-salvar', 'EscolaridadeController@store')->name('escolaridade-salvar');
