@@ -66,7 +66,7 @@ class ModuloController extends Controller
             }
             DB::commit();
             return redirect()->route('modulos');
-        } catch (QueryException $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->withErrors(($e->getCode() === '23000') ? 'Escolaridade sendo usada.' : 'teste');
         }

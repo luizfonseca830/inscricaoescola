@@ -27,7 +27,7 @@
                         <input class="form-control" type="text" value="{{$pessoa->cpf}}" disabled/>
                         <p>Escola de Origem</p>
                         <input class="form-control" type="text" value="{{$pessoa->escola_de_origem}}" disabled/>
-                        <p>Nível De Escolaridade Desejada</p>
+                        <p>Série Desejada</p>
                         <input class="form-control" size="50" type="text" value="{{$pessoa->escolaridade->nivel_escolaridade}}" disabled/>
                         <p>Data de Nascimento</p>
                         <input class="form-control" type="date" name="data_nascimento" value="{{$pessoa->data_nascimento}}" disabled/>
@@ -63,7 +63,7 @@
                                     <input class="form-control" size="50" type="text" value="{{$pessoa->nome_irmaos_na_escola}}" disabled/>
                                 @endif
                                 @if ($pessoa->irmaos_na_escola == 'Sim')
-                                    <p>Nível De Escolaridade Do Seu Irmão Na Escola</p>
+                                    <p>SÉRIE DO SEU IRMÃO NA ESCOLA</p>
                                     <input class="form-control" size="50" type="text"
                                            value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_na_escola_id)->nivel_escolaridade}}"
                                            disabled/>
@@ -79,7 +79,7 @@
                                     <input class="form-control" size="50" type="text" value="{{$pessoa->nome_irmaos_no_sorteio}}" disabled/>
                                 @endif
                                 @if ($pessoa->irmaos_no_sorteio == 'Sim')
-                                    <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
+                                    <p>SÉRIE DO SEU IRMÃO NO SORTEIO</p>
                                     <input class="form-control" size="50" type="text"
                                            value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
                                            disabled/>

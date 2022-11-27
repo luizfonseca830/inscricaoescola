@@ -24,7 +24,7 @@ class ModuloRequest extends FormRequest
     public function rules()
     {
         return [
-           'descricao' => 'required|string|max:30|regex:/^[A-zÀ-ú\s]+$/',
+           'descricao' => 'required|string|max:30',
         ];
     }
 

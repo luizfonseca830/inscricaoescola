@@ -17,7 +17,7 @@
                         </ul>
 
                         <fieldset>
-                            <h3>Selecione a Escolaridade</h3>
+                            <h3>Selecione a Série</h3>
                             <select name="Filtroescolaridade">
                                 <option value="">Todas</option>
                                 @foreach($escolaridades as $escolaridade)

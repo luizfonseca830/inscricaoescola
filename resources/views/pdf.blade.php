@@ -20,7 +20,7 @@
 <div style="margin-left: 1%;">
     <h2>Nome: {{$comprovante->pessoa->nome_completo}}</h2>
     <h2>CPF: {{$comprovante->pessoa->cpf}}</h2>
-    <h2>Escolaridade: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
+    <h2>Série: {{$comprovante->pessoa->escolaridade->nivel_escolaridade}}</h2>
     <h2>Data e Hora de Inscrição: {{date('d/m/Y H:i:s', strtotime($comprovante->pessoa->created_at))}}</h2>
     <h2>Protocolo: {{$comprovante->comprovante}}</h2>
 </div>

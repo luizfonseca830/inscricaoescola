@@ -30,8 +30,8 @@
 </div>
 @foreach($escolaridades as $escolaridade)
     <div style="margin-left: 20%; width: 60%;">
-        <b>Escolaridade: {{$escolaridade->nivel_escolaridade}}</b> <br>
-        <b>Módulo: {{$escolaridade->modulo->descricao}}</b>
+        <b>Série: {{$escolaridade->nivel_escolaridade}}</b> <br>
+        <b>Escolaridade: {{$escolaridade->modulo->descricao}}</b>
         @foreach($escolaridade->pessoas as $pessoa)
             @if(mb_strtoupper($pessoa->irmaos_na_escola) == "SIM")
                     <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
@@ -47,7 +47,7 @@
                                 <strong>{{is_null($pessoa->nome_irmaos_na_escola) || empty($pessoa->nome_irmaos_na_escola) ? 'NÃO INFORMADO' : mb_strtoupper($pessoa->nome_irmaos_na_escola)}}</strong></label><br>
                         </div>
                         <div style="margin-top: 10px; margin-bottom: 10px;">
-                            <label style="margin-left: 10px; ">ESCOLARIDADE DO IRMÃO(A) NA ESCOLA:
+                            <label style="margin-left: 10px; ">SÉRIE DO IRMÃO(A) NA ESCOLA:
                                 <strong>{{is_null($pessoa->serieIrmao) || empty($pessoa->serieIrmao) ? 'NÃO INFORMADO' : mb_strtoupper($pessoa->serieIrmao->nivel_escolaridade)}}</strong></label><br>
                         </div>
                     </div>

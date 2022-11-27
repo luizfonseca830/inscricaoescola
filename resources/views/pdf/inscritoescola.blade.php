@@ -30,8 +30,8 @@
 </div>
 @foreach($escolaridades as $escolaridade)
     <div style="margin-left: 20%; width: 60%;">
-        <strong>Escolaridade: {{$escolaridade->nivel_escolaridade}}</strong> <br>
-        <strong>Módulo: {{$escolaridade->modulo->descricao}}</strong>
+        <strong>Série: {{$escolaridade->nivel_escolaridade}}</strong> <br>
+        <strong>Escolaridade: {{$escolaridade->modulo->descricao}}</strong>
         @foreach($escolaridade->pessoas as $pessoa)
                 <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                     <div style="margin-top: 10px; margin-bottom: 10px;">

@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EscolaridadeRequest;
 use App\Models\Escolaridade;
 use App\Models\Modulo;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Exception;
 
 class EscolaridadeController extends Controller
 {
@@ -69,11 +67,9 @@ class EscolaridadeController extends Controller
             }
             DB::commit();
             return redirect()->route('escolaridades');
-        } catch (Exception $ex) {
+        } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->withErrors([
-                'error' => $ex->getMessage()
-            ]);
+            return redirect()->back()->withErrors(($e->getCode() === '23000') ? 'Escolaridade sendo usada.' : 'teste');
         }
 
     }

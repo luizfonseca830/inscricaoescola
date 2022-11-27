@@ -68,7 +68,7 @@
                                            value="{{$audit->nome_irmaos_na_escola}}" disabled/>
                                 @endif
                                 @if ($audit->irmaos_na_escola == 'Sim')
-                                    <p>Nível De Escolaridade Do Seu Irmão Na Escola</p>
+                                    <p>SÉRIE DO SEU IRMÃO NA ESCOLA</p>
                                     <input class="form-control" size="50" type="text"
                                            value="{{\App\Models\Escolaridade::findOrfail($audit->serie_irmao_na_escola_id)->nivel_escolaridade}}"
                                            disabled/>
@@ -85,7 +85,7 @@
                                            value="{{$audit->nome_irmaos_no_sorteio}}" disabled/>
                                 @endif
                                 @if ($audit->irmaos_no_sorteio == 'Sim')
-                                    <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
+                                    <p>SÉRIE DO SEU IRMÃO NO SORTEIO</p>
                                     <input class="form-control" size="50" type="text"
                                            value="{{\App\Models\Escolaridade::findOrfail($audit->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
                                            disabled/>

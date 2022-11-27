@@ -56,7 +56,7 @@
                         @enderror
 
                         <select name="escolaridade" id="escolaridade" autofocus>
-                            <option value="">Selecione a escolaridade desejada</option>
+                            <option value="">Selecione a série desejada</option>
                             @foreach($escolaridade as $esc)
                                 <option value="{{$esc->id}}" @if(old('escolaridade')==$esc->id) {{'selected'}} @endif>
                                     {{$esc->nivel_escolaridade}}
