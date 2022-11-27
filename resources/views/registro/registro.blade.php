@@ -145,11 +145,12 @@
 
                     <div
                         class="divIrmaoEscolaInput" {{ is_null(old('serie_irmao_na_escola_id')) ? 'hidden' : ''}}>
-                        <input type="text" id="nome_irmaos_na_escola" name="nome_irmaos_na_escola"
-                               placeholder="Nome do Irmão(a)"
+                        <input type="text" name="nome_irmaos_na_escola" id="nome_irmaos_na_escola" autocomplete="nome_irmaos_na_escola"
+                               value="{{old('nome_irmaos_na_escola')}}"
+                               class="@error('nome_irmaos_na_escola') is-invalid @enderror form-control"
+                               placeholder="Informe seu Nome Completo"
                                style="text-transform: uppercase"
-                               autofocus
-                               class="@error('nome_irmaos_na_escola') is-invalid @enderror form-control"/>
+                               autofocus/>
                         @error('nome_irmaos_na_escola')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -175,8 +176,10 @@
                     </div>
                     <div
                         class="divIrmaoSorteioInput" {{ is_null(old('serie_irmao_no_sorteio_id')) ? 'hidden' : ''}}>
-                        <input type="text" id="nome_irmaos_no_sorteio" name="nome_irmaos_no_sorteio"
-                               placeholder="Nome do Irmão(a)"
+                        <input type="text" name="nome_irmaos_no_sorteio" id="nome_irmaos_no_sorteio" autocomplete="nome_irmaos_no_sorteio"
+                               value="{{old('nome_irmaos_no_sorteio')}}"
+                               class="@error('nome_irmaos_no_sorteio') is-invalid @enderror form-control"
+                               placeholder="Informe seu Nome Completo"
                                style="text-transform: uppercase"
                                class="@error('nome_irmaos_no_sorteio') is-invalid @enderror form-control"/>
                         @error('nome_irmaos_no_sorteio')

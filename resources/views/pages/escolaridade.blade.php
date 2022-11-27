@@ -1,14 +1,13 @@
 @extends('layouts.app', ['activePage' => 'EscolaridadeRequest', 'titlePage' => __('Typography')])
 @extends('layouts.modal-message')
 @section('content')
-{{--    @dd($escolaridades)--}}
     <div class="content">
         <div class="row justify-content-center" id="carregando">
             <img src="{{asset('/gifs/Spinner-1s-164px.gif')}}">
         </div>
-                <div class="col-12 text-right">
-                    <a href="{{route('escolaridade-criar')}}" class="btn btn-sm btn-primary">Adicionar Série</a>
-                </div>
+        <div class="col-12 text-right">
+            <a href="{{route('escolaridade-criar')}}" class="btn btn-sm btn-primary">Adicionar Série</a>
+        </div>
         <div id="tabela-none" class="container-fluid" style="display: none">
             <table id="example" class="table table-striped table-bordered" style="width:100%;">
                 <thead>
@@ -16,6 +15,7 @@
                     <th>Nº</th>
                     <th>Série</th>
                     <th>Escolaridade</th>
+                    <th>Ações</th>
 
                 </tr>
                 </thead>
@@ -24,7 +24,13 @@
                     <tr>
                         <td>{{$escolaridade->id}}</td>
                         <td>{{$escolaridade->nivel_escolaridade}}</td>
-                        <td>{{$escolaridade->modulo_id == 1 ? 'Ensino Fundamental' : 'Ensino Médio'}}</td>
+                        <td>{{$escolaridade->modulo->descricao}}</td>
+                        <td>
+                            <a href="{{route('escolaridade-edit', $escolaridade->id)}}"><i class="fa fa-pencil" style="color: #2180e8"></i></a>
+                            <a href="{{route('escolaridade-confirma', $escolaridade->id)}}">
+                                <i class="fa fa-trash" style="color: red"></i>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
 
@@ -41,15 +47,8 @@
     </div>
 @endsection
 @section('script')
-
     <script>
         $(document).ready(function () {
-            // Setup - add a text input to each footer cell
-            // $('#example th').each(function () {
-            //     var title = $(this).text();
-            //     $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
-            // });
-
             // DataTable
             var table = $('#example').DataTable({
                 initComplete: function () {

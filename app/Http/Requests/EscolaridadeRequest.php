@@ -25,7 +25,7 @@ class EscolaridadeRequest extends FormRequest
     {
         return [
             'modulo_id' => 'required',
-            'nivel_escolaridade' => 'required|string|max:30',
+            'nivel_escolaridade' => 'required|string|max:33',
         ];
     }
 

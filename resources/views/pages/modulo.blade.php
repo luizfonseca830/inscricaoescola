@@ -14,6 +14,7 @@
                 <tr>
                     <th>Nº</th>
                     <th>Escolaridade</th>
+                    <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,12 @@
                     <tr>
                         <td>{{$modulo->id}}</td>
                         <td>{{$modulo->descricao}}</td>
+                        <td>
+                            <a href="{{route('modulo-edit', $modulo->id)}}"><i class="fa fa-pencil" style="color: #2180e8"></i></a>
+                            <a href="{{route('modulo-confirma', $modulo->id)}}">
+                                <i class="fa fa-trash" style="color: red"></i>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
 
@@ -39,12 +46,6 @@
 
     <script>
         $(document).ready(function () {
-            // Setup - add a text input to each footer cell
-            // $('#example th').each(function () {
-            //     var title = $(this).text();
-            //     $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
-            // });
-
             // DataTable
             var table = $('#example').DataTable({
                 initComplete: function () {

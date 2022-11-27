@@ -2,19 +2,20 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
     <style>
-        .content{
+        .content {
             background-color: #fff;
         }
     </style>
 @endsection
 @section('content')
-{{--    @dd($audit)--}}
+    {{--    @dd($audit)--}}
     <div class="content">
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 @csrf
                 <div class="row">
-                    <h4 class="col-4">Inscrito em:<input class="form-control" type="timestamp" value="{{date('d/m/Y H:i:s', strtotime( $audit->created_at))}}"
+                    <h4 class="col-4">Inscrito em:<input class="form-control" type="timestamp"
+                                                         value="{{date('d/m/Y H:i:s', strtotime( $audit->created_at))}}"
                                                          disabled/></h4>
                 </div>
 
@@ -30,9 +31,10 @@
                         <p>Escola de Origem</p>
                         <input class="form-control" type="text" value="{{$audit->escola_de_origem}}" disabled/>
                         <p>Nível De Escolaridade Desejada</p>
-{{--                        <input class="form-control" size="50" type="text" value="{{$audit->escolaridade->nivel_escolaridade}}" disabled/>--}}
+                        {{--                        <input class="form-control" size="50" type="text" value="{{$audit->escolaridade->nivel_escolaridade}}" disabled/>--}}
                         <p>Data de Nascimento</p>
-                        <input class="form-control" type="date" name="data_nascimento" value="{{$audit->data_nascimento}}" disabled/>
+                        <input class="form-control" type="date" name="data_nascimento"
+                               value="{{$audit->data_nascimento}}" disabled/>
                     </div>
                     <div class="col-sm-4">
                         <p>Sexo</p>
@@ -62,7 +64,8 @@
                                 @endif
                                 @if ($audit->irmaos_na_escola == 'Sim')
                                     <p>NOME DO IRMÃO(A) ESTUDANDO NA ESCOLA?</p>
-                                    <input class="form-control" size="50" type="text" value="{{$audit->nome_irmaos_na_escola}}" disabled/>
+                                    <input class="form-control" size="50" type="text"
+                                           value="{{$audit->nome_irmaos_na_escola}}" disabled/>
                                 @endif
                                 @if ($audit->irmaos_na_escola == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão Na Escola</p>
@@ -78,29 +81,30 @@
                                 @endif
                                 @if ($audit->irmaos_no_sorteio == 'Sim')
                                     <p>NOME DO IRMÃO (A) INSCRITO (A) NO SORTEIO DE VAGAS</p>
-                                    <input class="form-control" size="50" type="text" value="{{$pessoa->nome_irmaos_no_sorteio}}" disabled/>
+                                    <input class="form-control" size="50" type="text"
+                                           value="{{$audit->nome_irmaos_no_sorteio}}" disabled/>
                                 @endif
                                 @if ($audit->irmaos_no_sorteio == 'Sim')
                                     <p>Nível De Escolaridade Do Seu Irmão No Sorteio</p>
                                     <input class="form-control" size="50" type="text"
-                                           value="{{\App\Models\Escolaridade::findOrfail($pessoa->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
+                                           value="{{\App\Models\Escolaridade::findOrfail($audit->serie_irmao_no_sorteio_id)->nivel_escolaridade}}"
                                            disabled/>
                                 @endif
 
 
                             </div>
                             <div class="col-sm">
-{{--                                <h2>Endereço</h2>--}}
-{{--                                <p>CEP</p>--}}
-{{--                                <input class="form-control" size="20" type="text" value="{{$pessoa->endereco->cep}}"--}}
-{{--                                       disabled/>--}}
-{{--                                <p>Bairro</p>--}}
-{{--                                <input class="form-control" type="text" value="{{$pessoa->endereco->bairro}}"--}}
-{{--                                       disabled/>--}}
-{{--                                <p>Endereço</p>--}}
-{{--                                <input class="form-control" size="70" type="text"--}}
-{{--                                       value="{{$pessoa->endereco->endereco}}"--}}
-{{--                                       disabled/>--}}
+                                {{--                                <h2>Endereço</h2>--}}
+                                {{--                                <p>CEP</p>--}}
+                                {{--                                <input class="form-control" size="20" type="text" value="{{$pessoa->endereco->cep}}"--}}
+                                {{--                                       disabled/>--}}
+                                {{--                                <p>Bairro</p>--}}
+                                {{--                                <input class="form-control" type="text" value="{{$pessoa->endereco->bairro}}"--}}
+                                {{--                                       disabled/>--}}
+                                {{--                                <p>Endereço</p>--}}
+                                {{--                                <input class="form-control" size="70" type="text"--}}
+                                {{--                                       value="{{$pessoa->endereco->endereco}}"--}}
+                                {{--                                       disabled/>--}}
                             </div>
                         </div>
                     </div>
@@ -108,6 +112,10 @@
             </main>
         </div>
     </div>
+    <div class="col-md-4">
+        <a href="{{route('audit')}}" class="btn btn-primary">Voltar</a>
+    </div>
+
 @endsection
 @section('script')
 

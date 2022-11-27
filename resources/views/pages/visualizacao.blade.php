@@ -46,12 +46,6 @@
 
     <script>
         $(document).ready(function () {
-            // Setup - add a text input to each footer cell
-            // $('#example th').each(function () {
-            //     var title = $(this).text();
-            //     $(this).html('<input type="text" placeholder="Pesquisa ' + title + '" />');
-            // });
-
             // DataTable
             var table = $('#example').DataTable({
                 initComplete: function () {

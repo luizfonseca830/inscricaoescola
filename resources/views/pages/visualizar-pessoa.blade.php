@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => '', 'titlePage' => __('')])
+@extends('layouts.app', ['activePage' => 'avaliacao', 'titlePage' => __('Typography')])
 @section('css')
     <link rel="stylesheet" href="{{asset('css/registro/style.css')}}">
     <style>
@@ -105,6 +105,7 @@
                 </div>
             </main>
         </div>
+        <a href="{{route('/visualizacao')}}" class="btn btn-primary">Voltar</a>
     </div>
 @endsection
 @section('script')

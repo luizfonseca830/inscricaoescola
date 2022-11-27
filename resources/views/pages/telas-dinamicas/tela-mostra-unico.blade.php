@@ -12,7 +12,8 @@
         <div class="container-fluid">
             <main class="container" id="ajuste">
                 <div class="row">
-                    <form id="formulario_registro" method="post" action="{{route('tela-editar', $tela->id)}}" enctype="multipart/form-data">
+                    <form id="formulario_registro" method="post" action="{{route('tela-editar', $tela->id)}}"
+                          enctype="multipart/form-data">
                         @csrf
                         <ul id="progress">
                             <li class="ativo" style="width: 100%">Editar Tela</li>
@@ -35,7 +36,8 @@
                                     <p>Escolha o PDF</p>
                                     @if(!is_null($tela->nome_ou_anexo))
                                         <div class="row">
-                                            <a target="_blank" href="{{asset('pdf/'.$tela->nome_ou_anexo)}}">: Anexo antigo</a>
+                                            <a target="_blank" href="{{asset('pdf/'.$tela->nome_ou_anexo)}}">: Anexo
+                                                antigo</a>
                                         </div>
                                     @endif
                                     <input type="file" name="arquivo_pdf">
@@ -71,7 +73,10 @@
                                     <input type="datetime-local" id="input-data_final" name="data_final">
                                 </div>
                             @endif
-                            <input type="submit" name="next" id="confirma" class="acao" value="Editar"/>
+                            <div class="col-md-5 offset-md-7">
+                                <a href="{{route('tela-liberar')}}" class="btn btn-default">Voltar</a>
+                                <input type="submit" name="next" id="confirma" class="acao" value="Editar"/>
+                            </div>
                         </fieldset>
                     </form>
                 </div>

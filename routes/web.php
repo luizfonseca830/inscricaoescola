@@ -102,6 +102,14 @@ Route::get('transparencia/{id}/pessoa', 'AuditController@pessoa')->name('audit.p
 Route::get('modulo', 'ModuloController@index')->name('modulos');
 Route::get('/modulo-criar', 'ModuloController@create')->name('modulo-criar');
 Route::post('modulo-salvar', 'ModuloController@store')->name('modulo-salvar');
+Route::get('modulo-confirma/{id}', 'ModuloController@confirma')->name('modulo-confirma');
+Route::get('modulo-edit/{id}', 'ModuloController@show')->name('modulo-edit');
+Route::any('modulo-update/{id}', 'ModuloController@update')->name('modulo-update');
+Route::delete('delete-modulo/{id}', 'ModuloController@delete')->name('delete-modulo');
 Route::get('escolaridade', 'EscolaridadeController@index')->name('escolaridades');
 Route::get('/escolaridade-criar', 'EscolaridadeController@create')->name('escolaridade-criar');
 Route::post('escolaridade-salvar', 'EscolaridadeController@store')->name('escolaridade-salvar');
+Route::get('escolaridade-confirma/{id}', 'EscolaridadeController@confirma')->name('escolaridade-confirma');
+Route::get('escolaridade-edit/{id}', 'EscolaridadeController@show')->name('escolaridade-edit');
+Route::any('escolaridade-update/{id}', 'EscolaridadeController@update')->name('escolaridade-update');
+Route::delete('delete-escolaridade/{id}', 'EscolaridadeController@delete')->name('delete-escolaridade');

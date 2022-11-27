@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ModuloRequest;
 use App\Models\Modulo;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 class ModuloController extends Controller
 {
@@ -36,7 +37,7 @@ class ModuloController extends Controller
      */
     public function store(ModuloRequest $request)
     {
-       $moduloCreate = Modulo::create($request->all());
+        $moduloCreate = Modulo::create($request->all());
         return redirect()->route('modulos', [
             'modulo' => $moduloCreate->id
         ])->with([
@@ -44,6 +45,31 @@ class ModuloController extends Controller
             'message' => 'Modulo cadastrado com sucesso!'
         ]);
 
+    }
+
+    public function confirma($id)
+    {
+        $modulo = Modulo::findOrFail($id);
+        return view('pages.delete-modulo', compact('modulo'));
+    }
+
+    public function delete($id)
+    {
+        try {
+            DB::beginTransaction();
+            $modulo = Modulo::find($id);
+
+            if ($modulo->delete()) {
+                session()->put('sucess', 'Escolaridade deletada com sucesso!');
+            } else {
+                session()->put('error', 'Essa Escolaridade não poder ser deletado!');
+            }
+            DB::commit();
+            return redirect()->route('modulos');
+        } catch (QueryException $e) {
+            DB::rollBack();
+            return redirect()->back()->withErrors(($e->getCode() === '23000') ? 'Escolaridade sendo usada.' : 'teste');
+        }
     }
 
     /**
@@ -54,18 +80,11 @@ class ModuloController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $modulo = Modulo::findOrFail($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return view('pages.modulo-edit', [
+            'modulo' => $modulo,
+        ]);
     }
 
     /**
@@ -75,19 +94,12 @@ class ModuloController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ModuloRequest $request, $id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $modulo = Modulo::findOrFail($id);
+        $modulo->update([
+            $modulo->descricao = $request->descricao]);
+        session()->put('sucess', 'Modulo Editado com Sucesso!');
+        return redirect()->route('modulos', $id);
     }
 }

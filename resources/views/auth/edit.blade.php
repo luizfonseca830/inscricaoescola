@@ -88,14 +88,12 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
+                                    <a href="javascript:history.back()" class="btn btn-default">Voltar</a>
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('EDITAR') }}
                                     </button>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>
