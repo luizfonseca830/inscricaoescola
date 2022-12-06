@@ -59,6 +59,9 @@ class EscolaridadeController extends Controller
         try {
             DB::beginTransaction();
             $escolaridade = Escolaridade::find($id);
+            if(count($escolaridade->pessoas) > 0){
+                return redirect()->route('escolaridades')->with('error', 'Essa série não poder ser deletado!');
+            }
 
             if ($escolaridade->delete()) {
                 session()->put('sucess', 'Serie deletada com sucesso!');

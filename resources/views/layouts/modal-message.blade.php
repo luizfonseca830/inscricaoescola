@@ -18,7 +18,7 @@
 @endif
 
 @if (session()->has('error'))
-    <div class="modal" id="modal" tabindex="-1" role="dialog" >
+    <div class="modal d-block" id="modal" tabindex="-1" role="dialog" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -39,6 +39,8 @@
     <script>
         $('#close').click(function (){
             $('#modal').hide();
+            $('#modal').removeClass('d-block');
+            $('#modal').addClass('d-none');
         });
     </script>
 @endsection

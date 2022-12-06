@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ModuloRequest;
+use App\Models\Escolaridade;
 use App\Models\Modulo;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
@@ -57,7 +58,11 @@ class ModuloController extends Controller
     {
         try {
             DB::beginTransaction();
+
             $modulo = Modulo::find($id);
+            if(count($modulo->escolaridade) > 0){
+                return redirect()->route('modulos')->with('error', 'Esse escolaridade não poder ser deletada!');
+            }
 
             if ($modulo->delete()) {
                 session()->put('sucess', 'Escolaridade deletada com sucesso!');

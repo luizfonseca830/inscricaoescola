@@ -11,4 +11,7 @@ class Modulo extends Model
         'id',
         'descricao',
     ];
+    public function escolaridade(){
+        return $this->hasMany(Escolaridade::class, 'modulo_id', 'id');
+    }
 }

@@ -1,6 +1,7 @@
 $('#close').click(function () {
-    console.log('teste');
     $('#modal').css('display', 'none');
+    $('#modal').removeClass('d-block');
+    $('#modal').addClass('d-none');
 });
 
 $(document).ready(function(){
