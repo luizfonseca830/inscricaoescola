@@ -26,7 +26,7 @@
                             @if ($tela->tipo == 'Tela')
                                 <div id="tela">
                                     <p>Editar o nome da Tela</p>
-                                    <input type="text" name="nome_ou_anexo" value="{{$tela->nome_ou_anexo}}"/>
+                                    <input type="text" name="nome_ou_anexo" value="{{$tela->nome_ou_anexo}}"disabled/>
                                 </div>
                             @else
                                 <div id="pdf">

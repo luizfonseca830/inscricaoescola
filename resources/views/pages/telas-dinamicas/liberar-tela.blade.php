@@ -51,7 +51,9 @@
                                 @endif
                                 <th>
                                     <a href="{{route('tela-unica-mostra', $tela->id)}}" style="margin-right: 15px"><i class="fa fa-pencil" style="color: blue"></i></a>
+                                    @if ($tela->nome_ou_anexo != 'Inscrição' && $tela->nome_ou_anexo != 'Protocolo')
                                     <a href="{{route('tela-deletar', $tela->id)}}"><i class="fa fa-trash" style="color: red"></i></a>
+                                    @endif
                                 </th>
                             </tr>
                         @empty
