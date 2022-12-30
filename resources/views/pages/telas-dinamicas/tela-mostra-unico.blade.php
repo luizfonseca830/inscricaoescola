@@ -22,11 +22,11 @@
                         <fieldset>
                             <h2>Editar Tela</h2>
                             <h3>Tipo Tela</h3>
-                            <input type="text" value="{{$tela->tipo}}" name="tipo" disabled/>
+                            <input type="text" value="{{$tela->tipo}}" name="tipo" readonly/>
                             @if ($tela->tipo == 'Tela')
                                 <div id="tela">
                                     <p>Editar o nome da Tela</p>
-                                    <input type="text" name="nome_ou_anexo" value="{{$tela->nome_ou_anexo}}"disabled/>
+                                    <input type="text" name="nome_ou_anexo" value="{{$tela->nome_ou_anexo}}" readonly/>
                                 </div>
                             @else
                                 <div id="pdf">
