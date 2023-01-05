@@ -58,7 +58,9 @@
                         <select name="escolaridade" id="escolaridade" autofocus>
                             <option value="">Selecione a série desejada</option>
                             @foreach($escolaridade as $esc)
-                                <option value="{{$esc->id}}" @if(old('escolaridade')==$esc->id) {{'selected'}} @endif>
+                                <option value="{{$esc->id}}" @if(old('escolaridade')==$esc->id)
+                                    {{'selected'}}
+                                    @endif>
                                     {{$esc->nivel_escolaridade}}
                                 </option>
                             @endforeach
@@ -145,7 +147,8 @@
 
                     <div
                         class="divIrmaoEscolaInput" {{ is_null(old('serie_irmao_na_escola_id')) ? 'hidden' : ''}}>
-                        <input type="text" name="nome_irmaos_na_escola" id="nome_irmaos_na_escola" autocomplete="nome_irmaos_na_escola"
+                        <input type="text" name="nome_irmaos_na_escola" id="nome_irmaos_na_escola"
+                               autocomplete="nome_irmaos_na_escola"
                                value="{{old('nome_irmaos_na_escola')}}"
                                class="@error('nome_irmaos_na_escola') is-invalid @enderror form-control"
                                placeholder="Informe seu Nome Completo"
@@ -165,10 +168,55 @@
                         <select class="@error('serie_irmao_no_sorteio_id') is-invalid @enderror form-control"
                                 name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
                             <option value="">Selecione a série</option>
-                            @foreach($escolaridade as $esc)
-                                <option
-                                    value="{{$esc->id}}" {{old('serie_irmao_no_sorteio_id') == $esc->id ? 'selected' : ''}}>{{$esc->nivel_escolaridade}}</option>
-                            @endforeach
+                            <option
+                                value="1° ano do Ensino Fundamental I" {{old('serie_irmao_na_escola_id') == "1° ano do Ensino Fundamental I" ? 'selected' : ''}}>
+                                1° ano do Ensino Fundamental I
+                            </option>
+                            <option
+                                value="2° ano do Ensino Fundamental I" {{old('serie_irmao_na_escola_id') == "2° ano do Ensino Fundamental I" ? 'selected' : ''}}>
+                                2° ano do Ensino Fundamental I
+                            </option>
+                            <option
+                                value="3° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "3° ano do Ensino Fundamental I" ? 'selected' : ''}}>
+                                3° ano do Ensino Fundamental I
+                            </option>
+                            <option
+                                value="4° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "4° ano do Ensino Fundamental I" ? 'selected' : ''}}>
+                                4° ano do Ensino Fundamental I
+                            </option>
+                            <option
+                                value="5° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "5° ano do Ensino Fundamental I" ? 'selected' : ''}}>
+                                5° ano do Ensino Fundamental I
+                            </option>
+                            <option
+                                value="6° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "6° ano do Ensino Fundamental II" ? 'selected' : ''}}>
+                                6° ano do Ensino Fundamental II
+                            </option>
+                            <option
+                                value="7° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "7° ano do Ensino Fundamental II" ? 'selected' : ''}}>
+                                7° ano do Ensino Fundamental II
+                            </option>
+                            <option
+                                value="8° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "8° ano do Ensino Fundamental II" ? 'selected' : ''}}>
+                                8° ano do Ensino Fundamental II
+                            </option>
+                            <option
+                                value="9° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "9° ano do Ensino Fundamental II" ? 'selected' : ''}}>
+                                9° ano do Ensino Fundamental II
+                            </option>
+                            <option
+                                value="1° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "1° ano do Ensino Médio" ? 'selected' : ''}}>
+                                1° ano do Ensino Médio
+                            </option>
+                            <option
+                                value="2° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "2° ano do Ensino Médio" ? 'selected' : ''}}>
+                                2° ano do Ensino Médio
+                            </option>
+                            <option
+                                value="3° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "3° ano do Ensino Médio" ? 'selected' : ''}}>
+                                3° ano do Ensino Médio
+                            </option>
+                        </select>
                         </select>
                         @error('serie_irmao_no_sorteio_id')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -176,7 +224,8 @@
                     </div>
                     <div
                         class="divIrmaoSorteioInput" {{ is_null(old('serie_irmao_no_sorteio_id')) ? 'hidden' : ''}}>
-                        <input type="text" name="nome_irmaos_no_sorteio" id="nome_irmaos_no_sorteio" autocomplete="nome_irmaos_no_sorteio"
+                        <input type="text" name="nome_irmaos_no_sorteio" id="nome_irmaos_no_sorteio"
+                               autocomplete="nome_irmaos_no_sorteio"
                                value="{{old('nome_irmaos_no_sorteio')}}"
                                class="@error('nome_irmaos_no_sorteio') is-invalid @enderror form-control"
                                placeholder="Informe seu Nome Completo"
