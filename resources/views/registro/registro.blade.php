@@ -168,55 +168,10 @@
                         <select class="@error('serie_irmao_no_sorteio_id') is-invalid @enderror form-control"
                                 name="serie_irmao_no_sorteio_id" id="serie_irmao_no_sorteio_id">
                             <option value="">Selecione a série</option>
-                            <option
-                                value="1° ano do Ensino Fundamental I" {{old('serie_irmao_na_escola_id') == "1° ano do Ensino Fundamental I" ? 'selected' : ''}}>
-                                1° ano do Ensino Fundamental I
-                            </option>
-                            <option
-                                value="2° ano do Ensino Fundamental I" {{old('serie_irmao_na_escola_id') == "2° ano do Ensino Fundamental I" ? 'selected' : ''}}>
-                                2° ano do Ensino Fundamental I
-                            </option>
-                            <option
-                                value="3° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "3° ano do Ensino Fundamental I" ? 'selected' : ''}}>
-                                3° ano do Ensino Fundamental I
-                            </option>
-                            <option
-                                value="4° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "4° ano do Ensino Fundamental I" ? 'selected' : ''}}>
-                                4° ano do Ensino Fundamental I
-                            </option>
-                            <option
-                                value="5° ano do Ensino Fundamental I"{{old('serie_irmao_na_escola_id') == "5° ano do Ensino Fundamental I" ? 'selected' : ''}}>
-                                5° ano do Ensino Fundamental I
-                            </option>
-                            <option
-                                value="6° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "6° ano do Ensino Fundamental II" ? 'selected' : ''}}>
-                                6° ano do Ensino Fundamental II
-                            </option>
-                            <option
-                                value="7° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "7° ano do Ensino Fundamental II" ? 'selected' : ''}}>
-                                7° ano do Ensino Fundamental II
-                            </option>
-                            <option
-                                value="8° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "8° ano do Ensino Fundamental II" ? 'selected' : ''}}>
-                                8° ano do Ensino Fundamental II
-                            </option>
-                            <option
-                                value="9° ano do Ensino Fundamental II"{{old('serie_irmao_na_escola_id') == "9° ano do Ensino Fundamental II" ? 'selected' : ''}}>
-                                9° ano do Ensino Fundamental II
-                            </option>
-                            <option
-                                value="1° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "1° ano do Ensino Médio" ? 'selected' : ''}}>
-                                1° ano do Ensino Médio
-                            </option>
-                            <option
-                                value="2° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "2° ano do Ensino Médio" ? 'selected' : ''}}>
-                                2° ano do Ensino Médio
-                            </option>
-                            <option
-                                value="3° ano do Ensino Médio"{{old('serie_irmao_na_escola_id') == "3° ano do Ensino Médio" ? 'selected' : ''}}>
-                                3° ano do Ensino Médio
-                            </option>
-                        </select>
+                            @foreach($escolaridade as $esc)
+                                <option
+                                    value="{{$esc->id}}" {{old('serie_irmao_no_sorteio_id') == $esc->id ? 'selected' : ''}}>{{$esc->nivel_escolaridade}}</option>
+                            @endforeach
                         </select>
                         @error('serie_irmao_no_sorteio_id')
                         <div class="alert alert-danger">{{ $message }}</div>
