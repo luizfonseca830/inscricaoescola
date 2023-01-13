@@ -43,6 +43,10 @@
                                 <strong>{{$pessoa->comprovante->comprovante}}</strong></label><br>
                         </div>
                         <div style="margin-top: 10px; margin-bottom: 10px;">
+                            <label style="margin-left: 10px; ">DATA DE INSCRIÇÃO:
+                                <strong>{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}</strong></label><br>
+                        </div>
+                        <div style="margin-top: 10px; margin-bottom: 10px;">
                             <label style="margin-left: 10px; ">NOME DO IRMÃO(A) NA ESCOLA:
                                 <strong>{{is_null($pessoa->nome_irmaos_na_escola) || empty($pessoa->nome_irmaos_na_escola) ? 'NÃO INFORMADO' : mb_strtoupper($pessoa->nome_irmaos_na_escola)}}</strong></label><br>
                         </div>
