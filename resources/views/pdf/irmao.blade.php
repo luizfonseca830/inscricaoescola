@@ -36,15 +36,15 @@
             @if(mb_strtoupper($pessoa->irmaos_na_escola) == "SIM")
                     <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                         <div style="margin-top: 10px; margin-bottom: 10px;">
+                            <label style="margin-left: 10px; ">DATA DE INSCRIÇÃO:
+                                <strong>{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}</strong></label><br>
+                        </div>
+                        <div style="margin-top: 10px; margin-bottom: 10px;">
                             <label style="margin-left: 10px; ">ALUNO: <strong>{{mb_strtoupper($pessoa->nome_completo)}}</strong></label><br>
                         </div>
                         <div style="margin-top: 10px; margin-bottom: 10px;">
                             <label style="margin-left: 10px; ">COMPROVANTE:
                                 <strong>{{$pessoa->comprovante->comprovante}}</strong></label><br>
-                        </div>
-                        <div style="margin-top: 10px; margin-bottom: 10px;">
-                            <label style="margin-left: 10px; ">DATA DE INSCRIÇÃO:
-                                <strong>{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}</strong></label><br>
                         </div>
                         <div style="margin-top: 10px; margin-bottom: 10px;">
                             <label style="margin-left: 10px; ">NOME DO IRMÃO(A) NA ESCOLA:
