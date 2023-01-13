@@ -98,7 +98,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">6° ano do Ensino Fundamental I</p>
+                            <p class="card-category">6° ano do Ensino Fundamental II</p>
                             <h3 class="card-title">{{$inscricao_sextoano->total}}</h3>
                         </div>
                         <div class="card-footer">
@@ -112,7 +112,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">7° ano do Ensino Fundamental I</p>
+                            <p class="card-category">7° ano do Ensino Fundamental II</p>
                             <h3 class="card-title">{{$inscricao_setimoano->total}}</h3>
                         </div>
                         <div class="card-footer">
@@ -126,7 +126,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">8° ano do Ensino Fundamental I</p>
+                            <p class="card-category">8° ano do Ensino Fundamental II</p>
                             <h3 class="card-title">{{$inscricao_oitavomoano->total}}</h3>
                         </div>
                         <div class="card-footer">
@@ -140,7 +140,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <p class="card-category">9° ano do Ensino Fundamental I</p>
+                            <p class="card-category">9° ano do Ensino Fundamental II</p>
                             <h3 class="card-title">{{$inscricao_nonoano->total}}</h3>
                         </div>
                         <div class="card-footer">
@@ -158,7 +158,7 @@
                             <div class="card-icon">
                                 <i class="material-icons">content_copy</i>
                             </div>
-                            <h3 class="card-title">Inscrições</h3>
+                            <h3 class="card-title">Grafico de Inscrições</h3>
                         </div>
                         <div class="card-footer justify-content-center">
                             <!-- Chart's container -->
