@@ -34,13 +34,7 @@
         <b>Escolaridade: {{$escolaridade->modulo->descricao}}</b>
         @foreach($escolaridade->pessoas as $pessoa)
             @if(mb_strtoupper($pessoa->irmaos_na_escola) == "SIM")
-                <div
-                    style="width:600px;
-                    height:200px;
-                    border-color: #0b2e13;
-                    border-width: 2px;
-                    border-style: solid;
-                    class="keep-together">
+                <div style="border: 1px solid #000; margin-top: 20px" class="keep-together">
                     <div style="margin-top: 10px; margin-bottom: 10px;">
                         <label style="margin-left: 10px; ">DATA DE INSCRIÇÃO:
                             <strong>{{date('d/m/Y H:i:s', strtotime( $pessoa->created_at))}}</strong></label><br>
