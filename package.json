@@ -30,7 +30,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.14.0",
+        "@fortawesome/fontawesome-free": "^5.15.4",
         "inputmask": "^5.0.5",
         "sweetalert2": "^11.1.7"
     }
