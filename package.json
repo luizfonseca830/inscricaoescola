@@ -31,7 +31,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
-        "inputmask": "^5.0.8",
+        "inputmask": "^5.0.9",
         "sweetalert2": "^11.1.7"
     }
 }
